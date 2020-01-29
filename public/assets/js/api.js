@@ -2,7 +2,7 @@ window.user = {
     logged: false
 };
 url = new URLSearchParams(window.location.search);
-var host = 'http://andreafinazzi.com:5000';
+var host = '/api';
 defaultHeaders = {
     content: {
 
