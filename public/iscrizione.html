@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - spacca</title>
+
+
+    <link rel="stylesheet" href="/assets/css/tesseramento.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+            data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Performers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Seminars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+
+    <main>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate action="/auth/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
+                                    required ">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="loginPasswordInput" name="password"
+                                    placeholder="">
+                            </div>
+                            <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="loginButton" type="button" class="btn btn-primary">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+
+
+        <div class="sfondo"></div>
+        <div class="container">
+            <section class="row sct d-fixed" style="padding-top: 10vh;">
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <h3 class="title">Ancora con qualche <br>informazione!</h3>
+                        <p class="p-iscrizione">Per partecipare alle nostre attività bisogna essere tesserati.
+                            Ecco perchè
+                            ti chiediamo alcuni dati che ci permetteranno di farti entrare nella famiglia di
+                            Clash!
+                        </p>
+                        <div class="sct-body">
+                            <!-- card documenti-->
+                            <div class="card bg-light border-secondary mb-3">
+                                <div class="card-header">
+                                    <h5>Cosa ti serve</h5>
+                                </div>
+                                <div class="card-body">
+                                    <i class="fa fa-id-card-alt"></i>Carta d'identità<br>
+                                    <i class="fa fa-id-card"></i>Codice fiscale<br>
+                                    <i class="fa fa-file-medical"
+                                        style="padding-left: 3px; padding-right: 13px;"></i>Certificato medico
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                            <!-- card pagamento-->
+                            <div class="card bg-light border-secondary">
+                                <div class="card-header">
+                                    <h5>Come pagare</h5>
+                                </div>
+                                <div class="card-body">
+                                    <i class="fa fa-credit-card"></i>Carta di credito<br>
+                                    <i class="fab fa-paypal"
+                                        style="padding-left: 4px; padding-right: 13px;"></i>Paypal<br>
+                                    <i class="fa fa-money-check"></i>Bonifico bancario
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <form class="needs-validation" id="opesForm" novalidate action="" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="sesso">Sesso</label><br>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="m" name="gender" class="custom-control-input" required>
+                                    <label class="custom-control-label" for="m">M</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="f" name="gender" class="custom-control-input">
+                                    <label class="custom-control-label" for="f">F</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="data-di-nascita">Data di nascita</label>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="birthday_day" id="giorno"
+                                            placeholder="dd" minlength="2" maxlength="2" required
+                                            onchange='AggiornaGiorno(this.value);'>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="birthday_month" id="mese"
+                                            placeholder="mm" required minlength="2" maxlength="2"
+                                            onchange='AggiornaMese(this.value);'>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control datepicker" name="birthday_year"
+                                            id="anno" placeholder="aaaa" minlength="4" maxlength="4" required
+                                            onchange='AggiornaAnno(this.value);'>
+                                    </div>
+                                </div>
+                                <div class="form-group alarm" id="DataAlarm">
+                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data inserita non è valida!
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="provincia">Provincia</label>
+                                <select class="form-control" id="nascita-provincia" name="birthplace_area" required>
+                                    <option value="">Seleziona</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="nascita-comune">Comune di Nascita</label>
+                                <select class="form-control" id="nascita-comune" name="birthplace_municipality" required>
+                                    <option value="">Seleziona</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf">Codice Fiscale</label>
+                                <input type="text" onchange="LunghezzaCF(this.value)"class="form-control" name="national_id" id="cf" placeholder="" required>
+                            </div>
+                            <div class="form-group alarm" id="CFStudenteAlarm">
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice inserito è troppo corto!
+                            </div>
+                            <div class="form-group">
+                                <label for="residenza-via">Indirizzo di residenza</label>
+                                <div class="form-row">
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" name="address_street" id="residenza-via"
+                                            placeholder="Via" minlength="2" maxlength="2">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" name="address_number" id="residenza-numero"
+                                            placeholder="n°" required minlength="2" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="address_municipality" id="residenza-comune"
+                                    placeholder="Comune">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" onchange="LunghezzaNumero(this.value)" class="form-control" id="telefono" name="mobile" placeholder=""
+                                    required>
+                            </div>
+                            <div class="form-group alarm" id="NumeroAlarm">
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero inserito non è valido!
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo-documento">Tipo documento</label>
+                                <select class="form-control" id="tipo-documento" name="document_type" required>
+                                    <option value="">Seleziona</option>
+                                    <option value="carta">Carta d'identità</option>
+                                    <option value="passaporto">Passaporto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero-documento">Numero documento</label>
+                                <input type="text" class="form-control" id="numero-documento" name="document_number"
+                                    placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="selfie" name="selfie" required>
+                                    <label class="custom-file-label" for="selfie">Carica un selfie</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="certificato" name="hc_cert"
+                                        required>
+                                    <label class="custom-file-label" for="certificato">Certificato</label>
+                                </div>
+                            </div>
+
+                            <!-- Dati Genitore-->
+                            <div id="DatiGenitore">
+                                <div class="form-group">
+                                    Testo per minorenni!
+                                </div>
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" name="parent_first_name" id="nome-genitore"
+                                        placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nome">Cognome</label>
+                                    <input type="text" class="form-control" name="parent_last_name"
+                                        id="cognome-genitore" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sesso">Sesso</label><br>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="m-genitore" name="parent_gender"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="m-genitore">M</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="f-genitore" name="parent_gender"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="f-genitore">F</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="data-di-nascita-genitore">Data di nascita</label>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <input type="text" onchange="AggiornaGiornoGenitore(this.value)"class="form-control" name="parent_birthday_day" id="giorno-genitore"
+                                                placeholder="dd" minlength="2" maxlength="2" >
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" onchange="AggiornaMeseGenitore(this.value)" class="form-control" name="parent_birthday_month" id="mese-genitore" placeholder="mm"
+                                                required minlength="2" maxlength="2">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control datepicker"
+                                                name="parent_birthday_year" id="anno-genitore" placeholder="aaaa"
+                                                minlength="4" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-group alarm" id="DataAlarmGenitore">
+                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data inserita non è valida!
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="provincia-genitore">Provincia</label>
+                                    <select class="form-control" id="provincia-genitore" name="parent_birthplace_area">
+                                        <option value="">Seleziona</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nascita-comune-genitore">Comune di nascita</label>
+                                    <select class="form-control" id="nascita-comune-genitore"
+                                        name="parent_birthplace_municipality">
+                                        <option value="">Seleziona</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cf-genitore">Codice Fiscale</label>
+                                    <input type="text" onchange="LunghezzaCFGenitore(this.value)"class="form-control" name="parent_national_id" id="cf-genitore" placeholder="" >
+                                </div>
+                                <div class="form-group alarm" id="CFAlarmGenitore">
+                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice inserito è troppo corto!
+                                </div>
+                                <div class="form-group">
+                                    <label for="residenza-indirizzo-genitore">Indirizzo di residenza</label>
+                                    <div class="form-row">
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" name="parent_address_street"
+                                                id="residenza-indirizzo-genitore" placeholder="via" minlength="2" maxlength="2">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" class="form-control" name="parent_address_number"
+                                                id="residenza-numero-genitore" placeholder="n°" required minlength="2"
+                                                maxlength="2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="parent_address_municipality"
+                                        id="residenza-comune-genitore" placeholder="Comune">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono-genitore">Telefono</label>
+                                    <input type="text" onchange="LunghezzaNumeroGenitore(this.value)" class="form-control" id="telefono-genitore" name="parent_mobile" placeholder=""
+                                        >
+                                        <div class="form-group alarm" id="NumeroGenitoreAlarm">
+                                            <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero inserito non è valido!
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email-genitore">Email</label>
+                                    <input type="email"  class="form-control" id="email-genitore" name="parent_email"
+                                        placeholder="" onchange="AggiornaMailGenitore1(this.value)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="conferma-email-genitore">Conferma Email</label>
+                                    <input type="email" onpaste="return false" class="form-control" id="conferma-email-genitore"
+                                        name="parent_email_confirm" placeholder=""
+                                        onchange="AggiornaMailGenitore2(this.value)">
+                                </div>
+                                <div class="form-group alarm" id="MailGenitoreAlarm">
+                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Le mail
+                                    inserite non corrispondono!
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo-documento-genitore">Tipo documento</label>
+                                    <select class="form-control" id="tipo-documento-genitore"
+                                        name="parent_document_type">
+                                        <option value="">Seleziona</option>
+                                        <option value="carta">Carta d'identità</option>
+                                        <option value="passaporto">Passaporto</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numero-documento-genitore">Numero documento</label>
+                                    <input type="text" class="form-control" id="numero-documento-genitore"
+                                        name="parent_document_number" placeholder="">
+                                </div>
+                            </div>
+                            <!-- Fine Dati Genitore-->
+
+
+
+                            <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div>
+                    </div>
+
+
+                    </form>
+                </div>
+        </div>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/auth.js"></script>
+        <script src="/assets/js/tesseramento.js"></script>
+        <!-- include Bundle Bootstrap -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    </footer>
+
+</body>
+
+</html>

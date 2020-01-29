@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - spacca</title>
+
+
+    <link rel="stylesheet" href="/assets/css/tesseramento.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+            data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+
+    <main>
+        <div class="sfondo"></div>
+        <div class="container">
+            <section class="row sct d-fixed" style="padding-top: 10vh;">
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <h3 class="title">Creiamo un account!</h3>
+                        <p class="p-iscrizione">Con queste informazioni potremo crearti un account sulla piattaforma di Clash e sarai
+                            così in grado di gestire al meglio ogni attività!
+                        </p>
+                        <div class="sct-body">
+                            <!-- card documenti
+                            <div class="card bg-light border-secondary mb-3">
+                                <div class="card-header">
+                                    <h5>Cosa ti serve</h5>
+                                </div>
+                                <div class="card-body">
+                                    <i class="fa fa-id-card-alt"></i>Carta d'identità<br>
+                                    <i class="fa fa-id-card"></i>Codice fiscale<br>
+                                    <i class="fa fa-file-medical"
+                                        style="padding-left: 3px; padding-right: 13px;"></i>Certificato medico
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                            
+                            <div class="card bg-light border-secondary">
+                                <div class="card-header">
+                                    <h5>Come pagare</h5>
+                                </div>
+                                <div class="card-body">
+                                    <i class="fa fa-credit-card"></i>Carta di credito<br>
+                                    <i class="fab fa-paypal"
+                                        style="padding-left: 4px; padding-right: 13px;"></i>Paypal<br>
+                                    <i class="fa fa-money-check"></i>Bonifico bancario
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <form id="signForm" class="needs-validation">
+                            <!-- <div class="form-group" id="form" style="padding-top: 60px;">
+                                <label for="scuola">Scuola</label>
+                                <select class="form-control" id="school" name="school"
+                                    onchange='CheckValue(this.value);'>
+                                    <option value="">Seleziona</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="altro">Altro..</option>
+                                </select>
+                                <input type="text" class="form-control" style="display: none; margin-top: 5px;" name=""
+                                    id="altro_scuola" placeholder="Scuola">
+                            </div> -->
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" name="first_name" id="nome" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nome">Cognome</label>
+                                <input type="text" class="form-control" name="last_name" id="cognome" placeholder=""
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder=""
+                                    required onchange="AggiornaMailStudente1(this.value)">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="conferma-email">Conferma Email</label>
+                                <input type="email" onpaste="return false" class="form-control" id="email-confirm" name="email_confirm"
+                                    placeholder="" required onchange="AggiornaMailStudente2(this.value)">
+                            </div> -->
+                            <div class="form-group alarm" id="MailStudenteAlarm">
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Le mail inserite non corrispondono!
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder=""
+                                    required onchange="AggiornaPassword1(this.value)">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="conferma-password">Conferma Password</label>
+                                <input type="password" onpaste="return false" class="form-control" id="password-confirm" name="password_confirm"
+                                    placeholder="" required onchange="AggiornaPassword2(this.value)">
+                            </div> -->
+                            <div class="form-group alarm" id="PasswordAlarm">
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Le password inserite non corrispondono!
+                            </div>
+                                                  
+
+
+
+                            <div class="form-group">
+                                <!-- <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="termini" name="terms"
+                                        required>
+                                    <label class="custom-control-label" for="termini">Termini e
+                                        Condizioni</label>
+                                </div> -->
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="privacy" name="privacy"
+                                        required>
+                                    <label class="custom-control-label" for="privacy"><a href="/assets/docs/privacy_policy_clash.pdf">Privacy Policy*</a></label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="newsletter"
+                                        name="newsletter">
+                                    <label class="custom-control-label" for="newsletter">Newsletter</label>
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div>
+                    </div>
+
+
+                    </form>
+                </div>
+        </div>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <!-- include Cycle2 and Flipster -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/signup.js"></script>
+        <!-- include Bundle Bootstrap -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    </footer>
+
+</body>
+
+</html>

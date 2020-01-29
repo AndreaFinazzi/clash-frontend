@@ -1,0 +1,136 @@
+// Clash style customization
+@import "_clash";
+
+// Classi specifiche pagina index
+.video-background-holder {
+
+
+    // @include media-breakpoint-up(md) {
+    //     &:after {
+    //         content: url('/assets/img/Path 227.svg');
+    //         width: 100%;
+    //         position: relative;
+    //         top: -10vh;
+    //         z-index: 1;
+    //     }
+    // }
+}
+
+//sezione attività
+.card {
+    border: none;
+    border-radius: 15px;
+
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 0px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.06);
+}
+
+.card {
+    min-height: 400px;
+}
+
+.card .card-title{
+    color: $clash-blue !important;
+}
+
+.card .card-body{
+    padding: 20px;
+    padding-bottom: 65px;
+}
+
+
+.card .card-header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px;
+    color: $clash-white;
+}
+.card .card-footer {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    font-size: 25px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.sei-azienda{
+    width: 100%; 
+    height: auto;
+    background-color: $clash-blue; 
+    color: white; 
+    text-align: center;
+    font-size: 20px;
+}
+
+.img-partners{
+    max-width: 50%;
+    padding-top:50px;
+}
+
+.sei-azienda a{
+    padding:10px
+}
+
+.sei-azienda i{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.freccia-destra{
+    color: #ffffff;
+    font-size: 25px;
+    float: right;
+}
+
+#footer-scuole{
+    color: $clash-light-blue;
+}
+#header-scuole{
+    background: $clash-light-blue;
+}
+#footer-teatro{
+    color: $clash-green;
+}
+#header-teatro{
+    background: $clash-green;
+}
+#footer-musica{
+    color: $clash-yellow;
+}
+#header-musica{
+    background: $clash-yellow;
+}
+
+
+//sezione team
+.card-contatti  {
+    border: none;
+    border-radius: 5px;
+
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 20px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card-contatti {
+    min-height: 312px;
+}
+
+.card-contatti  .card-title-contatti  {
+    color: $clash-blue !important;
+}
+
+.card-contatti  .card-body-contatti  img {
+    color: $clash-grey;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}

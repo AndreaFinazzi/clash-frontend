@@ -1,0 +1,90 @@
+// Clash style customization
+@import "_clash";
+@import "_loader";
+
+// Classi specifiche pagina index
+.video-background-holder {
+
+
+    // @include media-breakpoint-up(md) {
+    //     &:after {
+    //         content: url('/assets/img/Path 227.svg');
+    //         width: 100%;
+    //         position: relative;
+    //         top: -10vh;
+    //         z-index: 1;
+    //     }
+    // }
+}
+
+//sezione informazioni
+
+.title{
+    color: $clash-blue;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.10);
+}
+
+.card .card-title{
+    color: $clash-blue !important;
+}
+
+
+.card .card-body{
+    padding: 20px;
+}
+
+.card .card-body i{
+    color: $clash-dark-grey;
+    padding-right: 10px;
+}
+
+.card .card-header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 8px;
+    padding-left: 20px;
+    font-size: medium;
+    color: $clash-white;
+    background-color: $clash-dark-grey;
+}
+
+#DatiGenitore{
+    display: none; 
+    padding-top: 40px; 
+    padding-bottom: 30px; 
+    border-top: 2px solid $clash-dark-grey;
+}
+
+.p-iscrizione{
+    text-align: justify;
+    max-width: 100%;
+}
+
+
+.form-group {
+    &.alarm{
+        display: none;
+        color: red;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .card, .p-iscrizione{
+        max-width: 19em;
+    }
+
+    #title{
+        max-width: 19em;
+    }
+
+    #form{
+        padding-top: 60px;
+    }
+}

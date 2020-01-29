@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - Collabora con noi</title>
+
+    <link rel="stylesheet" href="assets/css/business.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+    <!-- <link rel="stylesheet" href="assets/css/jquery.flipster.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        type="text/css">
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+            data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#storia">Storia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#vision">Vision e Mission</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#team">Il team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#scuole">Scuole</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#partner">Partner</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#contatti">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="sct sct-first video-background-holder d-flex flex-column-reverse justify-content-center">
+            <div class="overlay video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="/assets/video/background.mov" type="video/mp4">
+            </video>
+
+            <div class="video-background-content">
+                <div class="container d-flex flex-column text-center justify-content-end align-items-center" style="max-height: 70vh;">
+                    <div class="sct-text text-fi">
+                       <!-- <img class="d-sm-none" src="assets/img/business-firstimpression.svg" alt="Clash">-->
+                        <h1 class="d-none d-sm-block">Scopri come avviciniamo gli studenti alle aziende</h1>
+                    </div>
+
+                    <div class="row justify-content-center mt30">
+                        <div class="col-6 col-md-4">
+                            <div class="counter_box">
+                               <span class="counter">1400</span><span>+</span>
+                                <h5>studenti partecipanti</h5>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="counter_box">
+                                <span class="counter">20</span>
+                                <h5>scuole</h5>
+                            </div>
+                        </div>
+                        <div class="d-none d-md-block col-md-4">
+                            <div class="counter_box">
+                                <span>+</span><span class="counter">250</span><span>%</span>
+                                <h5>rispetto al 2019</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sct-nav align-items-center">
+                        <button id="btn-partner-iscriviti-partners" class="btn btn-success btn-block"><i class="fas fa-file-download" style="padding-right: 5px;"></i> Presentazione</button>
+                        <button onclick="window.location.href = '#contatti'"
+                            id="btn-partner-collaboriamo-partners"
+                            class="btn btn-warning btn-block">Contattaci</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="sct-container">
+            <div class="sfondo"></div>
+            <!-- Social-->
+            <section class="row sct sct-team">
+                <div class="container">
+                    <div class="sct-title" style="display: none;">
+                        <h2>
+                      
+                        </h2>
+                    </div>
+
+                    <div class="sct-body px-2">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-4">
+                                <h2><i class="fab fa-facebook"></i></h2>
+                                <h6>Facebook</h6>
+                                <p style="font-size: 12px;">Clash of Schools</p>
+                            </div>
+                            <div class="col-4">
+                                <h2><i class="fab fa-instagram"></i></h2>
+                                <h6>Instagram</h6>
+                                <p style="font-size: 12px;">@clashofschools</p>
+                            </div>
+                            <div class="col-4">
+                                <h2><i class="fab fa-linkedin"></i></h2>
+                                <h6>Linkedin</h6>
+                                <p style="font-size: 12px;">Clash of Schools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine Social-->
+            <a name="storia"></a>
+            <div class="container">
+
+
+                 <!-- TIMELINE START -->
+
+                 <section class="row example-centered">
+                    <div class="col-md-12 example-title">
+                        <h2>Clash in numeri</h2>
+                        <p>Cinque anni di sport e crescita.</p>
+                    </div>
+                    <div class="col-12">
+                        <ul class="timeline timeline-centered">
+                            <li class="timeline-item pre">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content"></div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">2017</h2>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>febbraio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">l'idea</h3>
+                                    <p>7 studenti provenienti da realtà differenti ma con un background comune formano il gruppo clash
+                                         con lo scopo di dare vita ad un centro di idee e progetti sempre nuovi 
+                                        </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>maggio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">la prima edizione del torneo</h3>
+                                    <p>La prima edizione del torneo sportivo- una competizione di paintball fa da apripista alle competizioni 
+                                        sui campi di basket, calcio e beach volley installati in Piazza Città di Lombardia. 
+                                        4 scuole coinvolte, più di 80 iscritti.</p>
+                                </div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">2018</h2>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>febbraio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">l'ASD</h3>
+                                    <p>Viene fondata ufficialmente l’associazione sportiva dilettantistica Clash Of Schools </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>maggio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">la seconda edizione del torneo</h3>
+                                    <p>Suddiviso in due giornate coinvolge il doppio delle scuole 
+                                        partecipanti all’edizione precedente nelle location di PlayMore e Piazza città di Lombardia </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">2019</h2>
+                                </div>
+                            </li>
+                            
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>febbraio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">la prima gara sci</h3>
+                                    <p>Studenti e amici hanno la possibilità di partecipare alla 
+                                        prima giornata sulla neve organizzata da clash nel comprensorio di Pila Ski </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>aprile</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title"> la terza edizione del torneo</h3>
+                                    <p>Svoltosi su tre giornate sui campi del Playmore e in quelli installati all’interno dell’Arena 
+                                        Civica vede confrontarsi 12 scuole per il doppio degli iscritti rispetto all’edizione precedente </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>maggio</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">il primo contest teatrale</h3>
+                                    <p>Con la collaborazione di Studio Novecento e il Patrocinio del Municipio 8 nasce il progetto culturale “Scuole in Scena” </p>
+                                </div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">e oltre...</h2>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- TIMELINE END -->
+
+                <!--caption --
+                <section class="row sct sct-mission">
+                    <div class="container px-0">
+                        <div class="caption">
+                            <div class="continer p-4 text-justify text-center">
+                                Abbiamo in serbo piani ambiziosi per il 2020! Collabora con noi per far crescere clash! #beclash
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <--Fine caption -->
+
+            </div>
+            <a name="vision"></a>
+            <div class="sct-container alt">
+                <section class="row sct sct-team">
+                    <div class="container">
+                        <div class="sct-title">
+                            <h2>
+                                la vision
+                            </h2>
+                        </div>
+                        <div class="sct-body px-2">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <p style="font-size: 20px; text-align: left;">
+                                        Cogliamo il bisogno di creare una comunità studentesca coesa in diverse città e territori, partendo dal territorio milanese. Una comunità dove gli studenti siano liberi e a loro agio nello scambiare idee, risorse e progetti per crescere in tutte le dimensioni di sviluppo della persona umana. Intendiamo fornire agli studenti opportunità ed esperienze che l’istituzione scuola non offre loro.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="/assets/img/vision.png" style="max-height: 100%; max-width:100%; padding-bottom: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sct-title" style="padding-top: 60px;">
+                            <h2>
+                                la mission
+                            </h2>
+                        </div>
+                        <div class="sct-body px-2">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="/assets/img/mission.png" style="max-height: 100%; max-width:100%; padding-bottom: 10px;">
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <p style="font-size: 20px; text-align: right;">
+                                        Ci impegniamo per una crescita personale e comunitaria delle ragazze e dei ragazzi   con   iniziative   di   carattere   sportivo,   artistico,   culturale, ambientale, sociale, “politico” (nel senso del Bene Comune della Polis, fuori dagli schieramenti partitici). A tal fine operiamo nel rigoroso rispetto delle normative vigenti, in stretta collaborazione con le istituzioni e associazioni del territorio
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </section>
+            </div>
+            <a name="team"></a>
+            <div class="sct-container">
+                <div class="sfondo"></div>
+
+                <!--sezione team -->
+                <section class="row sct sct-team">
+                    <div class="container">
+                        <div class="sct-title">
+                            <h2>
+                                il team
+                            </h2>
+                        </div>
+
+                        <div class="sct-body px-2">
+                            <div class="row">
+                                <!-- Team member -->
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                    src="/assets/img/staff/IMG_2375.png"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">michele comolli</h4>
+                                            <p class="card-text" style="min-height: 110px;">“Do not go where the path may lead, go instead where there is no path and leave a trail”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./Team member -->
+                                <!-- Team member -->
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                src="/assets/img/staff/IMG_2397.png"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">daniele luridiana</h4>
+                                            <p class="card-text" style="min-height: 110px;">“Non esiste buono o cattivo tempo esiste solo buono e cattivo equipaggiamento”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./Team member -->
+                                <!-- Team member -->
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                src="/assets/img/staff/IMG_2386.png"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">vittorio pizzigoni</h4>
+                                            <p class="card-text" style="min-height: 110px;">“Ordunque, anche voi,..., qualora siate concordi, sarete invincibili per i vostri nemici; qualora invece siate discordi, sarete vinti facilmente”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ./Team member -->
+
+                                <div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card" style="padding: 0px; height: auto; min-height: 0px;">
+                                        <img class="card-img-top" src="/assets/img/staff/foto_team_prov.png" style="height: 100%;" alt="Card image cap">
+                                        <div class="card-body" style="text-align: center;">
+                                          <h4 class="card-title">Scuole</h4>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card" style="padding: 0px ;height: auto; min-height: 0px;">
+                                        <img class="card-img-top" src="/assets/img/staff/foto_team_prov.png" style="height: 100%;" alt="Card image cap">
+                                        <div class="card-body" style="text-align: center;">
+                                          <h4 class="card-title">Sport</h4>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card" style="padding: 0px ;height: auto; min-height: 0px;">
+                                        <img class="card-img-top" src="/assets/img/staff/foto_team_prov.png" style="height: 100%;" alt="Card image cap">
+                                        <div class="card-body" style="text-align: center;">
+                                          <h4 class="card-title">Comunicazione</h4>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card" style="padding: 0px ;height: auto; min-height: 0px;">
+                                        <img class="card-img-top" src="/assets/img/staff/foto_team_prov.png" style="height: 100%;" alt="Card image cap">
+                                        <div class="card-body" style="text-align: center;">
+                                          <h4 class="card-title">Amministrazione</h4>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        -->
+                        </div>
+                    </div>
+                </section>
+                <!--Fine Team -->
+
+                <a name="scuole"></a>
+                <div class="container">
+                <!--sezione scuole -->
+                <section class="sct sct-scuole">
+                    <div class="row sct-body mx-0">
+                        <div class="col-12 col-lg-5 d-flex flex-column justify-content-around pr-lg-5">
+                            <div class="sct-title text-lg-right">
+                                <h2>
+                                    le scuole
+                                </h2>
+                            </div>
+                            <div class="sct-text">
+                                Ogni anno coinvolgiamo nuove scuole ampliando la nostra rete. 20 istituti partecipano alle attività di clash2020.
+                                <br><br>
+                                <p style="font-size: 15px;">clicca sulle scuole per scoprire più informazioni</p>
+                            </div>
+                        </div>
+                        <div id="map" class="col-12 col-lg-7"></div>
+                    </div>
+                </section>
+            </div>
+
+                <!-- Fine section container -->
+            </div>
+        </div>
+
+        <a name="partner"></a>
+        <div class="container-lg sct-container px-0 alt">
+            <!-- <div class="sfondo"></div> -->
+            <section class="sct sct-partners">
+                <div class="container">
+                    <div class="sct-title">
+                        <h2>I nostri partner</h2>
+                    </div>
+                    <div class="sct-body d-flex flex-column justify-content-around align-items-center">
+                    <div class="container" style="text-align: center;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/ComuneMilanoWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/MunicipioUnoWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/MunicipioOttoWhite.svg" class="img-partners">
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/FondazioneCariploWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/RegioneLombardiaWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/RipetizioniENonSoloWhite.svg" class="img-partners">
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/DominosWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/STNWhite.svg" class="img-partners">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/assets/img/partners/QuantaClubWhite.svg" class="img-partners">
+                            </div>
+                            
+                        </div>
+                        
+                    
+                        <div class="sct-nav" style="text-align: center; width: 100%; margin: auto; padding-top: 100px;">
+                            <a role="button" id="btn-mailto" href="mailto:sponsor@clashofschools.it"
+                            class="btn btn-success btn-block" style="margin: auto;">Colabora con noi</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fine section container alt -->
+        </div>
+        <a name="contatti"></a>
+        <!-- section container -->
+        <div class="sct-container">
+            <div class="sfondo"></div>
+
+            <!--sezione team -->
+            <section class="row sct sct-team">
+                <div class="container">
+                    <div class="sct-title">
+                        <h2>
+                            contattaci
+                        </h2>
+                    </div>
+
+                    <div class="sct-body px-2">
+                        <div class="row">
+                            <!-- Team member -->
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="/assets/img/staff/IMG_2305.jpg"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">matteo mazzola</h4>
+                                        <h5>scuole</h5>
+                                        <p class="card-text" style="text-align: center; min-height: 40px;"> </p>
+                                        <a role="button" id="btn-mailto" href="mailto:sponsor@clashofschools.it"
+                            class="btn btn-success btn-block" style="margin: auto;">Contatta il responsabile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Team member -->
+                            <!-- Team member -->
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="/assets/img/staff/BOBO.png"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">daniele airoldi</h4>
+                                        <h5>sport</h5>
+                                        <p class="card-text" style="text-align: center; min-height: 40px;">"piutost’ che nient’ l’è mej piutost"</p>
+                                        <a role="button" id="btn-mailto" href="mailto:sponsor@clashofschools.it"
+                            class="btn btn-success btn-block" style="margin: auto;">Contatta il responsabile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Team member -->
+                            <!-- Team member -->
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="/assets/img/staff/IMG_2409.jpg"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">roberto del bo</h4>
+                                        <h5>cultura</h5>
+                                        <p class="card-text" style="text-align: center; min-height: 40px;">"nel dubbio, thè al limone" </p>
+                                        <a role="button" id="btn-mailto" href="mailto:sponsor@clashofschools.it"
+                            class="btn btn-success btn-block" style="margin: auto;">"Contatta il responsabile"</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Team member -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine Team -->
+
+
+
+            <!-- Fine section container -->
+        </div>
+        <!--Inizio Cascinet-->
+        <div class="sct-container" >
+            <!-- <div class="sfondo"></div> -->
+            <section class="row sct sct-team">
+                <div class="container">
+                     <div class="sct-body px-2">
+                       <img src="/assets/img/partners/ClashForCascinet.svg" style="max-height:100px; max-width: 100%;">
+                     </div>
+                     <p style="color: black; font-size:20px; padding-top: 20px; padding-bottom: 20px;">
+                        Aiuta Cascinet a ridurre le emissioni della tua citta! Dona a km0 ! Facendo una donazione durante l’iscrizione alle nostre attività puoi contribuire a piantare un’ Agroforesta che contribuirà al miglioramento dell’aria cittadina, alla depurazione delle acque e all’aumento della fertilità della terra. Inoltre, entro due anni gli alberi piantati produrranno i primi frutti che verranno venduti per aiutare ulteriormente la causa di Cascinet.
+                        
+                    </p>
+                     <a role="button" href="https://www.cascinet.it"
+                            class="btn btn-block" style="margin: auto; background-color: #028F01; color: #ffffff; max-width: 300px;">Scopri di più</a>
+                </div>
+            </section>
+        </div>
+        <!--Fine Cascinet-->
+        
+    </main>
+    <footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <!-- include Flipster -->
+        <!-- <script src="assets/js/jquery.flipster.min.js"></script> -->
+        <!-- include Slick -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- include counterUp -->
+        <script src="/assets/js/jquery.waypoints.min.js"></script>
+        <script src="/assets/js/jquery.counterup.min.js"></script>
+        <!-- include per mappa -->
+        <script src="assets/js/leaflet.js"></script>
+        <script src="//unpkg.com/leaflet-gesture-handling"></script>
+        <script src="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+        <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+        <script src="assets/js/mappa.js"></script>
+        <!-- include custom script -->
+        <script src="/assets/js/business.js"></script>
+    </footer>
+</body>
+
+</html>

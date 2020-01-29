@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - Gara di Sci</title>
+
+    <link rel="stylesheet" href="assets/css/sci-tesseramento.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
+                disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+
+    <main>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate action="/auth/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="loginPasswordInput" name="password"
+                                    placeholder="" required>
+                            </div>
+                            <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="loginButton" type="button" class="btn btn-primary">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+
+        <div class="sct-container" style="margin-top: 80px;">
+            <div class="sfondo"></div>
+            <div class="container" id="container-paypal">
+                <script
+                    src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&client-id=Abao0T2-26Bkgf8mcIPdYyLLQOXzhTPFZ8sZz2RKIM6Cu0u-OCrSKyA4lglV4MSPSB6sSA4yPEPUlI-Y"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+                    </script>
+
+                <div id="paypal-button-container"></div>
+
+                <script>
+                    paypal.Buttons({
+                        createOrder: function (data, actions) {
+                            // This function sets up the details of the transaction, including the amount and line item details.
+                            return actions.order.create({
+                                purchase_units: [
+                                    {
+                                        amount: {
+                                            value: '55.00'
+                                        }
+                                    }]
+                            });
+                        },
+                        onApprove: function (data, actions) {
+                            // This function captures the funds from the transaction.
+                            return actions.order.capture()
+                                .then(function (details) {
+                                    // This function shows a transaction success message to your buyer.
+                                    alert('Transaction completed by ' + details.payer.name.given_name);
+                                    // Call your server to save the transaction
+                                    return api.paypalOnApprove(data)
+                                });
+                        }
+                    }).render('#paypal-button-container');
+                // This function displays Smart Payment Buttons on your web page.
+                </script>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <!-- include Slick -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- include custom script -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/auth.js"></script>
+        <script src="/assets/js/pagamento.js"></script>
+    </footer>
+</body>
+
+</html>

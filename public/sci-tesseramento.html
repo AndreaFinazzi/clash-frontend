@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - Gara di Sci</title>
+
+    <link rel="stylesheet" href="assets/css/sci-tesseramento.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
+                disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+
+    <main>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate action="/auth/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="loginPasswordInput" name="password"
+                                    placeholder="" required>
+                            </div>
+                            <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer text-left sct-text">
+                        <h5>Non sei ancora registrato? <a href="/sign-up.html">Clicca qui!</a></h5>
+                        <button id="loginButton" type="button" class="btn btn-primary">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+
+
+
+
+
+        <div class="sct-container" style="margin-top: 80px;">
+            <div class="sfondo"></div>
+            <div class="container" id="container-pacchetti">
+                <form id="purchaseForm" class="container" style="min-height: 100vh;">
+                    <!--Row-->
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label for="ruolo">
+                                    <h3>Come parteciperai?</h3>
+                                    <h5>Indica come parteciperai all'evento</h5>
+                                </label>
+                                <select class="form-control" id="ruolo" onchange="MostraPrezzi(this.value)" name="ruolo"
+                                    required>
+                                    <option value="">Seleziona</option>
+                                    <option value="sci">Sciatore</option>
+                                    <option value="snowboard">Snowboarder</option>
+                                    <option value="pedone">Pedone</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="MostraPrezzi">
+                            <a name="prezzi"></a>
+                            <div class="col-md-12 example-title">
+                                <h2>Scegli un pacchetto</h2>
+                            </div>
+                            <!--Pacchetti passeggero-->
+
+                            <div id="PacchettiPasseggero" style="display: none;">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4" onclick="SelezionePedone(1);">
+                                        <div class="single_what_we_do" id="sel1-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">35</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">TREKKY</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel1-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel1-pedone-icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel1-pedone-icons2"></i>
+                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" onclick="SelezionePedone(2);">
+                                        <div class="single_what_we_do" id="sel2-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">45</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">COMFORT</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
+                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
+                                                    </div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" onclick="SelezionePedone(3);">
+                                        <div class="single_what_we_do" id="sel3-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">50</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">FUN</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
+                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
+                                                    </div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/slittino.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel3-pedone-icons">
+                                                            <img src="/assets/img/icons/slittinoWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel3-pedone-icons2"></i>
+                                                    </div>
+                                                    <div class="col-10">Fun Park</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Pacchetti Sci-->
+
+                            <div id="PacchettiSci" style="display: none;">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4" onclick="SelezioneSci(1);">
+                                        <div class="single_what_we_do" id="sel1-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">55</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">SLALOM</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel1-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
+                                                    </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" onclick="SelezioneSci(2);">
+                                        <div class="single_what_we_do" id="sel2-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">75</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">COMPETITION</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
+                                                    </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="col-10">Maestro FISI (2h) per preparazione gara
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" onclick="SelezioneSci(3);">
+                                        <div class="single_what_we_do" id="sel3-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">125</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
+                                                    </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="col-10">Maestro FISI (5h)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="gara">Vuoi fare la gara?</label>
+                                            <select class="form-control" id="gara" name="gara">
+                                                <option value="">Seleziona</option>
+                                                <option value="true">Si</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="attrezzatura">Devi noleggiate l'attrezzatura?</label>
+                                            <select class="form-control" id="attrezzatura" name="noleggio">
+                                                <option value="">Seleziona</option>
+                                                <option value="true">Si</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fine Pacchetti-->
+
+                            <!--Cascinet-->
+                            <div class="card" style="border: 2px solid #028F01; margin-top: 30px;">
+                                <div class="card-body">
+                                    <div>
+                                        <img src="/assets/img/partners/ClashForCascinet.svg"
+                                            style="max-width: 100%; max-height: 40px;">
+                                    </div>
+                                    <p style="padding-top: 20px;">
+                                        Vuoi effettuare una donazione a Cascinet? Donando aiuterai a piantare
+                                        un’
+                                        Agroforesta, che contribuirà al miglioramento dell’aria cittadina, alla
+                                        depurazione
+                                        delle acque e all’aumento della fertilità della terra.
+                                    </p>
+                                    <div class="row">
+                                        <a onclick="cascinet(1)" class="btn btn-block" id="cascinet1"
+                                            style="cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; max-width: 50px;">1€</a>
+                                        <a onclick="cascinet(2)" class="btn btn-block" id="cascinet2"
+                                            style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; max-width: 50px;">2€</a>
+                                        <a onclick="cascinet(5)" class="btn btn-block" id="cascinet5"
+                                            style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; max-width: 50px;">5€</a>
+                                        <a onclick="cascinet(25)" class="btn btn-block" id="cascinet25"
+                                            style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; max-width: 50px;">25€</a>
+                                    </div>
+                                    <input name="cascinet" id="cascinet-input" type="hidden">
+                                </div>
+                            </div>
+                            <!--Fine Cascinet-->
+                            <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                            </div>
+                        </div>
+                        <!--Fine Pacchetti-->
+                        <input name="product" type="hidden" id="PacchettoHidden">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        </div>
+
+    </main>
+    <footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <!-- include Slick -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- include custom script -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/auth.js"></script>
+        <script src="/assets/js/sci-tesseramento.js"></script>
+    </footer>
+</body>
+
+</html>

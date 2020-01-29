@@ -1,0 +1,331 @@
+@import "_clash";
+@import "_timeline";
+
+$color-aziende: $clash-yellow;
+$color-scuole: $clash-green;
+$color-studenti: $clash-light-blue;
+
+// header {
+//     // max-height: 40px;
+//     // height: 40px;
+//     // background-color: transparent;
+
+//     // padding: 4px 16px;
+
+//     // .logo {
+//     //     max-height: 100%;
+//     //     margin: auto;
+
+//     //     img {
+//     //         max-width: 90px;
+//     //     }
+//     // }
+
+//     &.sticky_header {
+//         // .navbar-toggler {
+
+//         // }
+//         // .logo {
+
+//         //     @include media-breakpoint-down(sm) {
+//         //         transform: translateX(-35vw);
+
+//         //         img {
+//         //             max-width: 85px;
+//         //         }
+//         //     }
+//         // }
+//     }
+// }
+
+// Counter
+.counter_box {
+    text-align: center;
+    margin: 25px 0;
+    padding: 15px 5px;
+    min-width: 160px;
+
+    span,
+    .counter {
+        font-size: 42px;
+        display: inline-block;
+        margin: 0;
+        color: $clash-light-blue;
+        font-weight: 600;
+    }
+
+    h5 {
+        font-weight: 500;
+        text-transform: capitalize;
+        margin: 0;
+        font-size: 14px;
+        color: $clash-white;
+        margin-top: 15px;
+    }
+}
+
+// First impression
+.text-fi {
+
+    img {
+        min-width: 90vw;
+    }
+}
+
+.carousel-partners {
+    // max-height: 60vh;
+}
+
+//sezione team
+.card {
+    border: none;
+    border-radius: 5px;
+
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 20px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card {
+    min-height: 312px;
+}
+
+.card .card-title {
+    color: $clash-blue !important;
+}
+
+.card .card-body img {
+    color: $clash-grey;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+//Sezione mission
+// .bgimg-1 {
+//     position: relative;
+//     opacity: 0.65;
+//     background-attachment: fixed;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-image: url("/assets/img/mission-img.jpg");
+//     height: auto;
+// }
+
+
+.caption {
+    // padding-top: 20vh;
+    // background-color: black;
+    // opacity: 0.5;
+    // padding-bottom: 20vh;
+    // color: #ffffff;
+
+    color: $clash-txt-color-title;
+    font-size: 3em;
+    font-weight: 700;
+    font: $clash-font-text;
+}
+
+.img-partners{
+    max-width: 50%;
+    padding-top:50px;
+}
+
+// Sezione contatti
+.contatti-opzione {
+    &-container {
+        position: relative;
+        min-width: 100%;
+        height: 60vh;
+        max-height: 60vh;
+
+        @include media-breakpoint-up(lg) {
+            max-height: 45vh;
+        }
+
+        @include media-breakpoint-down(md) {
+            min-width: 100vw;
+        }
+    }
+
+    &-item {
+        min-width: 100%;
+        min-height: 33%;
+        height: auto;
+        max-height: 33%;
+
+        text-align: center;
+
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            transform: translateX(5%);
+            transition: all 0.5s ease-out;
+        }
+
+        &>h3 {
+            vertical-align: middle;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+
+        &.aziende {
+            background-color: $color-aziende;
+            color: $clash-dark-grey;
+        }
+
+        &.scuole {
+            background-color: $color-scuole;
+            color: $clash-white;
+        }
+
+        &.studenti {
+            background-color: $color-studenti;
+            color: $clash-blue;
+        }
+
+        @include media-breakpoint-up(lg) {
+            min-width: 33%;
+            max-width: 33%;
+            min-height: 10vh;
+            height: auto;
+            max-height: 15vh;
+
+            text-align: center;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: all 0.5s ease-out;
+            }
+
+            &.aziende {
+                background-color: transparent;
+                color: $color-aziende;
+            }
+
+            &.scuole {
+                background-color: transparent;
+                color: $color-scuole;
+            }
+
+            &.studenti {
+                background-color: transparent;
+                color: $color-studenti;
+            }
+        }
+    }
+}
+
+.contatti-nav {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.contatti-profilo {
+    text-align: center;
+
+    #profilo-img {
+        max-height: 20vh;
+        width: auto;
+        margin: 32px auto 16px auto;
+
+        border-radius: 50%;
+        border: 2px solid;
+
+        &.aziende {
+            background: linear-gradient(to top, $color-aziende 0%, transparent 50%);
+        }
+
+        &.scuole {
+            background: linear-gradient(to top, $color-scuole 0%, transparent 50%);
+        }
+
+        &.studenti {
+            background: linear-gradient(to top, $color-studenti 0%, transparent 50%);
+        }
+    }
+
+    .profilo-nome {}
+}
+
+#sct-contatti {
+    position: relative;
+    height: 100vh;
+
+    .sct-body {
+        position: absolute;
+        transition: all 1s ease-out;
+
+        width: 100%;
+
+    }
+}
+
+#contact-main {
+    position: relative;
+
+
+    &.hidden {
+        display: block;
+        transform: translateX(-105%);
+        opacity: 0;
+    }
+}
+
+#contact-send {
+
+
+    &.hidden {
+        transform: translateX(+105%);
+        opacity: 0;
+    }
+
+    #btn-back {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+
+        font-size: medium;
+    }
+
+    .contatti-nav {
+        max-width: 66vw;
+        min-height: 20vh;
+
+        margin-top: 8vh;
+    }
+}
+
+//sezione scuole
+.sct-scuole {
+    .sct-text {
+        text-align: justify;
+        padding-bottom: 32px;
+
+        @include media-breakpoint-up(lg) {
+            text-align: end;
+            font-size: xx-large;
+        }
+    }
+
+    .sct-nav {
+        margin: 32px auto;
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+}
+
+#map {
+    height: 60vh;
+    width: 100vw;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.20), 0 3px 6px rgba(0, 0, 0, 0.08);
+}

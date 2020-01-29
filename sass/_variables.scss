@@ -1,0 +1,34 @@
+// Clash specific
+@font-face {
+    font-family: Futura;
+    src: url("/assets/fonts/Futura Medium.otf");
+    font-weight: bold;
+}
+
+// Colors
+$clash-shock: #F26419;
+$clash-yellow: #F6E39B;
+$clash-green: #4C848F;
+$clash-light-blue: #8FBFDC;
+$clash-blue: #1F375F;
+$clash-dark-grey: #5D6671;
+$clash-grey: #888B8D;
+$clash-light-grey: #A7AEB8;
+$clash-white: #FFF;
+
+$clash-bg-color: $clash-white;
+$clash-txt-color: $clash-blue;
+$clash-txt-color-title: $clash-blue;
+
+$clash-bg-color-alt: $clash-blue;
+$clash-txt-color-alt: $clash-white;
+$clash-txt-color-title-alt: $clash-white;
+
+// Fonts
+$clash-font-text: 'Futura';
+$clash-font-title: $clash-font-text;
+
+
+//Bootstrap overrides
+$body-bg: #F2F2F2;
+$body-color: #111;
