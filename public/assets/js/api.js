@@ -2,7 +2,7 @@ window.user = {
     logged: false
 };
 url = new URLSearchParams(window.location.search);
-var host = '/api';
+var host = 'http://andreafinazzi.com:5000';
 defaultHeaders = {
     content: {
 
@@ -83,6 +83,18 @@ api = {
                     } else
                         return Promise.reject("?type=signup&success=false");
                 })
+        },
+        checkEmail: (email) => {
+            return fetch(host + '/users/can-use-email/' + email, {
+                mode: 'cors',
+                headers: defaultHeaders.content,
+            })
+                .then(res => {
+                    if (res.ok && res.status >= 200) {
+                        return res.json();
+                    } else
+                        return Promise.reject("?type=signup&success=false");
+                })
         }
     },
     opes: (payload) => {
@@ -114,14 +126,19 @@ api = {
             headers: defaultHeaders.content,
         })
     },
+    getNotPaidItems: () => {
+        defaultHeaders.refresh();
+        return fetch(host + '/venti-venti/not-paid', {
+            method: 'get',
+            headers: defaultHeaders.content,
+        })
+    },
     paypalOnApprove: (data) => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/paypal-transaction-complete', {
             method: 'post',
             headers: defaultHeaders.content,
-            body: JSON.stringify({
-                orderID: data.orderID
-            })
+            body: JSON.stringify(data)
         })
     }
 }

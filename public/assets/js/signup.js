@@ -1,5 +1,6 @@
 $(window).on('load', function () {
     // VALIDATION
+    checkAuth()
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
@@ -22,18 +23,40 @@ $('document').ready(function () {
 
     $("#signForm").on("submit", function (event) {
         event.preventDefault();
-        $('.loader').delay(50).fadeIn('slow');
         var object = {};
         let formData = new FormData($(this)[0]);
 
-        api.auth.signup(formData)
-            .then(data => {
-                if (data.status == 500) window.location = "?type=error&message='Server error'";
-                else window.location = "/iscrizione.html?success=true&membership=" + data.id
+        api.auth.checkEmail(formData.get('email'))
+            .then(isAvailable => {
+                if (!isAvailable) {
+                    $('#invalidMailAlarm').show();
+                    return;
+                }
+                $('#invalidMailAlarm').hide();
+                $('.loader').delay(50).fadeIn('slow');
+                return api.auth.signup(formData)
+                    .then(data => {
+                        if (data.status == 500) return Promise.reject(data);
+                        else window.location = "/iscrizione.html?success=true&membership=" + data.id
+                    })
+                    .catch(err => window.location = "/sorryforthat.html");
             })
-            .catch(err => window.location = "/sorryforthat.html");
     });
 })
+
+function checkAuth() {
+    if (window.user.logged === false) {
+        api.auth.check()
+            .then((success) => {
+                if (success) {
+                    window.location = '/iscrizione.html'
+                }
+            })
+            .catch(res => {
+                window.user.logged = false;
+            })
+    }
+}
 
 var MailStudente1 = "";
 var MailStudente2 = "";

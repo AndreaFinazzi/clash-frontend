@@ -31,7 +31,6 @@ STICKY HEADER
 */
 
     $(window).on('scroll', stickyHeader);
-
     stickyHeader();
 })
 

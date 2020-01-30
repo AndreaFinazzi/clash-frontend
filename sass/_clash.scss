@@ -5,7 +5,6 @@
     max-height: 60vh;
 }
 
-
 header {
     transition: all ease-in-out 0.4s;
 
@@ -97,6 +96,7 @@ html {
     body {
         background-color: $clash-bg-color;
         overflow-x: hidden;
+        height: 100%;
         max-width: 100%;
 
         main {
@@ -355,7 +355,8 @@ html {
 
 footer {
     background-color: $clash-dark-grey;
-
     min-height: 40vh;
-
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

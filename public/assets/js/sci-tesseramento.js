@@ -17,10 +17,10 @@ $('document').ready(function () {
         api.purchase_ski(formData)
             .then(response => {
                 if (response.ok) return response.json();
-                if (response.status >= 400) window.location = "?type=error&message='Server error'";
+                if (response.status >= 400) return Promise.reject(response);
             })
             .then(data => {
-                if (data.status == 500) window.location = "?type=error&message='Server error'";
+                if (data.status == 500) return Promise.reject(data);
                 else window.location = "/pagamento.html?success=true&membership=" + data.id
             })
             .catch(err => window.location = "/sorryforthat.html");

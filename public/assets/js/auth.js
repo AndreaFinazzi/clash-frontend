@@ -1,7 +1,6 @@
 $('document').ready(function () {
     $('#loginButton').click(function (e) {
         e.preventDefault();
-        $('.loader').delay(50).fadeIn('slow');
         tryLogin();
     });
 
@@ -33,9 +32,15 @@ function tryLogin() {
     let password = $('#loginPasswordInput').val();
     api.auth.login(email, password)
         .then(success => {
-            if (success) window.location = "?type=login&success=true";
+            if (success) {
+                $('.loader').delay(50).fadeIn('slow');
+                window.location = "?type=login&success=true";
+            }
+            else $('#invalidLoginAlarm').show();
         })
-        .catch(result => window.location = result);
+        .catch(result => {
+            $('#invalidLoginAlarm').show();
+        });
 }
 
 function initModal() {

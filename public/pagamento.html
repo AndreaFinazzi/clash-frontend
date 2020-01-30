@@ -45,7 +45,7 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main>
+    <main  class="d-flex justify-content-center align-items-center" >
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -79,89 +79,95 @@
         </div>
         <!-- Modal end -->
 
-        <div class="sct-container" style="margin-top: 80px;">
-            <div class="sfondo"></div>
-            <div class="container" id="container-paypal">
-                <script
-                    src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&client-id=Abao0T2-26Bkgf8mcIPdYyLLQOXzhTPFZ8sZz2RKIM6Cu0u-OCrSKyA4lglV4MSPSB6sSA4yPEPUlI-Y"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-                    </script>
+        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="height: 60vh;" >
 
-                <div id="paypal-button-container"></div>
+            <div class="sct-body">
+                <div class="container d-flex flex-column text-center justify-content-end align-items-center">
+                    <div style="color: #4C848F;" class="sct-text text-fi">
+                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
+                        <!-- <i style="font-size:xx-large;" class="fas fa-smile-wink"></i> -->
+                    </div>
+                    
+                    <div class="container px-0">
+                        <div class="">
+                            <div class="continer p-4 text-justify text-center">
+                                <h3>Completa il pagamento</h3>
+                                Utilizza i servizi PayPal per confermare il pagammento
+                            </div>
+                            <div id="paypal-button-container"></div>
+                        </div>
+                    </div>
+                    
 
-                <script>
-                    paypal.Buttons({
-                        createOrder: function (data, actions) {
-                            // This function sets up the details of the transaction, including the amount and line item details.
-                            return actions.order.create({
-                                purchase_units: [
-                                    {
-                                        amount: {
-                                            value: '55.00'
-                                        }
-                                    }]
-                            });
-                        },
-                        onApprove: function (data, actions) {
-                            // This function captures the funds from the transaction.
-                            return actions.order.capture()
-                                .then(function (details) {
-                                    // This function shows a transaction success message to your buyer.
-                                    alert('Transaction completed by ' + details.payer.name.given_name);
-                                    // Call your server to save the transaction
-                                    return api.paypalOnApprove(data)
-                                });
-                        }
-                    }).render('#paypal-button-container');
-                // This function displays Smart Payment Buttons on your web page.
-                </script>
+                    <!-- <div class="d-flex justify-content-center sct-nav">
+                        <a href="mailto:segreteria@clashofschools.it" style="color: #A7AEB8;">
+                            <i class="far fa-envelope" style="font-size: xx-large;padding: 4px 16px;"></i>
+                        </a>
+                        <a href="https://instagram.com/clashofschools" target="_blank" rel="noopener noreferrer"
+                            style="color: #A7AEB8;">
+                            <i class="fab fa-instagram" style="font-size: xx-large;padding: 4px 16px;"></i>
+                        </a>
+                        <a href="https://www.facebook.com/clashofschools/" target="_blank" rel="noopener noreferrer"
+                            style="color: #A7AEB8;">
+                            <i class="fab fa-facebook-square" style="font-size: xx-large;padding: 4px 16px;"></i>
+                        </a>
+                    </div> -->
+                    <!-- <div class="sct-nav align-items-center">
+                        <a id="btn-partner-collaboriamo-partners" class="btn btn-primary btn-block"
+                            href="mailto:segreteria@clashofschools.it">Contattaci</a>
+                    </div> -->
+                </div>
             </div>
-        </div>
-
+        </section>
+        
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
 
             <!-- Footer Links -->
             <div class="container-fluid text-center text-md-left">
-          
-              <!-- Grid row -->
-              <div class="row" style="padding-top: 50px;">
-          
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
-          
-                  <!-- Content -->
-                  <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
-          
-                </div>
-                <!-- Grid column -->
-          
-                <hr class="clearfix w-100 d-md-none pb-3">
-          
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-          
-                  <!-- Links -->
-                  <h5 class="text-uppercase">Social</h5>
-          
-                  <ul class="list-unstyled" >
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram" style="padding-right: 10px;"></i>Instagram</a>
-                    </li>
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f" style="padding-right: 13px;"></i>Facebook</a>
-                    </li>
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin" style="padding-right: 10px;"></i>Linkedin</a>
-                    </li>
-                  </ul>
-          
-                </div>
-                <!-- Grid column -->
-          
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!--
+
+                <!-- Grid row -->
+                <div class="row" style="padding-top: 50px;">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
+
+                        <!-- Content -->
+                        <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Social</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram"
+                                        style="padding-right: 10px;"></i>Instagram</a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f"
+                                        style="padding-right: 13px;"></i>Facebook</a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin"
+                                        style="padding-right: 10px;"></i>Linkedin</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <!--
                   <h5 class="text-uppercase">Links</h5>
           
                   <ul class="list-unstyled">
@@ -179,22 +185,23 @@
                     </li>
                   </ul>
                 -->
+                    </div>
+                    <!-- Grid column -->
+
                 </div>
-                <!-- Grid column -->
-          
-              </div>
-              <!-- Grid row -->
-          
+                <!-- Grid row -->
+
             </div>
             <!-- Footer Links -->
-          
+
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
             </div>
             <!-- Copyright -->
-          
-          </footer>
-          <!-- Footer -->
+
+        </footer>
+        <script src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=Abao0T2-26Bkgf8mcIPdYyLLQOXzhTPFZ8sZz2RKIM6Cu0u-OCrSKyA4lglV4MSPSB6sSA4yPEPUlI-Y"></script>
+        <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
