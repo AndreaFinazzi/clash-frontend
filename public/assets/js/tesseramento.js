@@ -10,6 +10,7 @@ var today;
 $(window).on('load', function () {
     today =  new Date();
     today.setFullYear(this.today.getFullYear()-18);
+    
     // VALIDATION
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
@@ -19,10 +20,27 @@ $(window).on('load', function () {
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
-            }
+            }else{
+                event.preventDefault();
+                $('.loader').delay(50).fadeIn('slow');
+                var object = {};
+                let formData = new FormData($(this)[0]);
+
+                api.opes_mp(formData)
+                    .then(response => {
+                        if (response.ok) return response.json();
+                        if (response.status >= 400) return Promise.reject(response);
+                    })
+                    .then(data => {
+                        if (data.status == 500) return Promise.reject(data);
+                        else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+                    })
+                    .catch(err => window.location = "/sorryforthat.html");
+                    }
             form.classList.add('was-validated');
         }, false);
     });
+    
 })
 
 $('document').ready(function () {
@@ -53,7 +71,7 @@ $('document').ready(function () {
         $("#approvedFiles").val(approvedHTML);
     
     });
-
+    /*
     $("#opesForm").on("submit", function (event) {
         event.preventDefault();
         $('.loader').delay(50).fadeIn('slow');
@@ -70,7 +88,7 @@ $('document').ready(function () {
                 else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
             })
             .catch(err => window.location = "/sorryforthat.html");
-    });
+    });*/
 });
 
 function CheckValue(val) {
