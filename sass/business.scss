@@ -191,6 +191,16 @@ $color-studenti: $clash-light-blue;
     text-align: center;
 }
 
+#mission{
+    text-align: right;
+}
+
+@media screen and (max-width: 800px){
+    #mission{
+        text-align: left;
+    }
+}
+
 .contatti-profilo {
     text-align: center;
 

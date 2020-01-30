@@ -7,11 +7,11 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 $('document').ready(function () {
     $("#flipster-scuole").flipster({
         style: 'flat',
-        spacing: -0.25,
+        spacing: 0,
         autoplay: 2000,
         loop: true,
         pauseOnHover: true,
-        click: false
+        click: true
     });
 
     $("#flipster-sponsor").flipster({
@@ -21,7 +21,7 @@ $('document').ready(function () {
         autoplay: 2000,
         loop: true,
         pauseOnHover: true,
-        click: false
+        click: true
     });
 
 /* 

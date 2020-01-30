@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - spacca</title>
+    <title>Clash - Iscrizione</title>
 
 
     <link rel="stylesheet" href="/assets/css/tesseramento.css">
@@ -34,18 +34,6 @@
                     <ul class=" nav navbar-nav menu">
                         <li class="nav-item">
                             <a class="nav-link active" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Performers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Seminars</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -147,7 +135,7 @@
                         <form class="needs-validation" id="opesForm" novalidate action="" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="scuola">Scuola di provenienza</label>
-                                <select class="form-control" id="scuola" name="school" required>
+                                <select class="form-control" onchange="AggiornaScuole(this.value)" id="scuola" required>
                                     <option value="">Seleziona</option>
                                     <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni</option>
                                     <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani</option>
@@ -168,6 +156,8 @@
                                     <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi </option>
                                     <option value="no_school">-- Nessuna delle precedenti --</option>
                                 </select>
+                                <input type="hidden" class="form-control" name="school"  style="margin-top: 5px;" name=""
+                                    id="scuole-alt" placeholder="Scuola">
                             </div>
                             <div class="form-group">
                                 <label for="sesso">Sesso</label><br>
@@ -207,24 +197,12 @@
 
                             <div class="form-group">
                                 <label for="provincia">Provincia</label>
-                                <select class="form-control" id="nascita-provincia" name="birthplace_area" required>
-                                    <option value="">Seleziona</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <input class="form-control" type="text" id="nascita-provincia" name="birthplace_area" required>
                             </div>
                             <div class="form-group">
                                 <label for="nascita-comune">Comune di Nascita</label>
-                                <select class="form-control" id="nascita-comune" name="birthplace_municipality"
-                                    required>
-                                    <option value="">Seleziona</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <input class="form-control" type="text" id="nascita-comune"name="birthplace_municipality" required>
+                                    
                             </div>
                             <div class="form-group">
                                 <label for="cf">Codice Fiscale</label>
@@ -233,13 +211,13 @@
                             </div>
                             <div class="form-group alarm" id="CFStudenteAlarm">
                                 <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
-                                inserito è troppo corto!
+                                inserito non è corretto!
                             </div>
                             <div class="form-group">
                                 <label for="residenza-via">Indirizzo di residenza</label>
                                 <div class="form-row">
                                     <div class="col-8">
-                                        <input type="text" class="form-control" name="address_street" id="residenza-via"
+                                        <input type="text" class="form-control" required name="address_street" id="residenza-via"
                                             placeholder="Via">
                                     </div>
                                     <div class="col-4">
@@ -249,7 +227,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="address_municipality"
+                                <input type="text" class="form-control" required name="address_municipality"
                                     id="residenza-comune" placeholder="Comune">
                             </div>
                             <div class="form-group">
@@ -267,6 +245,7 @@
                                     <option value="">Seleziona</option>
                                     <option value="carta">Carta d'identità</option>
                                     <option value="passaporto">Passaporto</option>
+                                    <option value="patente">Patente</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -274,6 +253,8 @@
                                 <input type="text" class="form-control" id="numero-documento" name="document_number"
                                     placeholder="" required>
                             </div>
+
+                            <!--
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="selfie" name="selfie" required>
@@ -287,6 +268,7 @@
                                     <label class="custom-file-label" for="certificato">Certificato</label>
                                 </div>
                             </div>
+                            -->
 
                             <!-- Dati Genitore-->
                             <div id="DatiGenitore">
@@ -345,23 +327,12 @@
 
                                 <div class="form-group">
                                     <label for="provincia-genitore">Provincia</label>
-                                    <select class="form-control" id="provincia-genitore" name="parent_birthplace_area">
-                                        <option value="">Seleziona</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <unput class="form-control" type="text" id="provincia-genitore" name="parent_birthplace_area">
                                 </div>
                                 <div class="form-group">
                                     <label for="nascita-comune-genitore">Comune di nascita</label>
-                                    <select class="form-control" id="nascita-comune-genitore"
+                                    <input class="form-control" id="nascita-comune-genitore" type="text"
                                         name="parent_birthplace_municipality">
-                                        <option value="">Seleziona</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -371,20 +342,19 @@
                                 </div>
                                 <div class="form-group alarm" id="CFAlarmGenitore">
                                     <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
-                                    inserito è troppo corto!
+                                    inserito non è corretto!
                                 </div>
                                 <div class="form-group">
                                     <label for="residenza-indirizzo-genitore">Indirizzo di residenza</label>
                                     <div class="form-row">
                                         <div class="col-8">
                                             <input type="text" class="form-control" name="parent_address_street"
-                                                id="residenza-indirizzo-genitore" placeholder="via" minlength="2"
-                                                maxlength="2">
+                                                id="residenza-indirizzo-genitore" placeholder="via" required>
                                         </div>
                                         <div class="col-4">
                                             <input type="text" class="form-control" name="parent_address_number"
-                                                id="residenza-numero-genitore" placeholder="n°" required minlength="2"
-                                                maxlength="2">
+                                                id="residenza-numero-genitore" placeholder="n°" required minlength="1"
+                                                >
                                         </div>
                                     </div>
                                 </div>
@@ -423,6 +393,7 @@
                                         <option value="">Seleziona</option>
                                         <option value="carta">Carta d'identità</option>
                                         <option value="passaporto">Passaporto</option>
+                                        <option value="patente">Patente</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -73,11 +73,11 @@
             // [milliseconds]
             // Speed of the fade in animation after items have been setup
 
-            loop: false,
+            loop: true,
             // [true|false]
             // Loop around when the start or end is reached
 
-            autoplay: false,
+            autoplay: true,
             // [false|milliseconds]
             // If a positive number, Flipster will automatically advance to next item after that number of milliseconds
 
@@ -85,12 +85,12 @@
             // [true|false]
             // If true, autoplay advancement will pause when Flipster is hovered
 
-            style: 'coverflow',
+            style: 'flat',
             // [coverflow|carousel|flat|...]
             // Adds a class (e.g. flipster--coverflow) to the flipster element to switch between display styles
             // Create your own theme in CSS and use this setting to have Flipster add the custom class
 
-            spacing: -0.6,
+            spacing: 0,
             // [number]
             // Space between items relative to each item's width. 0 for no spacing, negative values to overlap
 
@@ -102,7 +102,7 @@
             // [true|false]
             // Enable left/right arrow navigation
 
-            scrollwheel: true,
+            scrollwheel: false,
             // [true|false]
             // Enable mousewheel/trackpad navigation; up/left = previous, down/right = next
 

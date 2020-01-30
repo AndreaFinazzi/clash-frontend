@@ -238,7 +238,7 @@ function VerificaPassword() {
 }
 
 function LunghezzaCF(String) {
-    if (String.length < 16) {
+    if (String.length != 16) {
         document.getElementById("CFStudenteAlarm").style.display = "block";
     }
     else {
@@ -247,7 +247,7 @@ function LunghezzaCF(String) {
 }
 
 function LunghezzaCFGenitore(String) {
-    if (String.length < 16) {
+    if (String.length != 16) {
         document.getElementById("CFAlarmGenitore").style.display = "block";
     }
     else {
@@ -256,7 +256,8 @@ function LunghezzaCFGenitore(String) {
 }
 
 function LunghezzaNumero(String) {
-    if (String.length < 9 || String[0] != '3') {
+    
+    if (String.length < 9 || (String[0] != '3' &&  String[0]!="+" )) {
         document.getElementById("NumeroAlarm").style.display = "block";
     }
     else {
@@ -271,5 +272,16 @@ function LunghezzaNumeroGenitore(String) {
     else {
         document.getElementById("NumeroGenitoreAlarm").style.display = "none";
     }
+}
+
+function AggiornaScuole(val){
+    if(val=="no_school"){
+        document.getElementById("scuole-alt").type = "text";
+    }
+    else{
+        document.getElementById("scuole-alt").type = "hidden";
+        document.getElementById("scuole-alt").value = val;
+    }
+    
 }
 
