@@ -1,6 +1,11 @@
 @import "_vendor";
 @import "_variables";
 
+$theme-colors: (
+  "primary": $clash-blue,
+  "danger": $clash-shock
+);
+
 #logo {
     max-height: 60vh;
 }
@@ -96,7 +101,6 @@ html {
     body {
         background-color: $clash-bg-color;
         overflow-x: hidden;
-        height: 100%;
         max-width: 100%;
 
         main {

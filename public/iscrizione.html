@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md">
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
         <div class="container">
             <a class="navbar-brand logo" href="/">
                 <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
@@ -27,8 +27,8 @@
             </button>-->
 
             <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
-            data-toggle="collapse" data-target="#headernav"
-                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
+                disabled>
             <div class="container">
                 <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
                     <ul class=" nav navbar-nav menu">
@@ -52,14 +52,14 @@
             </div>
         </div>
     </header>
-<!--
+    
     <div class="loader">
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
     </div>
--->
+
     <main>
-        <!-- Modal --
+        <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -74,17 +74,18 @@
                                 <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
                                     required ">
                             </div>
-                            <div class="form-group">
+                            <div class=" form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="loginPasswordInput" name="password"
                                     placeholder="">
                             </div>
                             <div class="form-group alarm" id="invalidLoginAlarm">
-                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Impossibile effettuare il login
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Impossibile
+                                effettuare il login
                             </div>
                             <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
                                 <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
-                            </div> --
+                            </div> -->
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -136,38 +137,38 @@
                                 </div>
                                 <div class="card-footer"></div>
                             </div>
-                        
+
                         </div>
 
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="scuola">Scuola di provenienza</label>
-                    <select class="form-control" id="scuola" name="school" required>
-                        <option value="">Seleziona</option>
-                        <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni</option>
-                        <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani</option>
-                        <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi</option>
-                        <option value="mi_severi_correnti">Istituto di Istruzione Superiore Severi-Correnti</option>
-                        <option value="mi_bazzi">Istituto Tecnico Industriale Carlo Bazzi</option>
-                        <option value="mi_berchet">Liceo Classico Statale Giovanni Berchet</option>
-                        <option value="mi_parini">Liceo Classico Statale Giuseppe Parini</option>
-                        <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni</option>
-                        <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
-                        <option value="mi_volta">Liceo Scientifico Statale Alessandro Volt </option>
-                        <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
-                        <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
-                        <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
-                        <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto</option>
-                        <option value="mi_tenca">Liceo Statale Carlo Tenca</option>
-                        <option value="mi_agnesi">Liceo Statale Gaetano Agnesi</option>
-                        <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi </option>
-                        <option value="no_school">-- Nessuna delle precedenti --</option>
-                    </select>
-                </div>
                 <div class="col-sm">
                     <div class="sct-body">
                         <form class="needs-validation" id="opesForm" novalidate action="" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="scuola">Scuola di provenienza</label>
+                                <select class="form-control" id="scuola" name="school" required>
+                                    <option value="">Seleziona</option>
+                                    <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni</option>
+                                    <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani</option>
+                                    <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi</option>
+                                    <option value="mi_severi_correnti">Istituto di Istruzione Superiore Severi-Correnti</option>
+                                    <option value="mi_bazzi">Istituto Tecnico Industriale Carlo Bazzi</option>
+                                    <option value="mi_berchet">Liceo Classico Statale Giovanni Berchet</option>
+                                    <option value="mi_parini">Liceo Classico Statale Giuseppe Parini</option>
+                                    <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni</option>
+                                    <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
+                                    <option value="mi_volta">Liceo Scientifico Statale Alessandro Volt </option>
+                                    <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
+                                    <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
+                                    <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
+                                    <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto</option>
+                                    <option value="mi_tenca">Liceo Statale Carlo Tenca</option>
+                                    <option value="mi_agnesi">Liceo Statale Gaetano Agnesi</option>
+                                    <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi </option>
+                                    <option value="no_school">-- Nessuna delle precedenti --</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="sesso">Sesso</label><br>
                                 <div class="custom-control custom-radio custom-control-inline">
@@ -199,7 +200,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group alarm" id="DataAlarm">
-                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data inserita non è valida!
+                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data
+                                    inserita non è valida!
                                 </div>
                             </div>
 
@@ -215,7 +217,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="nascita-comune">Comune di Nascita</label>
-                                <select class="form-control" id="nascita-comune" name="birthplace_municipality" required>
+                                <select class="form-control" id="nascita-comune" name="birthplace_municipality"
+                                    required>
                                     <option value="">Seleziona</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -225,10 +228,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="cf">Codice Fiscale</label>
-                                <input type="text" onchange="LunghezzaCF(this.value)"class="form-control" name="national_id" id="cf" placeholder="" required>
+                                <input type="text" onchange="LunghezzaCF(this.value)" class="form-control"
+                                    name="national_id" id="cf" placeholder="" required>
                             </div>
                             <div class="form-group alarm" id="CFStudenteAlarm">
-                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice inserito è troppo corto!
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
+                                inserito è troppo corto!
                             </div>
                             <div class="form-group">
                                 <label for="residenza-via">Indirizzo di residenza</label>
@@ -238,22 +243,23 @@
                                             placeholder="Via">
                                     </div>
                                     <div class="col-4">
-                                        <input type="text" class="form-control" name="address_number" id="residenza-numero"
-                                            placeholder="n°" required minlength="2" maxlength="2">
+                                        <input type="text" class="form-control" name="address_number"
+                                            id="residenza-numero" placeholder="n°" required minlength="2" maxlength="2">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="address_municipality" id="residenza-comune"
-                                    placeholder="Comune">
+                                <input type="text" class="form-control" name="address_municipality"
+                                    id="residenza-comune" placeholder="Comune">
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Telefono</label>
-                                <input type="text" onchange="LunghezzaNumero(this.value)" class="form-control" id="telefono" name="mobile" placeholder=""
-                                    required>
+                                <input type="text" onchange="LunghezzaNumero(this.value)" class="form-control"
+                                    id="telefono" name="mobile" placeholder="" required>
                             </div>
                             <div class="form-group alarm" id="NumeroAlarm">
-                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero inserito non è valido!
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero
+                                inserito non è valido!
                             </div>
                             <div class="form-group">
                                 <label for="tipo-documento">Tipo documento</label>
@@ -285,7 +291,8 @@
                             <!-- Dati Genitore-->
                             <div id="DatiGenitore">
                                 <div class="form-group">
-                                    Essendo minorenne abbiamo bisogno della conferma di un tuo genitore! Inserisci i dati richiesti per permetterci di 
+                                    Essendo minorenne abbiamo bisogno della conferma di un tuo genitore! Inserisci i
+                                    dati richiesti per permetterci di
                                     ottenere il loro consenso.
                                 </div>
                                 <div class="form-group">
@@ -315,12 +322,14 @@
                                     <label for="data-di-nascita-genitore">Data di nascita</label>
                                     <div class="form-row">
                                         <div class="col">
-                                            <input type="text" onchange="AggiornaGiornoGenitore(this.value)"class="form-control" name="parent_birthday_day" id="giorno-genitore"
-                                                placeholder="dd" minlength="2" maxlength="2" >
+                                            <input type="text" onchange="AggiornaGiornoGenitore(this.value)"
+                                                class="form-control" name="parent_birthday_day" id="giorno-genitore"
+                                                placeholder="dd" minlength="2" maxlength="2">
                                         </div>
                                         <div class="col">
-                                            <input type="text" onchange="AggiornaMeseGenitore(this.value)" class="form-control" name="parent_birthday_month" id="mese-genitore" placeholder="mm"
-                                                required minlength="2" maxlength="2">
+                                            <input type="text" onchange="AggiornaMeseGenitore(this.value)"
+                                                class="form-control" name="parent_birthday_month" id="mese-genitore"
+                                                placeholder="mm" required minlength="2" maxlength="2">
                                         </div>
                                         <div class="col">
                                             <input type="text" class="form-control datepicker"
@@ -329,7 +338,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group alarm" id="DataAlarmGenitore">
-                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data inserita non è valida!
+                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data
+                                        inserita non è valida!
                                     </div>
                                 </div>
 
@@ -356,17 +366,20 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="cf-genitore">Codice Fiscale</label>
-                                    <input type="text" onchange="LunghezzaCFGenitore(this.value)"class="form-control" name="parent_national_id" id="cf-genitore" placeholder="" >
+                                    <input type="text" onchange="LunghezzaCFGenitore(this.value)" class="form-control"
+                                        name="parent_national_id" id="cf-genitore" placeholder="">
                                 </div>
                                 <div class="form-group alarm" id="CFAlarmGenitore">
-                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice inserito è troppo corto!
+                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
+                                    inserito è troppo corto!
                                 </div>
                                 <div class="form-group">
                                     <label for="residenza-indirizzo-genitore">Indirizzo di residenza</label>
                                     <div class="form-row">
                                         <div class="col-8">
                                             <input type="text" class="form-control" name="parent_address_street"
-                                                id="residenza-indirizzo-genitore" placeholder="via" minlength="2" maxlength="2">
+                                                id="residenza-indirizzo-genitore" placeholder="via" minlength="2"
+                                                maxlength="2">
                                         </div>
                                         <div class="col-4">
                                             <input type="text" class="form-control" name="parent_address_number"
@@ -381,21 +394,22 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="telefono-genitore">Telefono</label>
-                                    <input type="text" onchange="LunghezzaNumeroGenitore(this.value)" class="form-control" id="telefono-genitore" name="parent_mobile" placeholder=""
-                                        >
-                                        <div class="form-group alarm" id="NumeroGenitoreAlarm">
-                                            <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero inserito non è valido!
-                                        </div>
+                                    <input type="text" onchange="LunghezzaNumeroGenitore(this.value)"
+                                        class="form-control" id="telefono-genitore" name="parent_mobile" placeholder="">
+                                    <div class="form-group alarm" id="NumeroGenitoreAlarm">
+                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il
+                                        numero inserito non è valido!
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email-genitore">Email</label>
-                                    <input type="email"  class="form-control" id="email-genitore" name="parent_email"
+                                    <input type="email" class="form-control" id="email-genitore" name="parent_email"
                                         placeholder="" onchange="AggiornaMailGenitore1(this.value)">
                                 </div>
                                 <div class="form-group">
                                     <label for="conferma-email-genitore">Conferma Email</label>
-                                    <input type="email" onpaste="return false" class="form-control" id="conferma-email-genitore"
-                                        name="parent_email_confirm" placeholder=""
+                                    <input type="email" onpaste="return false" class="form-control"
+                                        id="conferma-email-genitore" name="parent_email_confirm" placeholder=""
                                         onchange="AggiornaMailGenitore2(this.value)">
                                 </div>
                                 <div class="form-group alarm" id="MailGenitoreAlarm">
@@ -438,45 +452,48 @@
 
             <!-- Footer Links -->
             <div class="container-fluid text-center text-md-left">
-          
-              <!-- Grid row -->
-              <div class="row" style="padding-top: 50px;">
-          
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
-          
-                  <!-- Content -->
-                  <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
-          
-                </div>
-                <!-- Grid column -->
-          
-                <hr class="clearfix w-100 d-md-none pb-3">
-          
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-          
-                  <!-- Links -->
-                  <h5 class="text-uppercase">Social</h5>
-          
-                  <ul class="list-unstyled" >
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram" style="padding-right: 10px;"></i>Instagram</a>
-                    </li>
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f" style="padding-right: 13px;"></i>Facebook</a>
-                    </li>
-                    <li>
-                      <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin" style="padding-right: 10px;"></i>Linkedin</a>
-                    </li>
-                  </ul>
-          
-                </div>
-                <!-- Grid column -->
-          
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!--
+
+                <!-- Grid row -->
+                <div class="row" style="padding-top: 50px;">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
+
+                        <!-- Content -->
+                        <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Social</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram"
+                                        style="padding-right: 10px;"></i>Instagram</a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f"
+                                        style="padding-right: 13px;"></i>Facebook</a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin"
+                                        style="padding-right: 10px;"></i>Linkedin</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <!--
                   <h5 class="text-uppercase">Links</h5>
           
                   <ul class="list-unstyled">
@@ -494,22 +511,22 @@
                     </li>
                   </ul>
                 -->
+                    </div>
+                    <!-- Grid column -->
+
                 </div>
-                <!-- Grid column -->
-          
-              </div>
-              <!-- Grid row -->
-          
+                <!-- Grid row -->
+
             </div>
             <!-- Footer Links -->
-          
+
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
             </div>
             <!-- Copyright -->
-          
-          </footer>
-          <!-- Footer -->
+
+        </footer>
+        <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/api.js"></script>
