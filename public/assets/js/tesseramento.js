@@ -105,21 +105,21 @@ var mese = 0;
 var anno = 0;
 var date;
 
+var DataNascita = new Date();
+var datiGenitoreContainer = $("#DatiGenitore");
+var genitoreFields = datiGenitoreContainer.children()[0].cloneNode(true);
+datiGenitoreContainer.children()[0].remove()
+
 function CheckDate() {
-    var DataNascita = new Date();
     //alert(DataNascita+" - "+today);
 
-    if (anno > today.getFullYear()) {
-        document.getElementById("DatiGenitore").style.display = "block";
-    }
-    else if (anno == today.getFullYear() && mese > today.getMonth()) {
-        document.getElementById("DatiGenitore").style.display = "block";
-    }
-    else if (anno == today.getFullYear() && mese == today.getMonth() && giorno > today.getDate()) {
-        document.getElementById("DatiGenitore").style.display = "block";
+    if (anno > today.getFullYear() ||
+    (anno == today.getFullYear() && mese > today.getMonth()) ||
+    (anno == today.getFullYear() && mese == today.getMonth() && giorno > today.getDate())) {
+        if (datiGenitoreContainer.children().length < 1) datiGenitoreContainer.append(genitoreFields);
     }
     else {
-        document.getElementById("DatiGenitore").style.display = "none";
+        if (datiGenitoreContainer.children().length > 0) datiGenitoreContainer.children()[0].remove()
     }
 }
 

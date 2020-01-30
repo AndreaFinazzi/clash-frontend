@@ -16,13 +16,14 @@ function checkAuth() {
                     showModal();
                 }
 
-                $('.loader').delay(500).fadeOut('slow');
             })
             .catch(res => {
                 window.user.logged = false;
                 window.user.message = "Network error!"
                 showModal();
             })
+            .finally($('.loader').delay(500).fadeOut('slow'))
+            
     }
 }
 

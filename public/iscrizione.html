@@ -40,7 +40,7 @@
             </div>
         </div>
     </header>
-    
+
     <div class="loader">
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
@@ -137,26 +137,32 @@
                                 <label for="scuola">Scuola di provenienza</label>
                                 <select class="form-control" onchange="AggiornaScuole(this.value)" id="scuola" required>
                                     <option value="">Seleziona</option>
-                                    <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni</option>
+                                    <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni
+                                    </option>
                                     <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani</option>
-                                    <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi</option>
-                                    <option value="mi_severi_correnti">Istituto di Istruzione Superiore Severi-Correnti</option>
+                                    <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi
+                                    </option>
+                                    <option value="mi_severi_correnti">Istituto di Istruzione Superiore Severi-Correnti
+                                    </option>
                                     <option value="mi_bazzi">Istituto Tecnico Industriale Carlo Bazzi</option>
                                     <option value="mi_berchet">Liceo Classico Statale Giovanni Berchet</option>
                                     <option value="mi_parini">Liceo Classico Statale Giuseppe Parini</option>
-                                    <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni</option>
+                                    <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni
+                                    </option>
                                     <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
                                     <option value="mi_volta">Liceo Scientifico Statale Alessandro Volt </option>
                                     <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
                                     <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
                                     <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
-                                    <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto</option>
+                                    <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto
+                                    </option>
                                     <option value="mi_tenca">Liceo Statale Carlo Tenca</option>
                                     <option value="mi_agnesi">Liceo Statale Gaetano Agnesi</option>
-                                    <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi </option>
+                                    <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi
+                                    </option>
                                     <option value="no_school">-- Nessuna delle precedenti --</option>
                                 </select>
-                                <input type="hidden" class="form-control" name="school"  style="margin-top: 5px;" name=""
+                                <input type="hidden" class="form-control" name="school" style="margin-top: 5px;"
                                     id="scuole-alt" placeholder="Scuola">
                             </div>
                             <div class="form-group">
@@ -185,8 +191,7 @@
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control datepicker" name="birthday_year"
-                                            id="anno" placeholder="aaaa" minlength="4" maxlength="4" required
-                                            onchange='AggiornaAnno(this.value);'>
+                                            id="anno" placeholder="aaaa" minlength="4" maxlength="4" required onchange='AggiornaAnno(this.value);'>
                                     </div>
                                 </div>
                                 <div class="form-group alarm" id="DataAlarm">
@@ -196,13 +201,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="provincia">Provincia</label>
-                                <input class="form-control" type="text" id="nascita-provincia" name="birthplace_area" required>
+                                <label for="provincia">Provincia di Nascita</label>
+                                <input class="form-control" type="text" id="nascita-provincia" name="birthplace_area"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="nascita-comune">Comune di Nascita</label>
-                                <input class="form-control" type="text" id="nascita-comune"name="birthplace_municipality" required>
-                                    
+                                <input class="form-control" type="text" id="nascita-comune"
+                                    name="birthplace_municipality" required>
+
                             </div>
                             <div class="form-group">
                                 <label for="cf">Codice Fiscale</label>
@@ -217,12 +224,12 @@
                                 <label for="residenza-via">Indirizzo di residenza</label>
                                 <div class="form-row">
                                     <div class="col-8">
-                                        <input type="text" class="form-control" required name="address_street" id="residenza-via"
-                                            placeholder="Via">
+                                        <input type="text" class="form-control" required name="address_street"
+                                            id="residenza-via" placeholder="Via">
                                     </div>
                                     <div class="col-4">
-                                        <input type="text" class="form-control" name="address_number" id="residenza-numero"
-                                            placeholder="n°" required >
+                                        <input type="text" class="form-control" name="address_number"
+                                            id="residenza-numero" placeholder="n°" required>
                                     </div>
                                 </div>
                             </div>
@@ -271,135 +278,142 @@
                             -->
 
                             <!-- Dati Genitore-->
-                            <div id="DatiGenitore">
-                                <div class="form-group">
-                                    Essendo minorenne abbiamo bisogno della conferma di un tuo genitore! Inserisci i
-                                    dati richiesti per permetterci di
-                                    ottenere il loro consenso.
-                                </div>
-                                <div class="form-group">
-                                    <label for="nome">Nome</label>
-                                    <input type="text" class="form-control" name="parent_first_name" id="nome-genitore"
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nome">Cognome</label>
-                                    <input type="text" class="form-control" name="parent_last_name"
-                                        id="cognome-genitore" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="sesso">Sesso</label><br>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="m-genitore" name="parent_gender"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="m-genitore">M</label>
+                            <div id="DatiGenitore" class="d-block">
+                                <div>
+                                    <div class="form-group">
+                                        Essendo minorenne abbiamo bisogno della conferma di un tuo genitore! Inserisci i
+                                        dati richiesti per permetterci di
+                                        ottenere il loro consenso.
                                     </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="f-genitore" name="parent_gender"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="f-genitore">F</label>
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" name="parent_first_name"
+                                            id="nome-genitore" placeholder="">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="data-di-nascita-genitore">Data di nascita</label>
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <input type="text" onchange="AggiornaGiornoGenitore(this.value)"
-                                                class="form-control" name="parent_birthday_day" id="giorno-genitore"
-                                                placeholder="dd" minlength="2" maxlength="2">
+                                    <div class="form-group">
+                                        <label for="nome">Cognome</label>
+                                        <input type="text" class="form-control" name="parent_last_name"
+                                            id="cognome-genitore" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sesso">Sesso</label><br>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="m-genitore" name="parent_gender"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="m-genitore">M</label>
                                         </div>
-                                        <div class="col">
-                                            <input type="text" onchange="AggiornaMeseGenitore(this.value)"
-                                                class="form-control" name="parent_birthday_month" id="mese-genitore"
-                                                placeholder="mm" required minlength="2" maxlength="2">
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control datepicker"
-                                                name="parent_birthday_year" id="anno-genitore" placeholder="aaaa"
-                                                minlength="4" maxlength="4">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="f-genitore" name="parent_gender"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="f-genitore">F</label>
                                         </div>
                                     </div>
-                                    <div class="form-group alarm" id="DataAlarmGenitore">
-                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La data
-                                        inserita non è valida!
+                                    <div class="form-group">
+                                        <label for="data-di-nascita-genitore">Data di nascita</label>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="text" onchange="AggiornaGiornoGenitore(this.value)"
+                                                    class="form-control" name="parent_birthday_day" id="giorno-genitore"
+                                                    placeholder="dd" minlength="2" maxlength="2">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" onchange="AggiornaMeseGenitore(this.value)"
+                                                    class="form-control" name="parent_birthday_month" id="mese-genitore"
+                                                    placeholder="mm" required minlength="2" maxlength="2">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control datepicker"
+                                                    name="parent_birthday_year" id="anno-genitore" placeholder="aaaa"
+                                                    minlength="4" maxlength="4">
+                                            </div>
+                                        </div>
+                                        <div class="form-group alarm" id="DataAlarmGenitore">
+                                            <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>La
+                                            data
+                                            inserita non è valida!
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="provincia-genitore">Provincia</label>
-                                    <unput class="form-control" type="text" id="provincia-genitore" name="parent_birthplace_area">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nascita-comune-genitore">Comune di nascita</label>
-                                    <input class="form-control" id="nascita-comune-genitore" type="text"
-                                        name="parent_birthplace_municipality">
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cf-genitore">Codice Fiscale</label>
-                                    <input type="text" onchange="LunghezzaCFGenitore(this.value)" class="form-control"
-                                        name="parent_national_id" id="cf-genitore" placeholder="">
-                                </div>
-                                <div class="form-group alarm" id="CFAlarmGenitore">
-                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
-                                    inserito non è corretto!
-                                </div>
-                                <div class="form-group">
-                                    <label for="residenza-indirizzo-genitore">Indirizzo di residenza</label>
-                                    <div class="form-row">
-                                        <div class="col-8">
-                                            <input type="text" class="form-control" name="parent_address_street"
-                                                id="residenza-indirizzo-genitore" placeholder="via" required>
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" class="form-control" name="parent_address_number"
-                                                id="residenza-numero-genitore" placeholder="n°" required minlength="1"
-                                                >
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="provincia-genitore">Provincia</label>
+                                        <unput class="form-control" type="text" id="provincia-genitore"
+                                            name="parent_birthplace_area">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="parent_address_municipality"
-                                        id="residenza-comune-genitore" placeholder="Comune">
-                                </div>
-                                <div class="form-group">
-                                    <label for="telefono-genitore">Telefono</label>
-                                    <input type="text" onchange="LunghezzaNumeroGenitore(this.value)"
-                                        class="form-control" id="telefono-genitore" name="parent_mobile" placeholder="">
-                                    <div class="form-group alarm" id="NumeroGenitoreAlarm">
+                                    <div class="form-group">
+                                        <label for="nascita-comune-genitore">Comune di nascita</label>
+                                        <input class="form-control" id="nascita-comune-genitore" type="text"
+                                            name="parent_birthplace_municipality">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cf-genitore">Codice Fiscale</label>
+                                        <input type="text" onchange="LunghezzaCFGenitore(this.value)"
+                                            class="form-control" name="parent_national_id" id="cf-genitore"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group alarm" id="CFAlarmGenitore">
                                         <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il
-                                        numero inserito non è valido!
+                                        codice
+                                        inserito non è corretto!
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email-genitore">Email</label>
-                                    <input type="email" class="form-control" id="email-genitore" name="parent_email"
-                                        placeholder="" onchange="AggiornaMailGenitore1(this.value)">
-                                </div>
-                                <div class="form-group">
-                                    <label for="conferma-email-genitore">Conferma Email</label>
-                                    <input type="email" onpaste="return false" class="form-control"
-                                        id="conferma-email-genitore" name="parent_email_confirm" placeholder=""
-                                        onchange="AggiornaMailGenitore2(this.value)">
-                                </div>
-                                <div class="form-group alarm" id="MailGenitoreAlarm">
-                                    <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Le mail
-                                    inserite non corrispondono!
-                                </div>
-                                <div class="form-group">
-                                    <label for="tipo-documento-genitore">Tipo documento</label>
-                                    <select class="form-control" id="tipo-documento-genitore"
-                                        name="parent_document_type">
-                                        <option value="">Seleziona</option>
-                                        <option value="carta">Carta d'identità</option>
-                                        <option value="passaporto">Passaporto</option>
-                                        <option value="patente">Patente</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="numero-documento-genitore">Numero documento</label>
-                                    <input type="text" class="form-control" id="numero-documento-genitore"
-                                        name="parent_document_number" placeholder="">
+                                    <div class="form-group">
+                                        <label for="residenza-indirizzo-genitore">Indirizzo di residenza</label>
+                                        <div class="form-row">
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" name="parent_address_street"
+                                                    id="residenza-indirizzo-genitore" placeholder="via" required>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" class="form-control" name="parent_address_number"
+                                                    id="residenza-numero-genitore" placeholder="n°" required
+                                                    minlength="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="parent_address_municipality"
+                                            id="residenza-comune-genitore" placeholder="Comune">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono-genitore">Telefono</label>
+                                        <input type="text" onchange="LunghezzaNumeroGenitore(this.value)"
+                                            class="form-control" id="telefono-genitore" name="parent_mobile"
+                                            placeholder="">
+                                        <div class="form-group alarm" id="NumeroGenitoreAlarm">
+                                            <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il
+                                            numero inserito non è valido!
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-genitore">Email</label>
+                                        <input type="email" class="form-control" id="email-genitore" name="parent_email"
+                                            placeholder="" onchange="AggiornaMailGenitore1(this.value)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="conferma-email-genitore">Conferma Email</label>
+                                        <input type="email" onpaste="return false" class="form-control"
+                                            id="conferma-email-genitore" name="parent_email_confirm" placeholder=""
+                                            onchange="AggiornaMailGenitore2(this.value)">
+                                    </div>
+                                    <div class="form-group alarm" id="MailGenitoreAlarm">
+                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Le mail
+                                        inserite non corrispondono!
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tipo-documento-genitore">Tipo documento</label>
+                                        <select class="form-control" id="tipo-documento-genitore"
+                                            name="parent_document_type">
+                                            <option value="">Seleziona</option>
+                                            <option value="carta">Carta d'identità</option>
+                                            <option value="passaporto">Passaporto</option>
+                                            <option value="patente">Patente</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="numero-documento-genitore">Numero documento</label>
+                                        <input type="text" class="form-control" id="numero-documento-genitore"
+                                            name="parent_document_number" placeholder="">
+                                    </div>
                                 </div>
                             </div>
                             <!-- Fine Dati Genitore-->
