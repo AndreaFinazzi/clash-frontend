@@ -5,9 +5,11 @@
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
-var today = new Date();
+var today;
 
 $(window).on('load', function () {
+    today =  new Date();
+    today.setFullYear(this.today.getFullYear()-18);
     // VALIDATION
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
@@ -87,6 +89,7 @@ var date;
 
 function CheckDate() {
     var DataNascita = new Date();
+    //alert(DataNascita+" - "+today);
 
     if (anno > today.getFullYear()) {
         document.getElementById("DatiGenitore").style.display = "block";
