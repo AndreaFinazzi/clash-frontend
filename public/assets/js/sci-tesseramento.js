@@ -8,6 +8,8 @@ $('document').ready(function () {
     $('.header').addClass('sticky_header');
     $('.navbar-toggler').prop('disabled', false);
 
+    checkPaid();
+
     $("#purchaseForm").on("submit", function (event) {
         event.preventDefault();
         $('.loader').delay(50).fadeIn('slow');
@@ -27,33 +29,23 @@ $('document').ready(function () {
     });
 });
 
-/* 
-==============================================
-STICKY HEADER
-=============================================== 
-
-
-    $(window).on('scroll', stickyHeader);
-
-    stickyHeader();
-})
-
-stickyHeader = function () {
-    if ($(window).scrollTop() < 100) {
-        $('.header').removeClass('sticky_header');
-        $('.navbar-toggler').prop('disabled', true);
-    } else {
-        $('.header').addClass('sticky_header');
-        $('.navbar-toggler').prop('disabled', false);
-    }
+function checkPaid() {
+    api.getPaidItems().then(response => {
+        if (response.ok) return response.json();
+        if (response.status >= 400) return Promise.reject(response);
+    })
+        .then(data => {
+            if (data.status == 500) return Promise.reject(data);
+            else if (data.paid == true) window.location = "/grazie.html?success=true&membership=" + data.id
+        })
+        .catch(err => window.location = "/sorryforthat.html");
 }
-*/
 
 var ruolo = "";
 
-function SelezionePedone(val){
+function SelezionePedone(val) {
 
-    if(val==1){
+    if (val == 1) {
         document.getElementById("PacchettoHidden").value = "27022020sci-trekky";
         document.getElementById("sel1-pedone").style.background = "#1F375F";
         document.getElementById("sel1-pedone-icons").style.display = "none";
@@ -73,7 +65,7 @@ function SelezionePedone(val){
         document.getElementById("sel3-title-pedone").style.color = "#1F375F";
         document.getElementById("sel3-content-pedone").style.color = "#2b353a";
     }
-    else if(val==2){
+    else if (val == 2) {
         document.getElementById("PacchettoHidden").value = "27022020sci-comfort";
         document.getElementById("sel2-pedone").style.background = "#1F375F";
         document.getElementById("sel2-title-pedone").style.color = "#ffffff";
@@ -92,8 +84,8 @@ function SelezionePedone(val){
         document.getElementById("sel3-pedone").style.background = "#ffffff";
         document.getElementById("sel3-title-pedone").style.color = "#1F375F";
         document.getElementById("sel3-content-pedone").style.color = "#2b353a";
-        }
-        else if(val==3){
+    }
+    else if (val == 3) {
         document.getElementById("PacchettoHidden").value = "27022020sci-fun";
         document.getElementById("sel3-pedone").style.background = "#1F375F";
         document.getElementById("sel3-title-pedone").style.color = "#ffffff";
@@ -112,13 +104,13 @@ function SelezionePedone(val){
         document.getElementById("sel2-pedone").style.background = "#ffffff";
         document.getElementById("sel2-title-pedone").style.color = "#1F375F";
         document.getElementById("sel2-content-pedone").style.color = "#2b353a";
-            }
-    
+    }
+
 }
 
-function SelezioneSci(val){
+function SelezioneSci(val) {
 
-    if(val==1){
+    if (val == 1) {
         document.getElementById("PacchettoHidden").value = "27022020sci-slalom";
         document.getElementById("sel1-sci").style.background = "#1F375F";
         document.getElementById("sel1-title-sci").style.color = "#ffffff";
@@ -130,7 +122,7 @@ function SelezioneSci(val){
         document.getElementById("sel3-title-sci").style.color = "#1F375F";
         document.getElementById("sel3-content-sci").style.color = "#2b353a";
     }
-    else if(val==2){
+    else if (val == 2) {
         document.getElementById("PacchettoHidden").value = "27022020sci-competition";
         document.getElementById("sel2-sci").style.background = "#1F375F";
         document.getElementById("sel2-title-sci").style.color = "#ffffff";
@@ -141,8 +133,8 @@ function SelezioneSci(val){
         document.getElementById("sel3-sci").style.background = "#ffffff";
         document.getElementById("sel3-title-sci").style.color = "#1F375F";
         document.getElementById("sel3-content-sci").style.color = "#2b353a";
-        }
-        else if(val==3){
+    }
+    else if (val == 3) {
         document.getElementById("PacchettoHidden").value = "27022020sci-experience";
         document.getElementById("sel3-sci").style.background = "#1F375F";
         document.getElementById("sel3-title-sci").style.color = "#ffffff";
@@ -153,13 +145,13 @@ function SelezioneSci(val){
         document.getElementById("sel2-sci").style.background = "#ffffff";
         document.getElementById("sel2-title-sci").style.color = "#1F375F";
         document.getElementById("sel2-content-sci").style.color = "#2b353a";
-            }
-    
+    }
+
 }
 
 
-function MostraPrezzi(val){
-    if(val=="pedone"){
+function MostraPrezzi(val) {
+    if (val == "pedone") {
         document.getElementById("gara").required = false;
         document.getElementById("PacchettiPasseggero").style.display = "block";
         document.getElementById("PacchettiSci").style.display = "none";
@@ -173,29 +165,29 @@ function MostraPrezzi(val){
     document.getElementById("MostraPrezzi").style.display = "block";
 }
 
-function cascinet(val){
-    if(val==1){
+function cascinet(val) {
+    if (val == 1) {
         var due = 2;
         var tre = 5;
         var quattro = 25;
     }
-    else if(val==2){
+    else if (val == 2) {
         var due = 1;
         var tre = 5;
         var quattro = 25;
     }
-    else if(val==5){
+    else if (val == 5) {
         var due = 2;
         var tre = 1;
         var quattro = 25;
     }
-    else if(val==25){
+    else if (val == 25) {
         var due = 2;
         var tre = 1;
         var quattro = 5;
     }
     var valore = document.getElementById("cascinet-input").value;
-    if(val == valore){
+    if (val == valore) {
         document.getElementById("cascinet-input").value = "";
         cascinetOff(val);
         return;
@@ -207,17 +199,17 @@ function cascinet(val){
     cascinetOff(quattro);
 }
 
-function cascinetOn(val){
+function cascinetOn(val) {
 
-    document.getElementById("cascinet"+val).style.border = "none";
-    document.getElementById("cascinet"+val).style.background = "#028F01";
-    document.getElementById("cascinet"+val).style.color = "#ffffff";
+    document.getElementById("cascinet" + val).style.border = "none";
+    document.getElementById("cascinet" + val).style.background = "#028F01";
+    document.getElementById("cascinet" + val).style.color = "#ffffff";
 }
 
-function cascinetOff(val){
-    document.getElementById("cascinet"+val).style.border = "2px solid #028F01";
-    document.getElementById("cascinet"+val).style.background = "#ffffff";
-    document.getElementById("cascinet"+val).style.color = "#028F01";
+function cascinetOff(val) {
+    document.getElementById("cascinet" + val).style.border = "2px solid #028F01";
+    document.getElementById("cascinet" + val).style.background = "#ffffff";
+    document.getElementById("cascinet" + val).style.color = "#028F01";
 }
 
 /*

@@ -97,6 +97,13 @@ api = {
                 })
         }
     },
+    getMembership: () => {
+            defaultHeaders.refresh();
+            return fetch(host + '/users/membership', {
+                method: 'get',
+                headers: defaultHeaders.content,
+            })
+    },
     opes: (payload) => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/opes', {
@@ -129,6 +136,13 @@ api = {
     getNotPaidItems: () => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/not-paid', {
+            method: 'get',
+            headers: defaultHeaders.content,
+        })
+    },
+    getPaidItems: () => {
+        defaultHeaders.refresh();
+        return fetch(host + '/venti-venti/paid', {
             method: 'get',
             headers: defaultHeaders.content,
         })

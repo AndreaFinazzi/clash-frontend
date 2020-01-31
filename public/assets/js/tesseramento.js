@@ -10,7 +10,7 @@ var today;
 $(window).on('load', function () {
     today =  new Date();
     today.setFullYear(this.today.getFullYear()-18);
-    
+    this.checkMembership();
     // VALIDATION
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
@@ -90,6 +90,20 @@ $('document').ready(function () {
             .catch(err => window.location = "/sorryforthat.html");
     });*/
 });
+
+
+function checkMembership() {
+    api.getMembership().then(response => {
+        if (response.ok) return response.json();
+        return Promise.resolve(false)
+    })
+        .then(data => {
+            if (data.valid == true) window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+            return Promise.resolve(false)
+        })
+        .catch(err => window.location = "/sorryforthat.html");
+}
+
 
 function CheckValue(val) {
     var element = document.getElementById('altro_scuola');
