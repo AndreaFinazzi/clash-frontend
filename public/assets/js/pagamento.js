@@ -71,7 +71,7 @@ function generateButton(purchase_unit) {
                     // Call your server to save the transaction
                     return api.paypalOnApprove(data)
                     .then(result => {
-                        window.localtion = '/grazie.html';
+                        window.location = '/grazie.html';
                     })
                 });
         }

@@ -60,12 +60,12 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
-                                    required ">
+                                    required>
                             </div>
                             <div class=" form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="loginPasswordInput" name="password"
-                                    placeholder="">
+                                    placeholder="" required>
                             </div>
                             <div class="form-group alarm" id="invalidLoginAlarm">
                                 <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Impossibile
@@ -150,7 +150,7 @@
                                     <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni
                                     </option>
                                     <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
-                                    <option value="mi_volta">Liceo Scientifico Statale Alessandro Volt </option>
+                                    <option value="mi_volta">Liceo Scientifico Statale Alessandro Volta</option>
                                     <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
                                     <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
                                     <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
@@ -186,7 +186,7 @@
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" name="birthday_month" id="mese"
-                                            placeholder="mm" required minlength="2" maxlength="2"
+                                            placeholder="mm" minlength="2" maxlength="2" required
                                             onchange='AggiornaMese(this.value);'>
                                     </div>
                                     <div class="col">
@@ -203,7 +203,7 @@
                             <div class="form-group">
                                 <label for="provincia">Provincia di Nascita</label>
                                 <input class="form-control" type="text" onchange="LunghezzaProvincia(this.value)" id="nascita-provincia" name="birthplace_area"
-                                    required>
+                                    minlength="2" maxlength="2" required>
                             </div>
 
                             <div class="form-group alarm" id="ProvinciaAlarm">
@@ -219,7 +219,7 @@
                             <div class="form-group">
                                 <label for="cf">Codice Fiscale</label>
                                 <input type="text" onchange="LunghezzaCF(this.value)" class="form-control"
-                                    name="national_id" id="cf" placeholder="" required>
+                                    name="national_id" id="cf" placeholder="" minlength="16" maxlength="16" required>
                             </div>
                             <div class="form-group alarm" id="CFStudenteAlarm">
                                 <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il codice
@@ -229,8 +229,8 @@
                                 <label for="residenza-via">Indirizzo di residenza</label>
                                 <div class="form-row">
                                     <div class="col-8">
-                                        <input type="text" class="form-control" required name="address_street"
-                                            id="residenza-via" placeholder="Via">
+                                        <input type="text" class="form-control" name="address_street"
+                                            id="residenza-via" placeholder="Via" required>
                                     </div>
                                     <div class="col-4">
                                         <input type="text" class="form-control" name="address_number"
@@ -239,13 +239,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" required name="address_municipality"
-                                    id="residenza-comune" placeholder="Comune">
+                                <input type="text" class="form-control" name="address_municipality"
+                                    id="residenza-comune" placeholder="Comune" required>
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Telefono</label>
                                 <input type="text" onchange="LunghezzaNumero(this.value)" class="form-control"
-                                    id="telefono" name="mobile" placeholder="" required>
+                                    id="telefono" name="mobile" placeholder="" minlength="8" required>
                             </div>
                             <div class="form-group alarm" id="NumeroAlarm">
                                 <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il numero
@@ -324,7 +324,7 @@
                                             <div class="col">
                                                 <input type="text" onchange="AggiornaMeseGenitore(this.value)"
                                                     class="form-control" name="parent_birthday_month" id="mese-genitore"
-                                                    placeholder="mm" required minlength="2" maxlength="2"required>
+                                                    placeholder="mm" minlength="2" maxlength="2" required>
                                             </div>
                                             <div class="col">
                                                 <input type="text" class="form-control datepicker"
@@ -342,7 +342,7 @@
                                     <div class="form-group">
                                         <label for="provincia-genitore">Provincia</label>
                                         <input class="form-control" type="text" id="provincia-genitore"
-                                            name="parent_birthplace_area" onchange="LunghezzaProvinciaGenitore(this.value)" required>
+                                            name="parent_birthplace_area" onchange="LunghezzaProvinciaGenitore(this.value)" minlength="2" maxlength="2" required>
                                     </div>
 
                                     <div class="form-group alarm" id="ProvinciaGenitoreAlarm">
@@ -359,7 +359,7 @@
                                         <label for="cf-genitore">Codice Fiscale</label>
                                         <input type="text" onchange="LunghezzaCFGenitore(this.value)"
                                             class="form-control" name="parent_national_id" id="cf-genitore"
-                                            placeholder="" required>
+                                            placeholder="" minlength="16" maxlength="16" required>
                                     </div>
                                     <div class="form-group alarm" id="CFAlarmGenitore">
                                         <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il
@@ -375,8 +375,7 @@
                                             </div>
                                             <div class="col-4">
                                                 <input type="text" class="form-control" name="parent_address_number"
-                                                    id="residenza-numero-genitore" placeholder="n°" required
-                                                    minlength="1">
+                                                    id="residenza-numero-genitore" placeholder="n°" required>
                                             </div>
                                         </div>
                                     </div>
@@ -388,7 +387,7 @@
                                         <label for="telefono-genitore">Telefono</label>
                                         <input type="text" onchange="LunghezzaNumeroGenitore(this.value)"
                                             class="form-control" id="telefono-genitore" name="parent_mobile"
-                                            placeholder="" required>
+                                            placeholder="" minlength="8" required>
                                         <div class="form-group alarm" id="NumeroGenitoreAlarm">
                                             <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Il
                                             numero inserito non è valido!
@@ -412,7 +411,7 @@
                                     <div class="form-group">
                                         <label for="tipo-documento-genitore">Tipo documento</label>
                                         <select class="form-control" id="tipo-documento-genitore"
-                                            name="parent_document_type">
+                                            name="parent_document_type" required>
                                             <option value="">Seleziona</option>
                                             <option value="carta">Carta d'identità</option>
                                             <option value="passaporto">Passaporto</option>
