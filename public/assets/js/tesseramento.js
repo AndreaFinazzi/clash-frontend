@@ -266,13 +266,35 @@ function LunghezzaNumero(String) {
 }
 
 function LunghezzaNumeroGenitore(String) {
-    if (String.length < 9 || String[0] != '3') {
+    if (String.length < 9 || (String[0] != '3' &&  String[0]!="+" )) {
         document.getElementById("NumeroGenitoreAlarm").style.display = "block";
     }
     else {
         document.getElementById("NumeroGenitoreAlarm").style.display = "none";
     }
 }
+
+function LunghezzaProvincia(String) {
+
+    if (String.length != 2){
+        document.getElementById("ProvinciaAlarm").style.display = "block";
+    }
+    else {
+        document.getElementById("ProvinciaAlarm").style.display = "none";
+    }
+}
+
+function LunghezzaProvinciaGenitore(String) {
+
+    if (String.length != 2){
+        document.getElementById("ProvinciaGenitoreAlarm").style.display = "block";
+    }
+    else {
+        document.getElementById("ProvinciaGenitoreAlarm").style.display = "none";
+    }
+}
+
+
 
 function AggiornaScuole(val){
     if(val=="no_school"){
@@ -282,6 +304,5 @@ function AggiornaScuole(val){
         document.getElementById("scuole-alt").type = "hidden";
         document.getElementById("scuole-alt").value = val;
     }
-    
-}
 
+}
