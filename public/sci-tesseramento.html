@@ -40,12 +40,12 @@
 
     </header>
 
-
+    <!--
     <div class="loader">
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
     </div>
-
+-->
     <main>
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -87,34 +87,60 @@
 
         <div class="sct-container" style="margin-top: 80px;">
             <div class="sfondo"></div>
+            <form id="purchaseForm" class="container" style="min-height: 100vh;">
             <div class="container" id="container-pacchetti">
-                <form id="purchaseForm" class="container" style="min-height: 100vh;">
+                
                     <!--Row-->
-                    <div class="row">
+                    <div class="row" style="padding-bottom: 30px;">
                         <div class="col-sm-12 col-md-12">
                             <div class="form-group">
                                 <label for="ruolo">
                                     <h3>A che date sei interesato?</h3>
                                     <h5>Indica a quali giornate sulla neve parteciperai</h5>
                                 </label>
-                                <div class="form-group">
-                                    <input type="checkbox" name="vehicle1" value="27022020"
-                                        onchange="toggleDate(this.value)">27 Febbraio<br>
-                                    <input type="checkbox" name="vehicle2" value="06032020"
-                                        onchange="toggleDate(this.value)">06 Marzo<br>
-                                    <input type="checkbox" name="vehicle3" value="10032020"
-                                        onchange="toggleDate(this.value)">10 Marzo<br>
-                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="vehicle1" value="27022020"
+                                            onchange="toggleDate(this.value)" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">27 Febbraio</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="vehicle2" value="06032020"
+                                            onchange="toggleDate(this.value)" id="customCheck2">
+                                            <label class="custom-control-label" for="customCheck2">6 Marzo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="vehicle3" value="10032020"
+                                            onchange="toggleDate(this.value)" id="customCheck3">
+                                            <label class="custom-control-label" for="customCheck3">10 Marzo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                                
+                                
                             </div>
                         </div>
-                        <div class="container" id="27022020" style="display: none">
+                        <div class="container px-0" id="27022020" style="display: none; padding-bottom: 30px;">
                             <!--Fine Pacchetti-->
                             <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12">
+                            <div class="col-sm-12 col-md-12 px-0">
                                 <div class="form-group">
                                     <label for="ruolo">
-                                        <h3>27/02/2020 - Come parteciperai?</h3>
-                                        <h5>Indica come parteciperai alla giornata sulla neve</h5>
+                                        <h4>27/02/2020 - Come parteciperai?</h4>
+                                        <h6>Indica come parteciperai alla giornata sulla neve</h6>
                                     </label>
                                     <select class="form-control" id="ruolo" data-date="27022020"
                                         onchange="MostraPrezzi(this)" name="ruolo">
@@ -403,13 +429,13 @@
                         </div>
                         <!-- FINE 27022020 -->
 
-                        <div class="container" id="06032020" style="display: none">
+                        <div class="container px-0" id="06032020" style="display: none; padding-bottom: 30px;">
                             <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12">
+                            <div class="col-sm-12 col-md-12 px-0">
                                 <div class="form-group">
                                     <label for="ruolo">
-                                        <h3>06/03/2020 - Come parteciperai?</h3>
-                                        <h5>Indica come parteciperai alla giornata sulla neve</h5>
+                                        <h4>06/03/2020 - Come parteciperai?</h3>
+                                        <h6>Indica come parteciperai alla giornata sulla neve</h6>
                                     </label>
                                     <select class="form-control" id="ruolo" data-date="06032020"
                                         onchange="MostraPrezzi(this)" name="ruolo">
@@ -698,13 +724,13 @@
                         </div>
                         <!-- FINE 06032020 -->
 
-                        <div class="container" id="10032020" style="display: none">
+                        <div class="container px-0" id="10032020" style="display: none; padding-bottom: 30px;">
                             <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12">
+                            <div class="col-sm-12 col-md-12 px-0">
                                 <div class="form-group">
                                     <label for="ruolo">
-                                        <h3>10/03/2020 - Come parteciperai?</h3>
-                                        <h5>Indica come parteciperai alla giornata sulla neve</h5>
+                                        <h4>10/03/2020 - Come parteciperai?</h4>
+                                        <h6>Indica come parteciperai alla giornata sulla neve</h6>
                                     </label>
                                     <select class="form-control" id="ruolo" data-date="10032020"
                                         onchange="MostraPrezzi(this)" name="ruolo">
@@ -992,6 +1018,8 @@
                             </div>
                         </div>
                         <!-- FINE 10032020 -->
+
+                        
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
@@ -1052,10 +1080,6 @@
                     </div>
             </div>
             </form>
-        </div>
-        </div>
-
-
         </div>
 
     </main>
@@ -1144,9 +1168,9 @@
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
         <!-- include Slick -->
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <!-- include custom script -->
+        <!-- include custom script --
         <script src="/assets/js/api.js"></script>
-        <script src="/assets/js/auth.js"></script>
+        <script src="/assets/js/auth.js"></script>-->
         <script src="/assets/js/sci-tesseramento.js"></script>
     </footer>
 </body>
