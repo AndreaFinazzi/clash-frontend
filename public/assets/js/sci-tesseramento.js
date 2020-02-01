@@ -43,126 +43,136 @@ function checkPaid() {
 
 var ruolo = "";
 
-function SelezionePedone(val) {
+function SelezionePedone(element) {
+    let context = $("#" + element.parentElement.dataset.date)
+    if (element.dataset.value == "trekky") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-trekky");
+        context.find("#sel1-pedone").css('background', "#1F375F");
+        context.find("#sel1-pedone-icons").toggle(false);
+        context.find("#sel1-pedone-icons2").toggle(true);
+        context.find("#sel3-pedone-icons2").toggle(false);
+        context.find("#sel3-pedone-icons").toggle(true);
+        context.find("#sel2-pedone-icons2").toggle(false);
+        context.find("#sel2-pedone-icons").toggle(true);
+        context.find("#sel2-pedone-icons4").toggle(false);
+        context.find("#sel2-pedone-icons3").toggle(true);
+        context.find("#sel1-title-pedone").css('color', "#ffffff");
+        context.find("#sel1-content-pedone").css('color', "#ffffff");
+        context.find("#sel2-pedone").css('background', "#ffffff");
+        context.find("#sel2-title-pedone").css('color', "#1F375F");
+        context.find("#sel2-content-pedone").css('color', "#2b353a");
+        context.find("#sel3-pedone").css('background', "#ffffff");
+        context.find("#sel3-title-pedone").css('color', "#1F375F");
+        context.find("#sel3-content-pedone").css('color', "#2b353a");
+    }
+    else if (element.dataset.value == "comfort") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-comfort");
+        context.find("#sel2-pedone").css('background', "#1F375F");
+        context.find("#sel2-title-pedone").css('color', "#ffffff");
+        context.find("#sel2-pedone-icons").toggle(false);        
+        context.find("#sel2-pedone-icons2").toggle(true);
+        context.find("#sel2-pedone-icons3").toggle(false);        
+        context.find("#sel2-pedone-icons4").toggle(true);
+        context.find("#sel1-pedone-icons2").toggle(false);        
+        context.find("#sel1-pedone-icons").toggle(true);
+        context.find("#sel3-pedone-icons2").toggle(false);        
+        context.find("#sel3-pedone-icons").toggle(true);
 
-    if (val == 1) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-trekky";
-        document.getElementById("sel1-pedone").style.background = "#1F375F";
-        document.getElementById("sel1-pedone-icons").style.display = "none";
-        document.getElementById("sel1-pedone-icons2").style.display = "block";
-        document.getElementById("sel3-pedone-icons2").style.display = "none";
-        document.getElementById("sel3-pedone-icons").style.display = "block";
-        document.getElementById("sel2-pedone-icons2").style.display = "none";
-        document.getElementById("sel2-pedone-icons").style.display = "block";
-        document.getElementById("sel2-pedone-icons4").style.display = "none";
-        document.getElementById("sel2-pedone-icons3").style.display = "block";
-        document.getElementById("sel1-title-pedone").style.color = "#ffffff";
-        document.getElementById("sel1-content-pedone").style.color = "#ffffff";
-        document.getElementById("sel2-pedone").style.background = "#ffffff";
-        document.getElementById("sel2-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel2-content-pedone").style.color = "#2b353a";
-        document.getElementById("sel3-pedone").style.background = "#ffffff";
-        document.getElementById("sel3-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel3-content-pedone").style.color = "#2b353a";
+        context.find("#sel2-content-pedone").css('color', "#ffffff");
+        context.find("#sel1-pedone").css('background', "#ffffff");
+        context.find("#sel1-title-pedone").css('color', "#1F375F");
+        context.find("#sel1-content-pedone").css('color', "#2b353a");
+        context.find("#sel3-pedone").css('background', "#ffffff");
+        context.find("#sel3-title-pedone").css('color', "#1F375F");
+        context.find("#sel3-content-pedone").css('color', "#2b353a");
     }
-    else if (val == 2) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-comfort";
-        document.getElementById("sel2-pedone").style.background = "#1F375F";
-        document.getElementById("sel2-title-pedone").style.color = "#ffffff";
-        document.getElementById("sel2-pedone-icons").style.display = "none";
-        document.getElementById("sel2-pedone-icons2").style.display = "block";
-        document.getElementById("sel2-pedone-icons3").style.display = "none";
-        document.getElementById("sel2-pedone-icons4").style.display = "block";
-        document.getElementById("sel1-pedone-icons2").style.display = "none";
-        document.getElementById("sel1-pedone-icons").style.display = "block";
-        document.getElementById("sel3-pedone-icons2").style.display = "none";
-        document.getElementById("sel3-pedone-icons").style.display = "block";
-        document.getElementById("sel2-content-pedone").style.color = "#ffffff";
-        document.getElementById("sel1-pedone").style.background = "#ffffff";
-        document.getElementById("sel1-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel1-content-pedone").style.color = "#2b353a";
-        document.getElementById("sel3-pedone").style.background = "#ffffff";
-        document.getElementById("sel3-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel3-content-pedone").style.color = "#2b353a";
-    }
-    else if (val == 3) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-fun";
-        document.getElementById("sel3-pedone").style.background = "#1F375F";
-        document.getElementById("sel3-title-pedone").style.color = "#ffffff";
-        document.getElementById("sel3-pedone-icons").style.display = "none";
-        document.getElementById("sel3-pedone-icons2").style.display = "block";
-        document.getElementById("sel1-pedone-icons2").style.display = "none";
-        document.getElementById("sel1-pedone-icons").style.display = "block";
-        document.getElementById("sel2-pedone-icons2").style.display = "none";
-        document.getElementById("sel2-pedone-icons").style.display = "block";
-        document.getElementById("sel2-pedone-icons4").style.display = "none";
-        document.getElementById("sel2-pedone-icons3").style.display = "block";
-        document.getElementById("sel3-content-pedone").style.color = "#ffffff";
-        document.getElementById("sel1-pedone").style.background = "#ffffff";
-        document.getElementById("sel1-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel1-content-pedone").style.color = "#2b353a";
-        document.getElementById("sel2-pedone").style.background = "#ffffff";
-        document.getElementById("sel2-title-pedone").style.color = "#1F375F";
-        document.getElementById("sel2-content-pedone").style.color = "#2b353a";
-    }
-
-}
-
-function SelezioneSci(val) {
-
-    if (val == 1) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-slalom";
-        document.getElementById("sel1-sci").style.background = "#1F375F";
-        document.getElementById("sel1-title-sci").style.color = "#ffffff";
-        document.getElementById("sel1-content-sci").style.color = "#ffffff";
-        document.getElementById("sel2-sci").style.background = "#ffffff";
-        document.getElementById("sel2-title-sci").style.color = "#1F375F";
-        document.getElementById("sel2-content-sci").style.color = "#2b353a";
-        document.getElementById("sel3-sci").style.background = "#ffffff";
-        document.getElementById("sel3-title-sci").style.color = "#1F375F";
-        document.getElementById("sel3-content-sci").style.color = "#2b353a";
-    }
-    else if (val == 2) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-competition";
-        document.getElementById("sel2-sci").style.background = "#1F375F";
-        document.getElementById("sel2-title-sci").style.color = "#ffffff";
-        document.getElementById("sel2-content-sci").style.color = "#ffffff";
-        document.getElementById("sel1-sci").style.background = "#ffffff";
-        document.getElementById("sel1-title-sci").style.color = "#1F375F";
-        document.getElementById("sel1-content-sci").style.color = "#2b353a";
-        document.getElementById("sel3-sci").style.background = "#ffffff";
-        document.getElementById("sel3-title-sci").style.color = "#1F375F";
-        document.getElementById("sel3-content-sci").style.color = "#2b353a";
-    }
-    else if (val == 3) {
-        document.getElementById("PacchettoHidden").value = "27022020sci-experience";
-        document.getElementById("sel3-sci").style.background = "#1F375F";
-        document.getElementById("sel3-title-sci").style.color = "#ffffff";
-        document.getElementById("sel3-content-sci").style.color = "#ffffff";
-        document.getElementById("sel1-sci").style.background = "#ffffff";
-        document.getElementById("sel1-title-sci").style.color = "#1F375F";
-        document.getElementById("sel1-content-sci").style.color = "#2b353a";
-        document.getElementById("sel2-sci").style.background = "#ffffff";
-        document.getElementById("sel2-title-sci").style.color = "#1F375F";
-        document.getElementById("sel2-content-sci").style.color = "#2b353a";
+    else if (element.dataset.value == "fun") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-fun");
+        context.find("#sel3-pedone").css('background', "#1F375F");
+        context.find("#sel3-title-pedone").css('color', "#ffffff");
+        context.find("#sel3-pedone-icons").toggle(false);
+        context.find("#sel3-pedone-icons2").toggle(true);
+        context.find("#sel1-pedone-icons2").toggle(false);
+        context.find("#sel1-pedone-icons").toggle(true);
+        context.find("#sel2-pedone-icons2").toggle(false);
+        context.find("#sel2-pedone-icons").toggle(true);
+        context.find("#sel2-pedone-icons4").toggle(false);
+        context.find("#sel2-pedone-icons3").toggle(true);
+        context.find("#sel3-content-pedone").css('color', "#ffffff");
+        context.find("#sel1-pedone").css('background', "#ffffff");
+        context.find("#sel1-title-pedone").css('color', "#1F375F");
+        context.find("#sel1-content-pedone").css('color', "#2b353a");
+        context.find("#sel2-pedone").css('background', "#ffffff");
+        context.find("#sel2-title-pedone").css('color', "#1F375F");
+        context.find("#sel2-content-pedone").css('color', "#2b353a");
     }
 
 }
 
+function SelezioneSci(element) {
+    let context = $("#" + element.parentElement.dataset.date)
+    if (element.dataset.value == "slalom") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-slalom");
+        context.find("#sel1-sci").css('background', "#1F375F");
+        context.find("#sel1-title-sci").css('color', "#ffffff");
+        context.find("#sel1-content-sci").css('color', "#ffffff");
+        context.find("#sel2-sci").css('background', "#ffffff");
+        context.find("#sel2-title-sci").css('color', "#1F375F");
+        context.find("#sel2-content-sci").css('color', "#2b353a");
+        context.find("#sel3-sci").css('background', "#ffffff");
+        context.find("#sel3-title-sci").css('color', "#1F375F");
+        context.find("#sel3-content-sci").css('color', "#2b353a");
+    }
+    else if (element.dataset.value == "competition") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-competition");
+        context.find("#sel2-sci").css('background', "#1F375F");
+        context.find("#sel2-title-sci").css('color', "#ffffff");
+        context.find("#sel2-content-sci").css('color', "#ffffff");
+        context.find("#sel1-sci").css('background', "#ffffff");
+        context.find("#sel1-title-sci").css('color', "#1F375F");
+        context.find("#sel1-content-sci").css('color', "#2b353a");
+        context.find("#sel3-sci").css('background', "#ffffff");
+        context.find("#sel3-title-sci").css('color', "#1F375F");
+        context.find("#sel3-content-sci").css('color', "#2b353a");
+    }
+    else if (element.dataset.value == "experience") {
+        context.find("#PacchettoHidden").val(element.parentElement.dataset.date + "sci-experience");
+        context.find("#sel3-sci").css('background', "#1F375F");
+        context.find("#sel3-title-sci").css('color', "#ffffff");
+        context.find("#sel3-content-sci").css('color', "#ffffff");
+        context.find("#sel1-sci").css('background', "#ffffff");
+        context.find("#sel1-title-sci").css('color', "#1F375F");
+        context.find("#sel1-content-sci").css('color', "#2b353a");
+        context.find("#sel2-sci").css('background', "#ffffff");
+        context.find("#sel2-title-sci").css('color', "#1F375F");
+        context.find("#sel2-content-sci").css('color', "#2b353a");
+    }
 
-function MostraPrezzi(val) {
-    if (val == "pedone") {
-        document.getElementById("gara").required = false;
-        document.getElementById("PacchettiPasseggero").style.display = "block";
-        document.getElementById("PacchettiSci").style.display = "none";
+}
+
+
+function MostraPrezzi(element) {
+    let context = $("#" + element.dataset.date)
+    if (element.value == "pedone") {
+        context.find("#PacchettiPasseggero").toggle(true);
+        context.find("#PacchettiSci").toggle(false);
         ruolo = "pedone";
     } else {
         ruolo = "sci";
-        document.getElementById("gara").required = true;
-        document.getElementById("PacchettiPasseggero").style.display = "none";
-        document.getElementById("PacchettiSci").style.display = "block";
+        context.find("#PacchettiPasseggero").toggle(false);
+        context.find("#PacchettiSci").toggle(true);
     }
-    document.getElementById("MostraPrezzi").style.display = "block";
+    context.find("#MostraPrezzi").toggle(true);
+}
+
+function toggleDate(changed) {
+    let context = $('#' + changed)
+    let required = context.find('#ruolo').prop('required');
+    // se require == false sto mostrando
+    // se required == true sto nascondendo
+    context.find("#PacchettoHidden").val(undefined)
+    context.toggle('fast');
+    context.find('#ruolo').prop('required', !required);
 }
 
 function cascinet(val) {

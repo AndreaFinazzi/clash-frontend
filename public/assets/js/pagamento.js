@@ -66,8 +66,6 @@ function generateButton(purchase_unit) {
             // This function captures the funds from the transaction.
             return actions.order.capture()
                 .then(function (details) {
-                    // This function shows a transaction success message to your buyer.
-                    alert('Transazione completata per ' + details.payer.name.given_name );
                     // Call your server to save the transaction
                     return api.paypalOnApprove(data)
                     .then(result => {
