@@ -1,4 +1,5 @@
 $('document').ready(function () {
+    
     $('#loginButton').click(function (e) {
         e.preventDefault();
         tryLogin();
@@ -6,7 +7,18 @@ $('document').ready(function () {
 
     initModal();
     checkAuth();
+    
+    if(api.auth.check().then((success) =>{
+        if(success){
+            document.getElementById("logged-icon").style.display = "block";
+        }
+        else{
+            document.getElementById("logged-icon").style.display = "none";
+        }
+    }));
+
 });
+
 
 function checkAuth() {
     if (window.user.logged === false) {
@@ -63,4 +75,12 @@ function initModal() {
 
 function showModal() {
     $('#loginModal').modal('show');
+}
+
+function logOut(){
+   /******/
+}
+
+function logIn(){
+    /******/
 }
