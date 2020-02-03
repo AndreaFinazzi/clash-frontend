@@ -63,9 +63,12 @@ function generateButton(purchase_unit) {
             });
         },
         onApprove: function (data, actions) {
+            $('.loader').delay(50).fadeIn('slow');
+            data.reference_id = purchase_unit.reference_id;
             // This function captures the funds from the transaction.
             return actions.order.capture()
                 .then(function (details) {
+                    data.details = details;
                     // Call your server to save the transaction
                     return api.paypalOnApprove(data)
                     .then(result => {

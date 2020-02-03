@@ -2,10 +2,9 @@ window.user = {
     logged: false
 };
 url = new URLSearchParams(window.location.search);
-var host = 'http://andreafinazzi.com:5000';
+var host = 'https://clash.andreafinazzi.com/api';
 defaultHeaders = {
     content: {
-
         "Content-Type": "application/json",
         'Cache-Control': 'no-cache',
         'Access-Control-Allow-Origin': "*",

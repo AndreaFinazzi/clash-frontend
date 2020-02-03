@@ -33,6 +33,16 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="/">Home</a>
                         </li>
+                        <li class="nav-item" id="logged-icon" style="display: none;">
+                            <div class="dropdown" >
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    <i class="fas fa-user-check" style="color: #ffffff; "></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                    <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
+                                  </div>
+                              </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -61,10 +71,14 @@
                                 <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
                                     required>
                             </div>
-                            <div class="form-group">
+                            <div class=" form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="loginPasswordInput" name="password"
                                     placeholder="" required>
+                            </div>
+                            <div class="form-group alarm" id="invalidLoginAlarm">
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Impossibile
+                                effettuare il login
                             </div>
                             <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
                                 <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
@@ -72,7 +86,10 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="loginButton" type="button" class="btn btn-primary">Log In</button>
+                        <div class="text-left w-100">
+                            Non sei ancora registrato? <a href="/sign-up.html" class="href">Clicca qui!</a>
+                        </div>
+                        <button id="loginButton" type="button" class="btn btn-block btn-primary">Log In</button>
                     </div>
                 </div>
             </div>

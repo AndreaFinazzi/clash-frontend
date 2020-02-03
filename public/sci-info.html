@@ -48,6 +48,16 @@
                         <li class="nav-item">
                             <a class="nav-link " href="/iscrizione.html">Iscriviti</a>
                         </li>
+                        <li class="nav-item" id="logged-icon" style="display: none;">
+                            <div class="dropdown" >
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    <i class="fas fa-user-check" style="color: #ffffff; "></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                    <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
+                                  </div>
+                              </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -640,6 +650,8 @@
         <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
         <script src="assets/js/mappa.js"></script>
         <!-- include custom script -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/auth.js"></script>
         <script src="/assets/js/business.js"></script>
     </footer>
 </body>

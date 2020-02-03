@@ -79,6 +79,8 @@ function showModal() {
 
 function logOut(){
    /******/
+   localStorage.removeItem('token');
+   window.location.reload();
 }
 
 function logIn(){
