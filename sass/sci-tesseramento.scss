@@ -5,11 +5,15 @@
 
 .img-frontend{
         width: 100vw;
-        height: 55vh;
+        height: 40vh;
         background-image: url("/assets/img/info-sci/frontend-sci.png");
-        background-position: center -40vh;;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include media-breakpoint-up(lg) {
+            background-position: center  -25vh;
+        }
 }
 
 .ptb-50{
