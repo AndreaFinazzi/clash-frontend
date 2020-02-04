@@ -34,14 +34,15 @@
                             <a class="nav-link active" href="/">Home</a>
                         </li>
                         <li class="nav-item" id="logged-icon" style="display: none;">
-                            <div class="dropdown" >
-                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-user-check" style="color: #ffffff; "></i>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
-                                  </div>
-                              </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +51,7 @@
 
     </header>
 
-    
+
     <div class="loader">
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
@@ -104,11 +105,11 @@
         <div class="sct-container" style="margin-top: 80px;">
             <div class="sfondo"></div>
             <form id="purchaseForm" class="container" style="min-height: 100vh;">
-            <div class="container" id="container-pacchetti">
-                
-                    <!--Row-->
+                <div class="container" id="container-pacchetti">
+
+                    <!-- Selezione data -->
                     <div class="row" style="padding-bottom: 30px;">
-                        <div class="col-sm-12 col-md-12">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label for="ruolo">
                                     <h3>A che date sei interesato?</h3>
@@ -119,8 +120,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="vehicle1" value="27022020"
-                                            onchange="toggleDate(this.value)" id="customCheck1">
+                                            <input type="checkbox" class="custom-control-input" name="vehicle1"
+                                                value="27022020" onchange="toggleDate(this.value)" id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">27 Febbraio</label>
                                         </div>
                                     </div>
@@ -137,300 +138,298 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="vehicle3" value="10032020"
-                                            onchange="toggleDate(this.value)" id="customCheck3">
+                                            <input type="checkbox" class="custom-control-input" name="vehicle3"
+                                                value="10032020" onchange="toggleDate(this.value)" id="customCheck3">
                                             <label class="custom-control-label" for="customCheck3">10 Marzo</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container px-0" id="27022020" style="display: none; padding-bottom: 30px;">
-                            <!--Fine Pacchetti-->
-                            <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12 px-0">
-                                <div class="form-group">
-                                    <label for="ruolo">
-                                        <h4>27/02/2020 - Come parteciperai?</h4>
-                                        <h6>Indica come parteciperai alla giornata sulla neve</h6>
-                                    </label>
-                                    <select class="form-control" id="ruolo" data-date="27022020"
-                                        onchange="MostraPrezzi(this)" name="ruolo">
-                                        <option value="">Seleziona</option>
-                                        <option value="sci">Sciatore</option>
-                                        <option value="snowboard">Snowboarder</option>
-                                        <option value="pedone">Pedone</option>
-                                    </select>
-                                </div>
+                    </div>
+
+                    <!-- 27 FEBBRAIO -->
+                    <div class="container px-0" id="27022020" style="display: none; padding-bottom: 30px;">
+                        <input name="products" type="hidden" id="PacchettoHidden">
+                        <div class="col-sm-12 col-md-12 px-0">
+                            <div class="form-group">
+                                <label for="ruolo">
+                                    <h4>27/02/2020 - Come parteciperai?</h4>
+                                    <h6>Indica come parteciperai alla giornata sulla neve</h6>
+                                </label>
+                                <select class="form-control" id="ruolo" data-date="27022020"
+                                    onchange="MostraPrezzi(this)" name="ruolo">
+                                    <option value="">Seleziona</option>
+                                    <option value="sci">Sciatore</option>
+                                    <option value="snowboard">Snowboarder</option>
+                                    <option value="pedone">Pedone</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div id="MostraPrezzi">
-                                <a name="prezzi"></a>
-                                <div class="col-md-12 example-title">
-                                    <h2>Scegli un pacchetto</h2>
-                                </div>
-                                <!--Pacchetti passeggero-->
+                        <div id="MostraPrezzi">
+                            <a name="prezzi"></a>
+                            <div class="col-md-12 example-title">
+                                <h2>Scegli un pacchetto</h2>
+                            </div>
+                            <!--Pacchetti passeggero-->
 
-                                <div id="PacchettiPasseggero" style="display: none;">
-                                    <div class="row" data-date="27022020">
-                                        <div class="col-sm-6 col-md-4" data-value="trekky"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel1-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">35</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">TREKKY</h4>
+                            <div id="PacchettiPasseggero" style="display: none;">
+                                <div class="row" data-date="27022020">
+                                    <div class="col-sm-6 col-md-4" data-value="trekky" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel1-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">35</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <h4 class="what_we_do_title">TREKKY</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel1-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel1-pedone-icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel1-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel1-pedone-icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel1-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="comfort"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel2-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">45</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMFORT</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="comfort"
+                                        onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel2-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">45</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
-                                                    </div>
-                                                </div>
-
+                                                <h4 class="what_we_do_title">COMFORT</h4>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4" data-value="fun"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel3-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">50</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">FUN</h4>
+                                            <div class="what_we_do_content" id="sel2-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="fun" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel3-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">50</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">FUN</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/slittino.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel3-pedone-icons">
-                                                                <img src="/assets/img/icons/slittinoWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel3-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Fun Park</div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/slittino.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel3-pedone-icons">
+                                                            <img src="/assets/img/icons/slittinoWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel3-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                    </div>
+                                                    <div class="col-10">Fun Park</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--Pacchetti Sci-->
+                            </div>
+                            <!--Pacchetti Sci-->
 
-                                <div id="PacchettiSci" style="display: none;">
-                                    <div class="row" data-date="27022020">
-                                        <div class="col-sm-6 col-md-4" data-value="slalom"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel1-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">55</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">SLALOM</h4>
+                            <div id="PacchettiSci" style="display: none;">
+                                <div class="row" data-date="27022020">
+                                    <div class="col-sm-6 col-md-4" data-value="slalom" onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel1-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">55</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                </div>
-
+                                                <h4 class="what_we_do_title">SLALOM</h4>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4" data-value="competition"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel2-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">75</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMPETITION</h4>
+                                            <div class="what_we_do_content" id="sel1-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (2h) per preparazione gara
-                                                        </div>
-                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="experience"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel3-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">125</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="competition"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel2-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">75</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <h4 class="what_we_do_title">COMPETITION</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
+                                                    <div class="col-10">Maestro FISI (2h) per preparazione gara
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="experience"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel3-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">125</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (5h)
-                                                        </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="col-10">Maestro FISI (5h)
                                                     </div>
                                                 </div>
                                             </div>
@@ -439,296 +438,292 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- FINE 27022020 -->
+                    </div>
+                    <!-- FINE 27022020 -->
 
-                        <!-- 6 MARZO
+                    <!-- 6 MARZO -->
 
-                        <div class="container px-0" id="06032020" style="display: none; padding-bottom: 30px;">
-                            <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12 px-0">
-                                <div class="form-group">
-                                    <label for="ruolo">
-                                        <h4>06/03/2020 - Come parteciperai?</h3>
+                    <div class="container px-0" id="06032020" style="display: none; padding-bottom: 30px;">
+                        <input name="products" type="hidden" id="PacchettoHidden">
+                        <div class="col-sm-12 col-md-12 px-0">
+                            <div class="form-group">
+                                <label for="ruolo">
+                                    <h4>06/03/2020 - Come parteciperai?</h3>
                                         <h6>Indica come parteciperai alla giornata sulla neve</h6>
-                                    </label>
-                                    <select class="form-control" id="ruolo" data-date="06032020"
-                                        onchange="MostraPrezzi(this)" name="ruolo">
-                                        <option value="">Seleziona</option>
-                                        <option value="sci">Sciatore</option>
-                                        <option value="snowboard">Snowboarder</option>
-                                        <option value="pedone">Pedone</option>
-                                    </select>
-                                </div>
+                                </label>
+                                <select class="form-control" id="ruolo" data-date="06032020"
+                                    onchange="MostraPrezzi(this)" name="ruolo">
+                                    <option value="">Seleziona</option>
+                                    <option value="sci">Sciatore</option>
+                                    <option value="snowboard">Snowboarder</option>
+                                    <option value="pedone">Pedone</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="MostraPrezzi">
+                            <a name="prezzi"></a>
+                            <div class="col-md-12 example-title">
+                                <h2>Scegli un pacchetto</h2>
                             </div>
 
-                            <div id="MostraPrezzi">
-                                <a name="prezzi"></a>
-                                <div class="col-md-12 example-title">
-                                    <h2>Scegli un pacchetto</h2>
-                                </div>
-                                
-                                Pacchetti passeggero
+                            Pacchetti passeggero
 
-                                <div id="PacchettiPasseggero" style="display: none;">
-                                    <div class="row" data-date="06032020">
-                                        <div class="col-sm-6 col-md-4" data-value="trekky"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel1-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">35</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">TREKKY</h4>
+                            <div id="PacchettiPasseggero" style="display: none;">
+                                <div class="row" data-date="06032020">
+                                    <div class="col-sm-6 col-md-4" data-value="trekky" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel1-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">35</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <h4 class="what_we_do_title">TREKKY</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel1-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel1-pedone-icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel1-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel1-pedone-icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel1-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="comfort"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel2-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">45</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMFORT</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="comfort"
+                                        onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel2-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">45</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
-                                                    </div>
+                                                <h4 class="what_we_do_title">COMFORT</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
-
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
+                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
+                                                    </div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="fun"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel3-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">50</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">FUN</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="fun" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel3-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">50</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <h4 class="what_we_do_title">FUN</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/slittino.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel3-pedone-icons">
+                                                            <img src="/assets/img/icons/slittinoWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel3-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/slittino.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel3-pedone-icons">
-                                                                <img src="/assets/img/icons/slittinoWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel3-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Fun Park</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                    </div>
+                                                    <div class="col-10">Fun Park</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                    Pacchetti Sci
+                            </div>
 
-                                <div id="PacchettiSci" style="display: none;">
-                                    <div class="row" data-date="06032020">
-                                        <div class="col-sm-6 col-md-4" data-value="slalom"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel1-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">55</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">SLALOM</h4>
+                            <!-- Pacchetti Sci -->
+                            <div id="PacchettiSci" style="display: none;">
+                                <div class="row" data-date="06032020">
+                                    <div class="col-sm-6 col-md-4" data-value="slalom" onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel1-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">55</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                </div>
-
+                                                <h4 class="what_we_do_title">SLALOM</h4>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4" data-value="competition"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel2-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">75</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMPETITION</h4>
+                                            <div class="what_we_do_content" id="sel1-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (2h) per preparazione gara
-                                                        </div>
-                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="experience"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel3-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">125</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="competition"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel2-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">75</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <h4 class="what_we_do_title">COMPETITION</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
+                                                    <div class="col-10">Maestro FISI (2h) per preparazione gara
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="experience"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel3-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">125</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (5h)
-                                                        </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="col-10">Maestro FISI (5h)
                                                     </div>
                                                 </div>
                                             </div>
@@ -737,293 +732,290 @@
                                 </div>
                             </div>
                         </div>
-                         FINE 06032020 --> 
+                    </div>
+                    <!-- FINE 06032020 -->
 
-                        <div class="container px-0" id="10032020" style="display: none; padding-bottom: 30px;">
-                            <input name="products" type="hidden" id="PacchettoHidden">
-                            <div class="col-sm-12 col-md-12 px-0">
-                                <div class="form-group">
-                                    <label for="ruolo">
-                                        <h4>10/03/2020 - Come parteciperai?</h4>
-                                        <h6>Indica come parteciperai alla giornata sulla neve</h6>
-                                    </label>
-                                    <select class="form-control" id="ruolo" data-date="10032020"
-                                        onchange="MostraPrezzi(this)" name="ruolo">
-                                        <option value="">Seleziona</option>
-                                        <option value="sci">Sciatore</option>
-                                        <option value="snowboard">Snowboarder</option>
-                                        <option value="pedone">Pedone</option>
-                                    </select>
-                                </div>
+                    <div class="container px-0" id="10032020" style="display: none; padding-bottom: 30px;">
+                        <input name="products" type="hidden" id="PacchettoHidden">
+                        <div class="col-sm-12 col-md-12 px-0">
+                            <div class="form-group">
+                                <label for="ruolo">
+                                    <h4>10/03/2020 - Come parteciperai?</h4>
+                                    <h6>Indica come parteciperai alla giornata sulla neve</h6>
+                                </label>
+                                <select class="form-control" id="ruolo" data-date="10032020"
+                                    onchange="MostraPrezzi(this)" name="ruolo">
+                                    <option value="">Seleziona</option>
+                                    <option value="sci">Sciatore</option>
+                                    <option value="snowboard">Snowboarder</option>
+                                    <option value="pedone">Pedone</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div id="MostraPrezzi">
-                                <a name="prezzi"></a>
-                                <div class="col-md-12 example-title">
-                                    <h2>Scegli un pacchetto</h2>
-                                </div>
-                                <!--Pacchetti passeggero-->
+                        <div id="MostraPrezzi">
+                            <a name="prezzi"></a>
+                            <div class="col-md-12 example-title">
+                                <h2>Scegli un pacchetto</h2>
+                            </div>
+                            <!--Pacchetti passeggero-->
 
-                                <div id="PacchettiPasseggero" style="display: none;">
-                                    <div class="row" data-date="10032020">
-                                        <div class="col-sm-6 col-md-4" data-value="trekky"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel1-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">35</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">TREKKY</h4>
+                            <div id="PacchettiPasseggero" style="display: none;">
+                                <div class="row" data-date="10032020">
+                                    <div class="col-sm-6 col-md-4" data-value="trekky" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel1-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">35</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <h4 class="what_we_do_title">TREKKY</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel1-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel1-pedone-icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel1-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel1-pedone-icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel1-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="comfort"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel2-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">45</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMFORT</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="comfort"
+                                        onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel2-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">45</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
-                                                    </div>
-                                                </div>
-
+                                                <h4 class="what_we_do_title">COMFORT</h4>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4" data-value="fun"
-                                            onclick="SelezionePedone(this);">
-                                            <div class="single_what_we_do" id="sel3-pedone">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-pedone">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">50</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">FUN</h4>
+                                            <div class="what_we_do_content" id="sel2-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-pedone">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons" class="icons">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons2" class="icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Telecabina Aosta-Pila</div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="fun" onclick="SelezionePedone(this);">
+                                        <div class="single_what_we_do" id="sel3-pedone">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-pedone">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">50</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">FUN</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-pedone">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons" class="icons">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons2" class="icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/seggiovia.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel2-pedone-icons3">
-                                                                <img src="/assets/img/icons/seggioviaWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel2-pedone-icons4"></i>
-                                                        </div>
-                                                        <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                    <div class="col-10">Telecabina Aosta-Pila</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/seggiovia.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel2-pedone-icons3">
+                                                            <img src="/assets/img/icons/seggioviaWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel2-pedone-icons4"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas">
-                                                                <img src="/assets/img/icons/slittino.svg"
-                                                                    style="height: 20px; display: block;"
-                                                                    id="sel3-pedone-icons">
-                                                                <img src="/assets/img/icons/slittinoWhite.svg"
-                                                                    style="height: 20px; display: none;"
-                                                                    id="sel3-pedone-icons2"></i>
-                                                        </div>
-                                                        <div class="col-10">Fun Park</div>
+                                                    <div class="col-10">Seggiovia Lago Chamolet</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas">
+                                                            <img src="/assets/img/icons/slittino.svg"
+                                                                style="height: 20px; display: block;"
+                                                                id="sel3-pedone-icons">
+                                                            <img src="/assets/img/icons/slittinoWhite.svg"
+                                                                style="height: 20px; display: none;"
+                                                                id="sel3-pedone-icons2"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                    </div>
+                                                    <div class="col-10">Fun Park</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--Pacchetti Sci-->
+                            </div>
+                            <!--Pacchetti Sci-->
 
-                                <div id="PacchettiSci" style="display: none;">
-                                    <div class="row" data-date="10032020">
-                                        <div class="col-sm-6 col-md-4" data-value="slalom"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel1-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel1-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">55</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">SLALOM</h4>
+                            <div id="PacchettiSci" style="display: none;">
+                                <div class="row" data-date="10032020">
+                                    <div class="col-sm-6 col-md-4" data-value="slalom" onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel1-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel1-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">55</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel1-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                </div>
-
+                                                <h4 class="what_we_do_title">SLALOM</h4>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4" data-value="competition"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel2-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel2-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">75</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">COMPETITION</h4>
+                                            <div class="what_we_do_content" id="sel1-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel2-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
-                                                    </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (2h) per preparazione gara
-                                                        </div>
-                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                        <div class="col-sm-6 col-md-4" data-value="experience"
-                                            onclick="SelezioneSci(this);">
-                                            <div class="single_what_we_do" id="sel3-sci">
-                                                <div class="top_line"></div>
-                                                <div id="sel3-title-sci">
-                                                    <div class="what_we_do_figure">
-                                                        <b><text style="font-size: 50px;">125</text>€</b>
-                                                    </div>
-                                                    <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="competition"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel2-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel2-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">75</text>€</b>
                                                 </div>
-                                                <div class="what_we_do_content" id="sel3-content-sci">
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-bus"></i></div>
-                                                        <div class="col-10">Trasferimento A/R</div>
+                                                <h4 class="what_we_do_title">COMPETITION</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel2-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-skiing"></i></div>
-                                                        <div class="col-10">Skipass</div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-briefcase-medical"></i>
-                                                        </div>
-                                                        <div class="col-10">Snowcare</div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-flag-checkered"></i>
-                                                        </div>
-                                                        <div class="col-10">Gara</div>
+                                                    <div class="col-10">Maestro FISI (2h) per preparazione gara
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="far fa-address-card"></i></div>
-                                                        <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4" data-value="experience"
+                                        onclick="SelezioneSci(this);">
+                                        <div class="single_what_we_do" id="sel3-sci">
+                                            <div class="top_line"></div>
+                                            <div id="sel3-title-sci">
+                                                <div class="what_we_do_figure">
+                                                    <b><text style="font-size: 50px;">125</text>€</b>
+                                                </div>
+                                                <h4 class="what_we_do_title">EXPERIENCE</h4>
+                                            </div>
+                                            <div class="what_we_do_content" id="sel3-content-sci">
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-bus"></i></div>
+                                                    <div class="col-10">Trasferimento A/R</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-skiing"></i></div>
+                                                    <div class="col-10">Skipass</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-briefcase-medical"></i>
                                                     </div>
-                                                    <div class="row" style="padding: 0px;">
-                                                        <div class="col-1"><i class="fas fa-graduation-cap"></i>
-                                                        </div>
-                                                        <div class="col-10">Maestro FISI (5h)
-                                                        </div>
+                                                    <div class="col-10">Snowcare</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="col-10">Gara</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="far fa-address-card"></i></div>
+                                                    <div class="col-10">Tesseramento Clash*</div>
+                                                </div>
+                                                <div class="row" style="padding: 0px;">
+                                                    <div class="col-1"><i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="col-10">Maestro FISI (5h)
                                                     </div>
                                                 </div>
                                             </div>
@@ -1032,71 +1024,70 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- FINE 10032020 -->
+                    </div>
+                    <!-- FINE 10032020 -->
 
-                        
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="gara">Vuoi fare la gara?</label>
+                                <select class="form-control" id="gara" name="gara" required>
+                                    <option value="">Seleziona</option>
+                                    <option value="true">Si</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="attrezzatura">Devi noleggiate l'attrezzatura?</label>
+                                <select class="form-control" id="attrezzatura" name="noleggio" required>
+                                    <option value="">Seleziona</option>
+                                    <option value="true">Si</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Fine Pacchetti-->
+
+                <!--Cascinet-->
+                <div class="card" style="border: 2px solid #028F01; margin-top: 30px;">
+                    <div class="card-body">
+                        <div>
+                            <img src="/assets/img/partners/ClashForCascinet.svg"
+                                style="max-width: 100%; max-height: 40px;">
+                        </div>
+                        <p style="padding-top: 20px;">
+                            Vuoi effettuare una donazione a Cascinet? Donando aiuterai a piantare
+                            un’
+                            Agroforesta, che contribuirà al miglioramento dell’aria cittadina, alla
+                            depurazione
+                            delle acque e all’aumento della fertilità della terra.
+                        </p>
                         <div class="row">
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="gara">Vuoi fare la gara?</label>
-                                    <select class="form-control" id="gara" name="gara" required>
-                                        <option value="">Seleziona</option>
-                                        <option value="true">Si</option>
-                                        <option value="false">No</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="attrezzatura">Devi noleggiate l'attrezzatura?</label>
-                                    <select class="form-control" id="attrezzatura" name="noleggio" required>
-                                        <option value="">Seleziona</option>
-                                        <option value="true">Si</option>
-                                        <option value="false">No</option>
-                                    </select>
-                                </div>
-                            </div>
+                            <a onclick="cascinet(1)" class="btn btn-block" id="cascinet1"
+                                style="cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">1€</a>
+                            <a onclick="cascinet(2)" class="btn btn-block" id="cascinet2"
+                                style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">2€</a>
+                            <a onclick="cascinet(5)" class="btn btn-block" id="cascinet5"
+                                style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">5€</a>
+                            <a onclick="cascinet(25)" class="btn btn-block" id="cascinet25"
+                                style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">25€</a>
                         </div>
+                        <input name="cascinet" id="cascinet-input" type="hidden">
                     </div>
-                    <!--Fine Pacchetti-->
-
-                    <!--Cascinet-->
-                    <div class="card" style="border: 2px solid #028F01; margin-top: 30px;">
-                        <div class="card-body">
-                            <div>
-                                <img src="/assets/img/partners/ClashForCascinet.svg"
-                                    style="max-width: 100%; max-height: 40px;">
-                            </div>
-                            <p style="padding-top: 20px;">
-                                Vuoi effettuare una donazione a Cascinet? Donando aiuterai a piantare
-                                un’
-                                Agroforesta, che contribuirà al miglioramento dell’aria cittadina, alla
-                                depurazione
-                                delle acque e all’aumento della fertilità della terra.
-                            </p>
-                            <div class="row">
-                                <a onclick="cascinet(1)" class="btn btn-block" id="cascinet1"
-                                    style="cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">1€</a>
-                                <a onclick="cascinet(2)" class="btn btn-block" id="cascinet2"
-                                    style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">2€</a>
-                                <a onclick="cascinet(5)" class="btn btn-block" id="cascinet5"
-                                    style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">5€</a>
-                                <a onclick="cascinet(25)" class="btn btn-block" id="cascinet25"
-                                    style=" cursor:pointer; margin: 0px 10px; background-color: #ffffff; color: #028F01; border:2px solid #028F01; width: 90px;">25€</a>
-                            </div>
-                            <input name="cascinet" id="cascinet-input" type="hidden">
-                        </div>
-                    </div>
-                    <!--Fine Cascinet-->
-                    <div class="form-group" style="text-align: center; padding-top: 30px;">
-                        <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
-                    </div>
-            </div>
+                </div>
+                <!--Fine Cascinet-->
+                <div class="form-group" style="text-align: center; padding-top: 30px;">
+                    <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                </div>
             </form>
         </div>
-
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
