@@ -1,6 +1,6 @@
 $(window).on('load', function () {
     // VALIDATION
-    checkAuth()
+    checkAuth();
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission

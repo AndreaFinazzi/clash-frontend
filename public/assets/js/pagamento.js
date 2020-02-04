@@ -1,12 +1,14 @@
-
+window.user.loaded = false
 
 $('document').ready(function () {
     $('.header').addClass('sticky_header');
     $('.navbar-toggler').prop('disabled', false);
 
     window.addEventListener('user-logged', event => {
-        
-        initPayment();
+        if (!window.user.loaded) {
+            window.user.loaded = true;
+            initPayment();
+        }
     })
 });
 

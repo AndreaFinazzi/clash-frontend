@@ -1,5 +1,4 @@
 $('document').ready(function () {
-    
     $('#loginButton').click(function (e) {
         e.preventDefault();
         tryLogin();
