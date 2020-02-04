@@ -11,8 +11,9 @@
         background-repeat: no-repeat;
         background-size: cover;
 
-        @include media-breakpoint-up(lg) {
-            background-position: center  -25vh;
+        @include media-breakpoint-up(md) {
+            height: 55vh;
+            background-position: center  -35vh;
         }
 }
 
