@@ -99,6 +99,7 @@ api = {
     getMembership: () => {
             defaultHeaders.refresh();
             return fetch(host + '/users/membership', {
+                mode: 'cors',
                 method: 'get',
                 headers: defaultHeaders.content,
             })
@@ -135,6 +136,7 @@ api = {
     getNotPaidItems: () => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/not-paid', {
+            mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,
         })
@@ -142,6 +144,7 @@ api = {
     getPaidItems: () => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/paid', {
+            mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,
         })
@@ -149,6 +152,7 @@ api = {
     paypalOnApprove: (data) => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/paypal-transaction-complete', {
+            mode: 'cors',
             method: 'post',
             headers: defaultHeaders.content,
             body: JSON.stringify(data)

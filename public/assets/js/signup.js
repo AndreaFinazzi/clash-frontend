@@ -23,7 +23,6 @@ $('document').ready(function () {
 
     $("#signForm").on("submit", function (event) {
         event.preventDefault();
-        var object = {};
         let formData = new FormData($(this)[0]);
 
         api.auth.checkEmail(formData.get('email'))
