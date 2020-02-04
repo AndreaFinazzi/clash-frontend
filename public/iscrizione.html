@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130491791-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130491791-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -36,14 +45,15 @@
                             <a class="nav-link active" href="/">Home</a>
                         </li>
                         <li class="nav-item" id="logged-icon" style="display: none;">
-                            <div class="dropdown" >
-                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-user-check" style="color: #ffffff; "></i>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
-                                  </div>
-                              </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -201,7 +211,8 @@
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control datepicker" name="birthday_year"
-                                            id="anno" placeholder="aaaa" minlength="4" maxlength="4" required onchange='AggiornaAnno(this.value);'>
+                                            id="anno" placeholder="aaaa" minlength="4" maxlength="4" required
+                                            onchange='AggiornaAnno(this.value);'>
                                     </div>
                                 </div>
                                 <div class="form-group alarm" id="DataAlarm">
@@ -212,12 +223,13 @@
 
                             <div class="form-group">
                                 <label for="provincia">Provincia di Nascita</label>
-                                <input class="form-control" type="text" onchange="LunghezzaProvincia(this.value)" id="nascita-provincia" name="birthplace_area"
-                                    minlength="2" maxlength="2" required>
+                                <input class="form-control" type="text" onchange="LunghezzaProvincia(this.value)"
+                                    id="nascita-provincia" name="birthplace_area" minlength="2" maxlength="2" required>
                             </div>
 
                             <div class="form-group alarm" id="ProvinciaAlarm">
-                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Inserire esattamente 2 caratteri!
+                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Inserire
+                                esattamente 2 caratteri!
                             </div>
 
                             <div class="form-group">
@@ -239,8 +251,8 @@
                                 <label for="residenza-via">Indirizzo di residenza</label>
                                 <div class="form-row">
                                     <div class="col-8">
-                                        <input type="text" class="form-control" name="address_street"
-                                            id="residenza-via" placeholder="Via" required>
+                                        <input type="text" class="form-control" name="address_street" id="residenza-via"
+                                            placeholder="Via" required>
                                     </div>
                                     <div class="col-4">
                                         <input type="text" class="form-control" name="address_number"
@@ -352,11 +364,14 @@
                                     <div class="form-group">
                                         <label for="provincia-genitore">Provincia</label>
                                         <input class="form-control" type="text" id="provincia-genitore"
-                                            name="parent_birthplace_area" onchange="LunghezzaProvinciaGenitore(this.value)" minlength="2" maxlength="2" required>
+                                            name="parent_birthplace_area"
+                                            onchange="LunghezzaProvinciaGenitore(this.value)" minlength="2"
+                                            maxlength="2" required>
                                     </div>
 
                                     <div class="form-group alarm" id="ProvinciaGenitoreAlarm">
-                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Inserire esattamente 2 caratteri!
+                                        <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Inserire
+                                        esattamente 2 caratteri!
                                     </div>
 
                                     <div class="form-group">

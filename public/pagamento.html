@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130491791-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130491791-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -34,14 +43,15 @@
                             <a class="nav-link active" href="/">Home</a>
                         </li>
                         <li class="nav-item" id="logged-icon" style="display: none;">
-                            <div class="dropdown" >
-                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-user-check" style="color: #ffffff; "></i>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
-                                  </div>
-                              </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +65,7 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main  class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
+    <main class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -96,14 +106,14 @@
         </div>
         <!-- Modal end -->
 
-        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="min-height: 60vh;" >
+        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="min-height: 60vh;">
             <div class="sct-body">
                 <div class="container d-flex flex-column text-center justify-content-end align-items-center">
                     <div style="color: #4C848F;" class="sct-text text-fi">
                         <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
                         <!-- <i style="font-size:xx-large;" class="fas fa-smile-wink"></i> -->
                     </div>
-                    
+
                     <div class="container px-0">
                         <div class="">
                             <div class="continer p-4 text-justify text-center">
@@ -116,7 +126,7 @@
                 </div>
             </div>
         </section>
-        
+
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
@@ -179,7 +189,8 @@
             <!-- Copyright -->
 
         </footer>
-        <script src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AecRO4QdKBzUNEnLcLNKIVCyaFsIb03dHdueT7IbLbQj0sPc6LkuqikANREaJQAll0JK3kQcG_XnEbCR"></script>
+        <script
+            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AecRO4QdKBzUNEnLcLNKIVCyaFsIb03dHdueT7IbLbQj0sPc6LkuqikANREaJQAll0JK3kQcG_XnEbCR"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
