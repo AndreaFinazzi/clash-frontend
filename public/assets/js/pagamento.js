@@ -47,7 +47,8 @@ function initPayment() {
                             currency_code: 'EUR',
                             value: product.product_id.price.toString()
                         },
-                        quantity: product.quantity.toString()
+                        quantity: product.quantity.toString(),
+                        category: 'DIGITAL_GOODS'
                     }
                 })
             }))
