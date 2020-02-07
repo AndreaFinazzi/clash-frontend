@@ -123,6 +123,16 @@ api = {
             headers: defaultHeaders.content,
         })
     },
+    docs: (formData) => {
+        defaultHeaders.refresh();
+        delete defaultHeaders.content['Content-Type']
+        return fetch(host + '/venti-venti/docs', {
+            method: 'POST',
+            mode: "cors",
+            body: formData,
+            headers: defaultHeaders.content,
+        })
+    },
     purchase_ski: (formData) => {
         defaultHeaders.refresh();
         delete defaultHeaders.content['Content-Type']
