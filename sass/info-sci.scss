@@ -4,7 +4,6 @@
 .img-frontend{
         width: 100vw;
         height: 40vh;
-        background-image: url("/assets/img/info-sci/frontend-sci.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -13,6 +12,19 @@
             height: 55vh;
             background-position: center  -35vh;
         }
+
+        &.sci {
+            background-image: url("/assets/img/info-sci/frontend-sci.png");
+        }
+
+        &.sport {
+            background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
+        }
+}
+
+.info-txt{
+    font-size: medium;
+    text-align: center;
 }
 
 .ptb-50{
