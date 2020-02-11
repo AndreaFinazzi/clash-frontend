@@ -97,12 +97,12 @@ api = {
         }
     },
     getMembership: () => {
-            defaultHeaders.refresh();
-            return fetch(host + '/users/membership', {
-                mode: 'cors',
-                method: 'get',
-                headers: defaultHeaders.content,
-            })
+        defaultHeaders.refresh();
+        return fetch(host + '/users/membership', {
+            mode: 'cors',
+            method: 'get',
+            headers: defaultHeaders.content,
+        })
     },
     opes: (payload) => {
         defaultHeaders.refresh();
@@ -123,15 +123,26 @@ api = {
             headers: defaultHeaders.content,
         })
     },
-    docs: (formData) => {
-        defaultHeaders.refresh();
-        delete defaultHeaders.content['Content-Type']
-        return fetch(host + '/venti-venti/docs', {
-            method: 'POST',
-            mode: "cors",
-            body: formData,
-            headers: defaultHeaders.content,
-        })
+    docs: {
+        submit: (formData) => {
+            defaultHeaders.refresh();
+            delete defaultHeaders.content['Content-Type']
+            return fetch(host + '/venti-venti/docs', {
+                method: 'POST',
+                mode: "cors",
+                body: formData,
+                headers: defaultHeaders.content,
+            })
+        },
+        get: () => {
+            defaultHeaders.refresh();
+            delete defaultHeaders.content['Content-Type']
+            return fetch(host + '/venti-venti/docs', {
+                method: 'GET',
+                mode: "cors",
+                headers: defaultHeaders.content,
+            })
+        },
     },
     purchase_ski: (formData) => {
         defaultHeaders.refresh();
