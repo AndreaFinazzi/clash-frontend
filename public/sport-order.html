@@ -12,18 +12,19 @@
         gtag('config', 'UA-130491791-1');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - Gara di Sci</title>
+    <title>Clash - Iscrizione</title>
 
-    <link rel="stylesheet" href="assets/css/sci-tesseramento.css">
+    <link rel="stylesheet" href="/assets/css/tesseramento.css">
     <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
 
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md">
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
         <div class="container">
             <a class="navbar-brand logo" href="/">
                 <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
@@ -57,7 +58,6 @@
                 </div>
             </div>
         </div>
-
     </header>
 
     <div class="loader">
@@ -65,68 +65,77 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
-        <!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    </div>
-                    <div class="modal-body">
-                        <form class="needs-validation" novalidate action="/auth/login" method="post">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="loginMailInput" name="email" placeholder=""
-                                    required>
-                            </div>
-                            <div class=" form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="loginPasswordInput" name="password"
-                                    placeholder="" required>
-                            </div>
-                            <div class="form-group alarm" id="invalidLoginAlarm">
-                                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>Impossibile
-                                effettuare il login
-                            </div>
-                            <!-- <div class="form-group" style="text-align: center; padding-top: 30px;">
-                                <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
-                            </div> -->
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="text-left w-100">
-                            Non sei ancora registrato? <a href="/sign-up.html" class="href">Clicca qui!</a>
+    <main>
+        <div class="sfondo"></div>
+        <div class="container"></div>
+        <section class="row sct d-fixed" style="padding-top: 10vh;">
+            <div class="col-sm">
+                <div class="sct-body">
+                    <form class="needs-validation" id="opesForm" novalidate action="" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="scuola">Scuola di provenienza</label>
+                            <select class="form-control" onchange="AggiornaScuole(this.value)" id="scuola" required>
+                                <option value="">Seleziona</option>
+                                <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro Manzoni
+                                </option>
+                                <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani</option>
+                                <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi</option>
+                                <option value="mi_severi_correnti">Istituto di Istruzione Superiore Severi-Correnti
+                                </option>
+                                <option value="mi_bazzi">Istituto Tecnico Industriale Carlo Bazzi</option>
+                                <option value="mi_berchet">Liceo Classico Statale Giovanni Berchet</option>
+                                <option value="mi_parini">Liceo Classico Statale Giuseppe Parini</option>
+                                <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni</option>
+                                <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
+                                <option value="mi_volta">Liceo Scientifico Statale Alessandro Volta</option>
+                                <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
+                                <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
+                                <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
+                                <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto</option>
+                                <option value="mi_tenca">Liceo Statale Carlo Tenca</option>
+                                <option value="mi_agnesi">Liceo Statale Gaetano Agnesi</option>
+                                <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo Marconi
+                                </option>
+                                <option value="no_school">-- Nessuna delle precedenti --</option>
+                            </select>
+
+                            <input type="hidden" class="form-control" name="school" style="margin-top: 5px;"
+                                id="scuole-alt" placeholder="Scuola">
+
+                            <label for="sport">Scegli uno sport</label>
+                            <select class="form-control" onchange="AggiornaSport(this.value)" id="sport" required>
+                                <option value="">Seleziona</option>
+                                <option value="basket">Basket</option>
+                                <option value="beach">Beach Volley</option>
+                                <option value="calcio">Calcio</option>
+                            </select>
+
+                            <input type="hidden" class="form-control" name="sport" style="margin-top: 5px;"
+                                id="sport-alt" placeholder="Sport">
+
+                            <label for="taglia">Scegli una taglia</label>
+                            <select class="form-control" onchange="AggiornaTaglia(this.value)" id="sport" required>
+                                <option value="">Seleziona</option>
+                                <option value="size_xs">XS</option>
+                                <option value="size_s">S</option>
+                                <option value="size_m">M</option>
+                                <option value="size_l">L</option>
+                                <option value="size_xl">XL</option>
+                            </select>
+
+                            <input type="hidden" class="form-control" name="size" style="margin-top: 5px;" id="size-alt"
+                                placeholder="Taglia">
                         </div>
-                        <button id="loginButton" type="button" class="btn btn-block btn-primary">Log In</button>
-                    </div>
+
+                        <div class="form-group" style="text-align: center; padding-top: 30px;">
+                            <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
+                        </div>
                 </div>
+                </form>
             </div>
-        </div>
-        <!-- Modal end -->
-
-        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="min-height: 60vh;">
-            <div class="sct-body">
-                <div class="container d-flex flex-column text-center justify-content-end align-items-center">
-                    <div style="color: #4C848F;" class="sct-text text-fi">
-                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
-                        <!-- <i style="font-size:xx-large;" class="fas fa-smile-wink"></i> -->
-                    </div>
-
-                    <div class="container px-0">
-                        <div class="">
-                            <div class="continer p-4 text-justify text-center">
-                                <h3>Completa il pagamento</h3>
-                                Utilizza i servizi PayPal per confermare il pagammento
-                            </div>
-                            <div id="paypal-button-container"></div>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
-
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
@@ -194,19 +203,17 @@
             <!-- Copyright -->
 
         </footer>
-        <script
-            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AecRO4QdKBzUNEnLcLNKIVCyaFsIb03dHdueT7IbLbQj0sPc6LkuqikANREaJQAll0JK3kQcG_XnEbCR"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <!-- include Slick -->
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <!-- include custom script -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/auth.js"></script>
-        <script src="/assets/js/pagamento.js"></script>
+        <script src="/assets/js/sport-order.js"></script>
+        <!-- include Bundle Bootstrap -->
+
     </footer>
+
 </body>
 
 </html>
