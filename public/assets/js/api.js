@@ -154,6 +154,15 @@ api = {
             headers: defaultHeaders.content,
         })
     },
+    purchase: (jsonData) => {
+        defaultHeaders.refresh();
+        return fetch(host + '/venti-venti/purchase', {
+            method: 'POST',
+            mode: "cors",
+            body: jsonData,
+            headers: defaultHeaders.content,
+        })
+    },
     getNotPaidItems: () => {
         defaultHeaders.refresh();
         return fetch(host + '/venti-venti/not-paid', {
@@ -162,9 +171,9 @@ api = {
             headers: defaultHeaders.content,
         })
     },
-    getPaidItems: () => {
+    getPaidItems: (flow) => {
         defaultHeaders.refresh();
-        return fetch(host + '/venti-venti/paid', {
+        return fetch(host + '/venti-venti/paid/' + flow, {
             mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,

@@ -30,7 +30,7 @@ $('document').ready(function () {
 });
 
 function checkPaid() {
-    api.getPaidItems().then(response => {
+    api.getPaidItems('1').then(response => {
         if (response.ok) return response.json();
         if (response.status >= 400) return Promise.reject(response);
     })
