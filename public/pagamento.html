@@ -115,8 +115,21 @@
                     </div>
 
                     <div class="container px-0">
-                        <div class="">
-                            <div class="continer p-4 text-justify text-center">
+                        <div id="purchaseBox">
+                            <div class="p-4 text-justify text-center">
+                                <h3>Seleziona un evento</h3>
+                                Seleziona un evento per cui completare l'iscrizione
+                            </div>
+
+                            <div id="flow-button-container" class="card-group">
+                                
+                            </div>
+                        </div>
+                        <div id="paymentBox" style="display: none;">
+                            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="goBack()">
+                                <span class="p-1" aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>Indietro
+                            </button>
+                            <div class="p-4 text-justify text-center">
                                 <h3>Completa il pagamento</h3>
                                 Utilizza i servizi PayPal per confermare il pagammento
                             </div>
@@ -195,13 +208,11 @@
 
         </footer>
         <script
-            src="https://www.sandbox.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AWuSAkbbmWJLaZHffDS5e1wsuo2E2ZjRHJuV8GNMQHuVC_s9lODACdQatIpxLKxX4yru2RQGi4WRWB0t"></script>
+            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AWuSAkbbmWJLaZHffDS5e1wsuo2E2ZjRHJuV8GNMQHuVC_s9lODACdQatIpxLKxX4yru2RQGi4WRWB0t"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <!-- include Slick -->
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- include custom script -->
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/auth.js"></script>

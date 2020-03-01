@@ -34,7 +34,7 @@ $(window).on('load', function () {
                         })
                         .then(data => {
                             if (data.status == 500) return Promise.reject(data);
-                            else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+                            else window.location = "/1920-sci-order.html?success=true&membership=" + data.id
                         })
                         .catch(err => window.location = "/sorryforthat.html");
                 }
@@ -87,7 +87,7 @@ $('document').ready(function () {
             })
             .then(data => {
                 if (data.status == 500) return Promise.reject(data);
-                else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+                else window.location = "/1920-sci-order.html?success=true&membership=" + data.id
             })
             .catch(err => window.location = "/sorryforthat.html");
     });*/
@@ -100,7 +100,7 @@ function checkMembership() {
         return Promise.resolve(false)
     })
         .then(data => {
-            if (data.valid == true) window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+            if (data.valid == true) window.location = "/1920-sci-order.html?success=true&membership=" + data.id
             return Promise.resolve(false)
         })
         .catch(err => window.location = "/sorryforthat.html");

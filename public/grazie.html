@@ -68,6 +68,11 @@
               <div class="continer p-4 text-justify text-center">
                 <h3>Grazie</h3>
                 La procedura di iscrizione é andata a buon fine, grazie per aver scelto clash!
+                <p id="backToPayment" class="pt-3" style="display: none;"><a href="/pagamento.html">Torna alla pagina di
+                    pagamento</a></p>
+                <div id="loadDocs" class="form-group" style="text-align: center; padding-top: 30px; display: none;">
+                  <a href="/docs.html" class="btn btn-primary" type="button">Carica i documenti</a>
+                </div>
               </div>
             </div>
           </div>
@@ -186,6 +191,15 @@
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/api.js"></script>
   <script src="/assets/js/auth.js"></script>
+  <script>
+    // uses api var declared in api.js
+    if (url.has('type') && url.has('success')) {
+      if (url.get('type') == 'payment' && url.get('success') == 'true') {
+        $('#backToPayment').show();
+        $('#loadDocs').show();
+      }
+    }
+  </script>
   </footer>
 </body>
 

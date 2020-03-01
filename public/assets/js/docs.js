@@ -48,7 +48,7 @@ $('document').ready(function () {
                     })
                     .then(data => {
                         if (data.status == 500) return Promise.reject(data);
-                        else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+                        else window.location = "/grazie.html?type=docs&success=true"
                     })
                     .catch(err => window.location = "/sorryforthat.html");
                 form.classList.add('was-validated');
