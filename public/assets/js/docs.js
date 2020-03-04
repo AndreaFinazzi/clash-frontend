@@ -1,16 +1,24 @@
 docInput = data => {
-    return (
+    if (!data.verified) return (
         `<div class="form-group">
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="${data.name}" name="${data.name}" onchange='checkFile(this)' required>
-            <label class="custom-file-label" for="selfie">${data.label}</label>
-        </div>
-        <input name="${data.name}" type="hidden" value='{"is_temp":${data.is_temp}}'></input>
-        <div class="form-group alarm" id="FileAlarm${data.name}">
-            <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>
-            Il file caricato é troppo grande, puoi comprimerlo utilizzando uno dei servizi disponibili online.
-        </div>
-    </div>`
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="${data.name}" name="${data.name}" onchange='checkFile(this)' required>
+                <label class="custom-file-label" for="selfie">${data.label}</label>
+            </div>
+            <input name="${data.name}" type="hidden" value='{"is_temp":${data.is_temp}}'></input>
+            <div class="form-group alarm" id="FileAlarm${data.name}">
+                <i class="fas fa-exclamation-triangle" style="padding-right: 10px;"></i>
+                Il file caricato é troppo grande, puoi comprimerlo utilizzando uno dei servizi disponibili online.
+            </div>
+        </div>`
+    ); else return (
+        `<div class="form-group">
+            <div type="file" class="" id="${data.name}">
+                ${data.label}:
+                <span class="badge badge-success py-1"><i class="fas fa-check-circle px-1"></i>
+                <strong>Verificato</strong></span>
+            </div>
+        </div>`
     )
 }
 
@@ -73,6 +81,7 @@ function initDocs() {
                         docInput({
                             name: element.id,
                             label: element.value,
+                            verified: element.verified,
                             is_temp: element.is_temp ? 1 : 0
                         }))
             })

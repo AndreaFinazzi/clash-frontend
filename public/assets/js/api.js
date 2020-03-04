@@ -64,6 +64,10 @@ api = {
                 })
                 .then(data => {
                     localStorage.setItem('token', data.access_token);
+                    // User logged
+                    window.user.logged = true;
+
+                    window.dispatchEvent(new Event('user-logged'));
                     return true;
                 })
         },
@@ -96,9 +100,9 @@ api = {
                 })
         }
     },
-    getMembership: () => {
+    getMembership: (name) => {
         defaultHeaders.refresh();
-        return fetch(host + '/users/membership', {
+        return fetch(host + '/membership/' + name, {
             mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,

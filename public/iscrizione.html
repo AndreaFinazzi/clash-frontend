@@ -202,16 +202,19 @@
                                     <div class="col">
                                         <input type="text" class="form-control" name="birthday_day" id="giorno"
                                             placeholder="dd" minlength="2" maxlength="2" required
+                                            oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"
                                             onchange='AggiornaGiorno(this.value);'>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control" name="birthday_month" id="mese"
                                             placeholder="mm" minlength="2" maxlength="2" required
+                                            oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"
                                             onchange='AggiornaMese(this.value);'>
                                     </div>
                                     <div class="col">
                                         <input type="text" class="form-control datepicker" name="birthday_year"
                                             id="anno" placeholder="aaaa" minlength="4" maxlength="4" required
+                                            oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"
                                             onchange='AggiornaAnno(this.value);'>
                                     </div>
                                 </div>
@@ -339,19 +342,24 @@
                                         <label for="data-di-nascita-genitore">Data di nascita</label>
                                         <div class="form-row">
                                             <div class="col">
-                                                <input type="text" onchange="AggiornaGiornoGenitore(this.value)"
+                                                <input type="text"
                                                     class="form-control" name="parent_birthday_day" id="giorno-genitore"
-                                                    placeholder="dd" minlength="2" maxlength="2" required>
+                                                    placeholder="dd" minlength="2" maxlength="2" required 
+                                                    oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"
+                                                    onchange="AggiornaGiornoGenitore(this.value)">
                                             </div>
                                             <div class="col">
-                                                <input type="text" onchange="AggiornaMeseGenitore(this.value)"
+                                                <input type="text"
                                                     class="form-control" name="parent_birthday_month" id="mese-genitore"
-                                                    placeholder="mm" minlength="2" maxlength="2" required>
+                                                    placeholder="mm" minlength="2" maxlength="2" required 
+                                                    oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"
+                                                    onchange="AggiornaMeseGenitore(this.value)">
                                             </div>
                                             <div class="col">
                                                 <input type="text" class="form-control datepicker"
                                                     name="parent_birthday_year" id="anno-genitore" placeholder="aaaa"
-                                                    minlength="4" maxlength="4" required>
+                                                    minlength="4" maxlength="4" required
+                                                    oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')">
                                             </div>
                                         </div>
                                         <div class="form-group alarm" id="DataAlarmGenitore">
@@ -457,13 +465,10 @@
                             <div class="form-group" style="text-align: center; padding-top: 30px;">
                                 <button class="btn btn-primary btn-xl" style="width: 60%;" type="submit">Avanti</button>
                             </div>
+                        </form>
                     </div>
-
-
-                    </form>
                 </div>
-        </div>
-        </section>
+            </section>
         </div>
     </main>
     <footer>

@@ -36,7 +36,7 @@ $('document').ready(function () {
                 return api.auth.signup(formData)
                     .then(data => {
                         if (data.status == 500) return Promise.reject(data);
-                        else window.location = "/iscrizione.html?success=true&membership=" + data.id
+                        else window.location = "/iscrizione.html"
                     })
                     .catch(err => window.location = "/sorryforthat.html");
             })

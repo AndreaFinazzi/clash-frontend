@@ -7,26 +7,19 @@ $('document').ready(function () {
     initModal();
     checkAuth();
     
-    if(api.auth.check().then((success) =>{
-        if(success){
-            document.getElementById("logged-icon").style.display = "block";
-        }
-        else{
-            document.getElementById("logged-icon").style.display = "none";
-        }
-    }));
-
 });
 
 
 function checkAuth() {
     if (window.user.logged === false) {
-        api.auth.check()
+        return api.auth.check()
             .then((success) => {
                 if (!success) {
+                    document.getElementById("logged-icon").style.display = "none";
                     showModal();
+                } else {
+                    document.getElementById("logged-icon").style.display = "block";
                 }
-
             })
             .catch(res => {
                 window.user.logged = false;
@@ -34,7 +27,6 @@ function checkAuth() {
                 showModal();
             })
             .finally($('.loader').delay(500).fadeOut('slow'))
-            
     }
 }
 
