@@ -98,6 +98,22 @@ api = {
                     } else
                         return Promise.reject("?type=signup&success=false");
                 })
+        },
+        verifyTemp: (jsonData) => {
+            delete defaultHeaders.content.Authorization;
+            return fetch(host + '/auth/verify_temp', {
+                method: 'POST',
+                mode: "cors",
+                body: jsonData,
+                connection: 'keep-alive',
+                headers: defaultHeaders.content,
+            })
+                .then(res => {
+                    if (res.ok && res.status >= 200) {
+                        return res.json();
+                    } else
+                        return Promise.reject("?type=verification&success=false");
+                })
         }
     },
     getMembership: (name) => {
