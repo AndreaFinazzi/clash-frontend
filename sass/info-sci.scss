@@ -13,6 +13,19 @@
             height: 55vh;
             background-position: center  -35vh;
         }
+
+        &.sci {
+            background-image: url("/assets/img/info-sci/frontend-sci.png");
+        }
+
+        &.sport {
+            background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
+        }
+
+        &.loudpolaroid {
+            height: 54vh;
+            background-image: url("/assets/img/loudpolaroid/LP_banner_1080.png");
+        }
 }
 
 .ptb-50{

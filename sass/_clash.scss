@@ -1,10 +1,8 @@
 @import "_vendor";
 @import "_variables";
 
-$theme-colors: (
-  "primary": $clash-blue,
-  "danger": $clash-shock
-);
+$theme-colors: ("primary": $clash-blue,
+    "danger": $clash-shock);
 
 #logo {
     max-height: 60vh;
@@ -21,7 +19,7 @@ header {
 
 
     .navbar-nav {
-        
+
         cursor: pointer;
 
         .nav-link {
@@ -159,15 +157,16 @@ html {
             }
 
 
-            #btn-partner-collaboriamo-partners{
+            #btn-partner-collaboriamo-partners {
                 display: block;
             }
-            
+
             @media screen and (orientation: landscape) {
                 .video-background-baffo {
                     display: none
                 }
-                #btn-partner-collaboriamo-partners{
+
+                #btn-partner-collaboriamo-partners {
                     display: block;
                 }
             }
@@ -353,6 +352,19 @@ html {
                     }
                 }
             }
+        }
+
+        .banner {
+
+            &.banner {
+                
+                &:hover {
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.06);
+                    transform: scale(1.01);
+                }
+            }
+
+            transition: all ease-out 0.4s;
         }
     }
 }
