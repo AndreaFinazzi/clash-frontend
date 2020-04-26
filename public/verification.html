@@ -53,7 +53,7 @@
         </div>
     </header>
 
-    <main class="d-flex justify-content-center align-items-center">
+    <main class="d-flex pt-5 pt-md-0 justify-content-center align-items-center">
         <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="height: 60vh;">
 
             <div class="sct-body">
@@ -68,14 +68,17 @@
                                 </p>
                                 <form id="verifyForm">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="verification_code" id="verification_code"
-                                            placeholder="Codice di verifica" required>
+                                        <input type="text" class="form-control" name="verification_code"
+                                            id="verification_code" placeholder="Codice di verifica" required>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-primary btn-xl" style="width: 40%;" type="submit">Conferma</button>
+                                        <button class="btn btn-primary btn-xl" style="width: 40%;"
+                                            type="submit">Conferma</button>
                                     </div>
-                                    <input type="hidden" class="form-control" name="user_email" id="user_email" required>
-                                    <input type="hidden" class="form-control" name="temp_user_email" id="temp_user_email" required>
+                                    <input type="hidden" class="form-control" name="user_email" id="user_email"
+                                        required>
+                                    <input type="hidden" class="form-control" name="temp_user_email"
+                                        id="temp_user_email" required>
                                 </form>
                             </div>
                         </div>
@@ -175,9 +178,7 @@
     <!-- include Bundle Bootstrap -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/api.js"></script>
-    <script src="/assets/js/auth.js"></script>
     <script src="/assets/js/verification.js"></script>
-    </footer>
 </body>
 
 </html>

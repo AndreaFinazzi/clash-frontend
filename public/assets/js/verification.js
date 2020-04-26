@@ -14,12 +14,8 @@ $('document').ready(function () {
 
         api.auth.verifyTemp(jsonString)
             .then(response => {
-                if (response.ok) return response.json();
+                if (response.ok) window.location = "/grazie.html?type=verification&success=true"
                 if (response.status >= 400) return Promise.reject(response);
-            })
-            .then(data => {
-                if (data.status == 500) return Promise.reject(data);
-                else window.location = "/grazie.html?type=verification&success=true" + data.id
             })
             .catch(err => window.location = "/sorryforthat.html");
     });
