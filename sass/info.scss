@@ -1,6 +1,10 @@
 @import "_clash";
 @import "_timeline";
 
+main {
+    overflow: hidden;
+}
+
 .img-frontend {
     width: 100vw;
     height: 40vh;
@@ -138,5 +142,9 @@ article {
     img {
         max-width: 100% !important;
         height: auto !important;
+    }
+
+    .timeline-title {
+        text-align: initial;
     }
 }   
