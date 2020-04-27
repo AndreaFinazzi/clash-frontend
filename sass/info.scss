@@ -2,38 +2,38 @@
 @import "_timeline";
 
 .img-frontend {
-        width: 100vw;
-        height: 40vh;
+    width: 100vw;
+    height: 40vh;
+    background-image: url("/assets/img/info-sci/frontend-sci.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-up(lg) {
+        height: 55vh;
+        background-position: center -35vh;
+    }
+
+    &.sci {
         background-image: url("/assets/img/info-sci/frontend-sci.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    }
 
-        @include media-breakpoint-up(lg) {
-            height: 55vh;
-            background-position: center  -35vh;
+    &.sport {
+        background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
+    }
+
+    &.loudpolaroid {
+        height: 50vh;
+        background-image: url("/assets/img/loudpolaroid/LP_banner_wide_1080.png");
+
+        @include media-breakpoint-down(sm) {
+            height: 48vh;
+            background-image: url("/assets/img/loudpolaroid/LP_banner_mobile.png");
         }
-
-        &.sci {
-            background-image: url("/assets/img/info-sci/frontend-sci.png");
-        }
-
-        &.sport {
-            background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
-        }
-
-        &.loudpolaroid {
-            height: 50vh;
-            background-image: url("/assets/img/loudpolaroid/LP_banner_wide_1080.png");
-
-            @include media-breakpoint-down(sm) {
-                height: 48vh;
-                background-image: url("/assets/img/loudpolaroid/LP_banner_mobile.png");
-            }
-        }
+    }
 }
 
-.ptb-50{
+.ptb-50 {
     padding: 50px 50px;
 }
 
@@ -53,6 +53,7 @@
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 .single_what_we_do:hover {
     -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
@@ -73,9 +74,11 @@
     padding: 40px 0;
     padding-bottom: 10px;
 }
+
 .single_what_we_do .what_we_do_figure img {
     margin: 0 auto;
 }
+
 .single_what_we_do .what_we_do_title {
     font-weight: 600;
     font-size: 22px;
@@ -83,6 +86,7 @@
     margin: 0;
     color: #2b353a;
 }
+
 .single_what_we_do .what_we_do_content {
     padding-bottom: 65px;
     font-size: 20px;
@@ -91,10 +95,11 @@
     color: #2b353a;
 }
 
-.single_what_we_do .what_we_do_content p i{
+.single_what_we_do .what_we_do_content p i {
     padding-right: 18px;
 }
- .single_what_we_do .what_we_do_icon {
+
+.single_what_we_do .what_we_do_icon {
     position: absolute;
     bottom: -9px;
     left: 47%;
@@ -115,7 +120,7 @@
     padding: 2px 3px 2px 5px;
 }
 
-#container-pacchetti{
+#container-pacchetti {
     padding-bottom: 40px;
 }
 
@@ -125,3 +130,13 @@
     font-weight: 700;
     font: $clash-font-text;
 }
+
+article {
+    p {
+        margin: 2rem 0;
+    }
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}   
