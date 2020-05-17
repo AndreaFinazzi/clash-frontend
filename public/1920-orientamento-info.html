@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130491791-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130491791-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - #orientami</title>
+
+    <link rel="stylesheet" href="/assets/css/info.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+    <!-- <link rel="stylesheet" href="assets/css/jquery.flipster.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        type="text/css">
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
+                disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link " href="#info">Sport</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#squadre">Squadre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#howto">Come partecipare</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/iscrizione.html">Iscriviti</a>
+                        </li> -->
+                        <li class="nav-item" id="logged-icon" style="display: none;">
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-check" style="color: #ffffff; "></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!--Immagine first impression-->
+        <section class="img-frontend orientamento" style="background-position: top;">
+        </section>
+        <!--Fine Immagine first impression-->
+
+
+        <div class="sct-container">
+            <div class="sfondo"></div>
+
+            <!-- Social-->
+            <section class="row sct sct-team">
+                <div class="container px-0">
+                    <div class="sct-title" style="display: none;">
+                        <h2>
+
+                        </h2>
+                    </div>
+                    <a name="info"></a>
+                    <div class="sct-body px-4">
+                        <div class="row" style="text-align: center;">
+
+                            <div class="col-4">
+                                <a href="https://www.facebook.com/clashofschools/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-facebook"></i></h2>
+                                    <h6>Facebook</h6>
+                                    <p style="font-size: 12px;">Clash of Schools</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-4">
+                                <a href="https://www.instagram.com/clashofschools/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-instagram"></i></h2>
+                                    <h6>Instagram</h6>
+                                    <p style="font-size: 12px;">@clashofschools</p>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="https://www.linkedin.com/company/clashh/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-linkedin"></i></h2>
+                                    <h6>Linkedin</h6>
+                                    <p style="font-size: 12px;">Clash of Schools</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine Social-->
+            <!--caption -->
+            <section class="row sct sct-mission">
+                <div class="container px-0">
+                    <div class="text-center">
+                        <h5>#ORIENTAMI</h5>
+                        <h2 class="mb-3 title-17">Non perderti nella giungla delle universitá milanesi, fatti guidare
+                            dal barbaro</h2>
+                        <div class="news-date text-muted"><i class="ion-ios-clock-outline"></i>18.05.2020</div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine caption -->
+
+            <section class="row sct sct-news">
+                <article class="container px-4 text-justify">
+                    <div class="mb-3">
+                        <p class="text-center"><img alt=""
+                                src="https://slyvi-tstorage.fra1.digitaloceanspaces.com/r0_tml4190464096001_116179358933_158798037121733.png"
+                                style="width: 400px; height: 225px; display: none;"></p>
+
+                        <p>L’emergenza <strong>Covid 19</strong> ha messo tutti a dura prova dando inizio ad un viaggio
+                            che dallo scorso <em>8 marzo</em> viviamo nelle nostre case. Un viaggio bizzarro, la cui
+                            concezione è indubbiamente distante dalla consuetudine perché fatto di <em>regole</em> e
+                            <em>sacrifici</em> più che da libertà e indipendenza o da luoghi e scorci indimenticabili.
+                        </p>
+
+                        <p>Un viaggio che è quasi giunto al termine.</p>
+                        <p class="lead">
+                            <blockquote class="blockquote">
+                                <p class="mb-1">"L’unica regola del viaggio è: non tornare come sei
+                                    partito. Torna diverso”.</p>
+                                <div class="blockquote-footer"><cite title="Source Title">Anne Carson</cite></div>
+                            </blockquote>
+                        </p>
+                        <p>Un progetto per vivere insieme e per ricordare questo viaggio con le emozioni, i pensieri che
+                            lo hanno caratterizzato attraverso la passione per la fotografia e per la musica.</p>
+                    </div>
+                    <div id="howto" class="mb-3">
+                        <div class="col-md-12 example-title">
+                            <h2>Come partecipare</h2>
+                        </div>
+                        <div class="col-12">
+                            <ul class="timeline timeline-split">
+                                <!-- <li class="timeline-item pre">
+                                        <div class="timeline-info"></div>
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content"></div>
+                                    </li> -->
+                                <li class="timeline-item pre">
+                                    <div class="timeline-info"></div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <!-- <h2 class="timeline-title">27 febbraio | 10 marzo</h2> -->
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <!-- <span>ore 06:00</span> -->
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h3 class="timeline-title">Scatta una fotografia</h3>
+                                        <p><br></p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <!-- <span>ore 06:30</span> -->
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h3 class="timeline-title">Dai voce alla tua foto</h3>
+                                        <p>Associa il tuo <strong>brano musicale</strong> alla fotografia e
+                                            descrivila con i versi preferiti del brano selezionato</p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <!-- <span>ore 08:30</span> -->
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h3 class="timeline-title">Posta la tua #loudpolaroid</h3>
+                                        <p>Posta la tua <strong>#loudpolaroid</strong> sui social network utilizzando
+                                            l’hashtag dedicato e taggando <strong>@scuolabasketsound</strong> e
+                                            <strong>@clashofschools</strong>, oppure invia un ‘e-mail all’indirizzo
+                                            <strong>scuolabasketsound@gmail.com</strong>.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="text-center"><img alt=""
+                                src="https://slyvi-tstorage.fra1.digitaloceanspaces.com/r0_tml4190464096001_528496219349_1587980477488761.jpg"
+                                style="width: 425px; height: 600px;"></p>
+
+                        <p>Le foto che riceveremo saranno repostate sui social network e successivamente inserite in
+                            una
+                            <strong>photogallery</strong> mentre i brani musicali da voi selezionati andranno a
+                            formare
+                            la playlist <strong>#loudpolaroid</strong> su <strong>Spotify</strong> e sarà
+                            liberamente
+                            accessibile a tutti.</p>
+
+                        <p class="lead text-center m-5">Viaggiamo insieme alla scoperta di noi stessi!</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="sct-team">
+                <div class="container">
+                    <div class="wrapper d-flex justify-content-start align-content-center">
+                        <div class="flip-card">
+                            <input type="checkbox" id="card1" class="more" aria-hidden="true">
+                            <div class="content">
+                                <div class="front"
+                                    style="background-image: url('/assets/projects/orientamento/bocconi/bocconi.jpg')">
+                                    <div class="inner d-flex flex-column justify-content-around align-content-center">
+                                        <div class="card-title">
+                                            <h2>Universitá Bocconi</h2>
+                                        </div>
+                                        <!-- <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div> -->
+                                        <div>
+                                            <label for="card1" class="button" aria-hidden="true">
+                                                Dettagli
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="inner d-flex flex-column justify-content-between align-content-center">
+                                        <div class="head d-flex justify-content-between align-content-start">
+                                            <div class="location align-self-start">Via Sarfatti, Milano</div>
+                                            <div class="price align-self-end">20K€ / year</div>
+                                        </div>
+                                        <div class="stats d-flex justify-content-between align-content-center">
+                                            <div class="info">
+                                                <span>13K+</span>
+                                                <div class="icon">
+                                                    <i class="fas fa-users"></i>
+                                                    <span>studenti</span>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span>13</span>
+                                                <div class="icon">
+                                                    <i class="fas fa-door-open"></i>
+                                                    <span>corsi LM</span>
+                                                </div>
+                                            </div>
+                                            <div class="info d-none d-md-flex">
+                                                <span>3</span>
+                                                <div class="icon">
+                                                    <i class="fas fa-bed"></i>
+                                                    <span>dormitori</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="description">
+                                            <p>Diventare Bocconiani DOC si sa, non é facile. Qui puoi trovare tutti i
+                                                dettagli per facilitare il percorso.</p>
+                                            <p>
+                                                <ul>
+                                                    <li><a
+                                                            href="/assets/projects/orientamento/bocconi/Salvamatricole-ITA-2019.pdf">Il
+                                                            manuale delle giovani matricole</a></li>
+                                                    <li><a
+                                                            href="https://www.unibocconi.it/wps/wcm/connect/Bocconi/SitoPubblico_IT/Albero+di+navigazione/info/studenti+scuole+superiori/">I
+                                                            consigli dell'universitá Bocconi</a></li>
+                                                </ul>
+                                            </p>
+                                        </div>
+
+                                        <div class="d-flex justify-content-around">
+                                            <label for="card1" class="button return flex-grow-1 mx-2"
+                                                aria-hidden="true">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </label>
+                                            <div>
+                                                <a id="fire-modal-bocconi" class="button fire-modal flex-grow-1 mx-2"
+                                                    type="button" aria-hidden="true" data-toggle="modal"
+                                                    data-target="#modal-bocconi">
+                                                    <span class="pr-1"><i
+                                                            class="fas fa-arrow-right"></i></span>Approfondisci
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--Fine sct-container -->
+
+        <!-- MODALS -->
+        <!-- Modal -->
+        <div class="modal fade" id="modal-bocconi" tabindex="-1" role="dialog" aria-labelledby="modal-bocconi-title"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-bocconi-title">Universitá Bocconi</h3>
+                        <button type="button" class="btn fa-close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>L’università Bicocca offre percorsi di studio in diverse aree. Corsi di area scientifica
+                            (Matematica, Fisica, Informatica, Bioscienze ecc) che hanno il loro cuore nel cosiddetto
+                            quadrilatero di Piazza della Scienza, la piazza dove hanno sede i principali dipartimenti
+                            scientifici e dove si tengono la maggior parte delle lezioni di questi corsi. Corsi di area
+                            economica, delle scienze umane e di giurisprudenza gravitano invece attorno a Piazza
+                            Dell’Ateneo Nuovo. Questi sono i due luoghi cardine del campus universitario di Milano che
+                            si sviluppa nel quartiere di Bicocca, da cui l’università prende il nome. Oltre agli edifici
+                            con aule, laboratori e segreterie sono infatti presenti residenze universitarie, mense, bar,
+                            biblioteche e aule studio. Il campus è facilmente raggiungibile coi mezzi pubblici essendo
+                            presenti diverse fermate di tram e autobus nonché le fermate di Bicocca e Ponale della linea
+                            lilla. È importantissima anche la stazione di Greco-Pirelli infatti moltissimi studenti
+                            raggiungono il campus come pendolari in particolare venendo da nord di Milano. Discorso a
+                            parte va fatto per i corsi medico-sanitari che hanno un proprio campus nella città di Monza
+                            nei pressi dell’Ospedale San Gerardo raggiungibile coi mezzi dalla stazione ferroviaria di
+                            Monza. Al di là dell’utilizzo didattico gli spazi della Bicocca sono sede di momenti e
+                            iniziative di crescita culturale, sociale e personale molte volte organizzati dagli studenti
+                            stessi rendendo così l’università un luogo di formazione a 360 gradi.</p>
+                        <h4>Link utili:</h4>
+                        <ul>
+                            <li><a href="https://www.unimib.it/servizi/segreterie-studenti">Segreterie studenti</a></li>
+                            <li><a href="https://www.unimib.it/ugov/organizationunit/149576">Segreteria DSU per tutto
+                                    quello che riguarda le borse di studio</a></li>
+                            <li><a href="https://www.facebook.com/Infopointdirittoallostudiomilano/">Infopoint sportello
+                                    di supporto per borse di studio e studenti stranieri</a></li>
+                            <li><a href="https://www.facebook.com/Infopointdirittoallostudiomilano/">Segreteria per
+                                    studenti DSA e diversamente abili</a></li>
+                            <li><a href="https://www.unimib.it/node/19356">Iniziative di orientamento online della
+                                    Bicocca</a></li>
+                        </ul>
+                        <h4>Gruppi attivi in Bicocca:</h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/unixmib/">UnixMib associazione attiva nella promozione
+                                    e nell’utilizzo di tecnologia open</a></li>
+                            <li><a href=">https://www.instagram.com/bicocca_rainbow/">Bicocca Rainbow associazione
+                                    culturale riguardo tematiche LGBTQIA+</a></li>
+                            <li><a href="https://www.instagram.com/asb_bicocca/">Associazione Studenti Bicocca gruppo
+                                    culturale e di aggregazione</a></li>
+                            <li><a href="https://www.facebook.com/BicoccaScacchi/">Club scacchistico di Bicocca</a></li>
+                            <li><a href="https://www.facebook.com/cusbicocca/">CUS Bicocca Comitato sportivo di
+                                    Bicocca</a></li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
+
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row" style="padding-top: 50px;">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
+
+                        <!-- Content -->
+                        <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Social</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.instagram.com/clashofschools/"><i class="fab fa-instagram"
+                                        style="padding-right: 10px;"></i>Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.facebook.com/clashofschools/"><i class="fab fa-facebook-f"
+                                        style="padding-right: 13px;"></i>Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.linkedin.com/company/clashh/"><i class="fab fa-linkedin"
+                                        style="padding-right: 10px;"></i>Linkedin
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <!--
+                  <h5 class="text-uppercase">Links</h5>
+          
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 4</a>
+                    </li>
+                  </ul>
+                -->
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <!-- include custom script -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/business.js"></script>
+    </footer>
+</body>
+
+</html>
