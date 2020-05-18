@@ -77,6 +77,14 @@ $overlay-color-to: $clash-green;
 	.inner {
 		// grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
 		justify-items: center;
+
+		.card-logos {
+			max-height: 20%;
+			img {
+				height: 76px;
+				width: auto;
+			}
+		}
 	}
 
 	h2 {
