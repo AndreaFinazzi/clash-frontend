@@ -1,5 +1,7 @@
 $accent-color: $clash-green;
 $alt-color: $clash-shock;
+$overlay-color-from: $clash-light-blue;
+$overlay-color-to: $clash-green;
 
 * {
 	box-sizing: border-box;
@@ -68,8 +70,8 @@ $alt-color: $clash-shock;
 		backface-visibility: hidden;
 		background: linear-gradient(
 			40deg,
-			rgba(67, 138, 243, 0.7),
-			rgba(255, 242, 166, 0.7)
+			rgba($overlay-color-from, 0.5),
+			rgba($overlay-color-to, 0.5)
 		);
 	}
 	.inner {
