@@ -36,6 +36,16 @@ main {
             background-image: url("/assets/img/loudpolaroid/LP_banner_mobile.png");
         }
     }
+
+    &.orientamento {
+        height: 50vh;
+        background-image: url("/assets/projects/orientamento/banner_sito.png");
+
+        @include media-breakpoint-down(sm) {
+            height: 48vh;
+            background-image: url("/assets/projects/orientamento/banner_sito.png");
+        }
+    }
 }
 
 .ptb-50 {
