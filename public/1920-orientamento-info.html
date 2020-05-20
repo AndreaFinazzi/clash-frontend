@@ -227,8 +227,9 @@
 
             <section class="sct-team">
                 <div class="container">
-                    <div class="wrapper d-flex justify-content-start align-content-center">
+                    <div id="cards-container" class="wrapper d-flex justify-content-start align-content-center">
                         <!-- CARDS -->
+                        
                     </div>
                 </div>
             </section>
@@ -309,9 +310,28 @@
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/ejs.min.js"></script>
         <!-- include custom script -->
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/business.js"></script>
+        <script>
+            let cards = [{name: "polimi", html: ''}];
+            for (const card of cards) {
+                fetch('/assets/projects/orientamento/templates/' + card.name + '.ejs')
+                    .then(response => {
+                        return response.text();
+                    })
+                    .then(template => {
+                        card.html = ejs.render(template, {});
+                        $('#cards-container').append(card.html);
+                        return Promise.resolve(card);
+                    })
+                    .catch(e => {
+                        console.log(e);
+                        return Promise.reject(e);
+                    });
+            }
+            </script>
     </footer>
 </body>
 
