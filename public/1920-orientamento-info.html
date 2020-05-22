@@ -315,7 +315,10 @@
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/business.js"></script>
         <script>
-            let cards = [{name: "polimi", html: ''}];
+            let cards = [
+                {name: "polimi"},
+                {name: "bocconi"}
+            ];
             for (const card of cards) {
                 fetch('/assets/projects/orientamento/templates/' + card.name + '.ejs')
                     .then(response => {
