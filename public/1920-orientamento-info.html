@@ -321,8 +321,9 @@
                 {name: "bicocca"},
                 {name: "trieste"},
                 {name: "unimi"},
+                {name: "torvergata"},
             ];
-            for (const card of cards) {
+            cards.forEach(card => {
                 fetch('/assets/projects/orientamento/templates/' + card.name + '.ejs')
                     .then(response => {
                         return response.text();
@@ -336,7 +337,7 @@
                         console.log(e);
                         return Promise.reject(e);
                     });
-            }
+            });
             </script>
     </footer>
 </body>
