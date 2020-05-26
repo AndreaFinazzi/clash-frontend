@@ -1,0 +1,115 @@
+<!-- CARD UNICATT -->
+<div class="flip-card flex-grow-1">
+    <input type="checkbox" id="details-unicatt" class="more" aria-hidden="true">
+    <div class="content">
+        <div class="front" style="background-image: url('/assets/projects/orientamento/unicatt/unicatt.png')">
+            <div class="inner d-flex flex-column justify-content-around align-content-center">
+                <div class="card-logos d-flex justify-content-start">
+                    <img src="/assets/projects/orientamento/unicatt/unicatt-unilab.png" alt="">
+                    <img src="/assets/projects/orientamento/unilab.png" alt="">
+                </div>
+                <div class="card-title">
+                    <h2>Universitá Cattolica del Sacro Cuore</h2>
+                </div>
+                <div>
+                    <label for="details-unicatt" class="button" aria-hidden="true">
+                        Dettagli
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="inner d-flex flex-column justify-content-between align-content-center">
+                <div class="head d-flex justify-content-between align-content-start">
+                    <div class="location align-self-start">Largo Agostino Gemelli, Milano</div>
+                    <!-- <div class="price align-self-end">2K€ / year</div> -->
+                </div>
+                <div class="stats d-flex justify-content-between align-content-center">
+                    <div class="info">
+                        <span>43K+</span>
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                            <span>studenti</span>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <span>93</span>
+                        <div class="icon">
+                            <i class="fas  fa-graduation-cap"></i>
+                            <span>corsi di L.T.</span>
+                        </div>
+                    </div>
+                    <div class="info d-none d-md-flex">
+                        <span>10</span>
+                        <div class="icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>campus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <p>Università storica, ha ospitato tra le sue mura e i suoi banchi, personalità capaci di imporsi
+                        nella storia novecentesca italiana.</p>
+                    <ul>
+                        <li><a href="https://www.unicatt.it/">Sito web - Universitá Cattolica del Sacro Cuore</a></li>
+                    </ul>
+                </div>
+
+                <div class="d-flex justify-content-around">
+                    <label for="details-unicatt" class="button return flex-grow-0 mx-2" aria-hidden="true">
+                        <i class="fas fa-arrow-left"></i>
+                    </label>
+
+                    <label id="fire-modal-unicatt" class="button fire-modal flex-grow-1 mx-2" aria-hidden="true"
+                        data-toggle="modal" data-target="#modal-unicatt">
+                        Approfondisci
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CARD UNICATT -->
+
+<!-- Modal UNICATT -->
+<div class="modal fade" id="modal-unicatt" tabindex="-1" role="dialog" aria-labelledby="modal-unicatt-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-unicatt-title">Universitá Cattolica del Sacro Cuore</h3>
+                <button type="button" class="btn fa-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>L'Universit&agrave; Cattolica del Sacro Cuore (per gli amici stretti, Unicatt) nasce nel 1921,
+                    partendo da una piccola sede in via Sant'Agnese 2 e ampliandosi rapidamente, raggiungendo ad oggi
+                    dodici facolt&agrave;, sette alte scuole di formazione e cinque sedi: Milano, Cremona, Brescia,
+                    Piacenza e Roma.</p>
+                <p>Punto di riferimento per molti studenti fin dai primi anni della fondazione, propone sulle varie
+                    sedi, una vastissima scelta di corsi di studio: <strong>Economia</strong>, <strong>Lettere e
+                        Filosofia</strong> (e la relativa interfacolt&agrave; Economia e gestione dei beni culturali e
+                    dello spettacolo), <strong>Giurisprudenza</strong>, <strong>Psicologia</strong>,<strong> Scienze
+                        Politiche e sociali</strong>, <strong>Bancarie</strong>, <strong>Finanziarie</strong>...</p>
+                <p>Una particolare attenzione merita il corso di <strong>Medicina</strong>, con sede a
+                    <strong>Roma</strong>, legata a diversi ospedali romani e all'immenso <strong>Policlinico Agostino
+                        Gemelli</strong> (non a caso, fondatore dell'universit&agrave;).</p>
+                <p>Di seguito potete trovare due documenti dettagliati sulle sedi di Milani e Roma redatti dai
+                    rappresentanti degli studenti:</p>
+                <ul>
+                    <li><a title="Corsi della facolt&aacute; di medicina - Roma" href="/assets/projects/orientamento/unicatt/unicatt-roma.pdf">Corsi della
+                            facolt&agrave; di medicina, sede di Roma<span class="px-2 icon"><i class="fas fa-file-pdf"></i></span></a></li>
+                    <li><a title="Facolt&aacute; della sede di Milano" href="/assets/projects/orientamento/unicatt/unicatt-milano.pdf">Facolt&agrave; della sede di
+                            Milano<span class="px-2 icon"><i class="fas fa-file-pdf"></i></span></a></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL UNICATT -->
