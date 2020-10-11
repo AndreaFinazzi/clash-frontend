@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130491791-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130491791-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Clash - Gara di Sci</title>
+
+    <link rel="stylesheet" href="assets/css/info-sci.css">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+    <!-- <link rel="stylesheet" href="assets/css/jquery.flipster.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        type="text/css">
+
+</head>
+
+<body>
+    <header class="header navbar fixed-top navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">
+                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
+                aria-expanded="false" aria-label="Toggle navigation" disabled>
+                <span class="fas fa-hamburger"></span>
+            </button>-->
+
+            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
+                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
+                disabled>
+            <div class="container">
+                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                    <ul class=" nav navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#info">Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#prezzi">Prezzi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/iscrizione.html">Iscriviti</a>
+                        </li>
+                        <li class="nav-item" id="logged-icon" style="display: none;">
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-check" style="color: #ffffff; "></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!--Immagine first impression-->
+        <section class="img-frontend sci">
+        </section>
+        <!--Fine Immagine first impression-->
+
+
+        <div class="sct-container">
+            <div class="sfondo"></div>
+
+            <!-- Social-->
+            <section class="row sct sct-team">
+                <div class="container px-0">
+                    <div class="sct-title" style="display: none;">
+                        <h2>
+
+                        </h2>
+                    </div>
+                    <a name="info"></a>
+                    <div class="sct-body px-4">
+                        <div class="row" style="text-align: center;">
+
+                            <div class="col-4">
+                                <a href="https://www.facebook.com/clashofschools/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-facebook"></i></h2>
+                                    <h6>Facebook</h6>
+                                    <p style="font-size: 12px;">Clash of Schools</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-4">
+                                <a href="https://www.instagram.com/clashofschools/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-instagram"></i></h2>
+                                    <h6>Instagram</h6>
+                                    <p style="font-size: 12px;">@clashofschools</p>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="https://www.linkedin.com/company/clashh/"
+                                    style="color: #1F375F; text-decoration: none; cursor: pointer;">
+                                    <h2><i class="fab fa-linkedin"></i></h2>
+                                    <h6>Linkedin</h6>
+                                    <p style="font-size: 12px;">Clash of Schools</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine Social-->
+            <!--caption -->
+            <section class="row sct sct-mission">
+                <div class="container px-0">
+                    <div class="caption">
+                        <div class="continer p-4 text-justify text-center">
+                            PORTAMIINBICI, UN NUOVO FORMAT PER UNA MILANO SEMPRE Più GREEN
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Fine caption -->
+
+            <!--sezione team -->
+            <section class="row sct sct-team">
+                <div class="container">
+
+                    <div class="sct-body px-2" style="font-size: 20px;">
+                        <div class="row">
+                            <div class="col">
+                                <p style="font-size: 20px; text-align: justify;">
+                                    PortaMIinBici è il nostro nuovo format che consiste in una giornata all’insegna del divertimento in sella alla propria bicicletta, in tutta sicurezza e nel rispetto delle norme anti-Covid19. 
+                                </p>
+                                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                                    Domenica 18 ottobre si terrà un giro per le <b>PISTE CICLABILI</b> di Milano con partenza ai Giardini Pubblici Indro Montanelli, che toccherà <b>7 tappe</b> segrete in cui si terranno prove di diverso tipo. Il completamento di ogni prova porterà a guadagnare dei punti e a scoprire la tappa successiva.
+                                </p>
+                                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                                    Ciascuna tappa avrà un punteggio massimo ottenibile e durante il percorso si potranno ottenere dei punti bonus. Chi avrà collezionato più punti alla fine del giro vincerà la gara e riceverà <b>fantastici premi</b>.
+                                </p>
+
+                                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                                    Durante tutto il giro saranno presenti prove bonus di tipo fotografico che permetteranno di collezionare punti fondamentali per la vittoria, ma non solo! Infatti, <b>la foto migliore scattata durante l’evento sarà premiata.</b>
+                                </p>
+                                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                                    La competizione si svolgerà a squadre composte da 3 persone, ad ognuno dei membri verrà consegnata una sacchetta con borraccia e maglietta dell’evento, accompagnate da bellissimi gadget. Per motivi organizzativi e per rispettare le norme Covid potranno prendere parte all’evento un numero massimo di 100 persone. <b>Affrettati ad iscriverti per essere uno dei fortunati e assicurandoti il diritto di partecipare alla gara!</b>
+                                    <br>
+                                    <small>
+                                        <i>Per più info scriveteci su <a
+                                                href="https://www.instagram.com/clashofschools">Instagram</a> o
+                                            attraverso la sezione <a href="/index.html#contatti">Contattaci</a> </i>
+                                    </small>
+                                </p>
+                                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                                    Non aspettare altro tempo, <a href="#prezzi"> <b>iscriviti e partecipa</b></a>!
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!--Fine Team -->
+
+
+            <div class="container">
+                <p style="font-size: 20px; text-align: justify; padding-top: 16px;">
+                    Iscriviti con i tuoi amici e mettiti in gioco! Oltre a poterti divertire testando le tue abilità è un’occasione per <b>riscoprire Milano</b> e dimostrare quanto sia accessibile con la propria bicicletta grazie alla rete di piste ciclabili!
+                </p>
+                <!-- TIMELINE START -->
+
+                <!-- <section class="row example-centered">
+                    <div class="col-md-12 example-title">
+                        <h2>Il programma</h2>
+                    </div>
+                    <div class="col-12">
+                        <ul class="timeline timeline-split">
+                            <li class="timeline-item pre">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content"></div>
+                            </li>
+                            <li class="timeline-item period">
+                                <div class="timeline-info"></div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h2 class="timeline-title">27 febbraio | 10 marzo</h2>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 06:00</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Ritrovo</h3>
+                                    <p>Il luogo verrà comunicato via mail</p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 06:30</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Partenza</h3>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 08:30</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Arrivo a Pila</h3>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 10:30</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Gara</h3>
+                                    <p>Lungo la pista 23 Gare Basso. Solo su iscrizione (max 150 ragazzi)</p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 13:00</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Pranzo</h3>
+                                    <p>Per chi lo desiderasse, è possibile pranzare al rifugio La Baraka ad un prezzo
+                                        convenzionato</p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 16:00</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Ritrovo al pullman</h3>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 16:30</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Partenza da Pila</h3>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span>ore 19/20</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Arrivo a Milano</h3>
+                                    <p>Nello stesso luogo di partenza</p>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                </section> -->
+            </div>
+            <!-- TIMELINE END -->
+
+
+
+            <!-- Fine section container -->
+        </div>
+
+        <a name="prezzi"></a>
+        <div class="sct-container alt" style="margin-top: 60px;">
+            <div class="container" id="container-pacchetti">
+                <div class="col-md-12 example-title">
+                    <h2>I prezzi</h2>
+                </div>
+                <!--Pacchetti-->
+                <div class="row" style="padding-top: 40px; padding-bottom: 10px;">
+                    <div class="col">
+                        <h3>Passeggeri</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/iscrizione.html">
+                            <div class="single_what_we_do">
+                                <div class="top_line"></div>
+                                <div class="what_we_do_figure">
+                                    <b><text style="font-size: 50px;">10</text>€</b>
+                                </div>
+                                <h4 class="what_we_do_title">PortaMI base</h4>
+                                <div class="what_we_do_content">
+                                    <div class="row" style="padding: 0px;">
+                                        <div class="col-1"><i class="fas fa-bus"></i></div>
+                                        <div class="col-10">Biglietto PortaMI</div>
+                                    </div>
+                                    <div class="row" style="padding: 0px;">
+                                        <div class="col-1"><i class="far fa-address-card"></i></div>
+                                        <div class="col-10">Tesseramento Clash*</div>
+                                    </div>
+
+                                </div>
+                                <a class="what_we_do_icon" href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top: 40px; padding-bottom: 10px;">
+                    <div class="col">
+                        <p>(*) Il tesseramento consiste della quota annuale di 5€, valida per tutte le attività di
+                            Clash, e della relativa assicurazione</p>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 40px; padding-bottom: 10px;">
+                    <div class="col">
+                        <a href="/iscrizione.html" class="sct-nav align-items-center"
+                            style="width: 100%; margin: auto; cursor: pointer;">
+                            <button id="btn-partner-iscriviti-partners" class="btn btn-success btn-sm btn-block">
+                                Iscriviti</button>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <footer>
+        <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
+
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row" style="padding-top: 50px;">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
+
+                        <!-- Content -->
+                        <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Social</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.instagram.com/clashofschools/"><i class="fab fa-instagram"
+                                        style="padding-right: 10px;"></i>Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.facebook.com/clashofschools/"><i class="fab fa-facebook-f"
+                                        style="padding-right: 13px;"></i>Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color: #ffffff; text-decoration:none;"
+                                    href="https://www.linkedin.com/company/clashh/"><i class="fab fa-linkedin"
+                                        style="padding-right: 10px;"></i>Linkedin
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <!--
+                  <h5 class="text-uppercase">Links</h5>
+          
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 4</a>
+                    </li>
+                  </ul>
+                -->
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- include jQuery -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <!-- include Flipster -->
+        <!-- <script src="assets/js/jquery.flipster.min.js"></script> -->
+        <!-- include Slick -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- include counterUp -->
+        <script src="/assets/js/jquery.waypoints.min.js"></script>
+        <script src="/assets/js/jquery.counterup.min.js"></script>
+        <!-- include per mappa -->
+        <script src="assets/js/leaflet.js"></script>
+        <script src="//unpkg.com/leaflet-gesture-handling"></script>
+        <script src="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+        <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+        <script src="assets/js/mappa.js"></script>
+        <!-- include custom script -->
+        <script src="/assets/js/api.js"></script>
+        <script src="/assets/js/auth.js"></script>
+        <script src="/assets/js/business.js"></script>
+    </footer>
+</body>
+
+</html>
