@@ -20,6 +20,11 @@
         &.sport {
             background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
         }
+
+        &.portami {
+            background-image: url("/assets/img/portami-info/frontend-portami.jpeg");
+            background-position-y: initial;
+        }
 }
 
 .info-txt{
