@@ -55,11 +55,3 @@ function AggiornaScuole(val, custom = false) {
     document.getElementById("school-hidden").value = val;
 
 }
-
-function AggiornaSport(val) {
-    document.getElementById("sport-hidden").value = val;
-}
-
-function AggiornaTaglia(val) {
-    document.getElementById("size-hidden").value = val;
-}

@@ -156,28 +156,11 @@
                                     <input type="hidden" class="form-control" style="margin-top: 5px;" id="scuole-alt"
                                         placeholder="Scuola" onchange="AggiornaScuole(this.value, false)">
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label for="sport">Scegli uno sport</label>
-                                    <select class="form-control" onchange="AggiornaSport(this.value)" id="sport"
+                                <div class="form-group">
+                                    <label for="team">Inserisci il nome del tuo team <b>(assicurati che i tuoi compagni di squadra inseriscano lo stesso!)</b></label>
+                                    <input class="form-control" onchange="document.getElementById('team-hidden').value = this.value" id="team"
                                         required>
-                                        <option value="">Seleziona</option>
-                                        <option value="basket">Basket</option>
-                                        <option value="beach">Beach Volley</option>
-                                        <option value="calcio">Calcio</option>
-                                    </select>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <label for="taglia">Scegli una taglia</label>
-                                    <select class="form-control" onchange="AggiornaTaglia(this.value)" id="sport"
-                                        required>
-                                        <option value="">Seleziona</option>
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                    </select>
-                                </div> -->
+                                </div>
                                 <div class="form-group" style="text-align: center; padding-top: 30px;">
                                     <button class="btn btn-primary btn-xl" style="width: 60%;"
                                         type="submit">Avanti</button>
@@ -185,7 +168,7 @@
                                 <input type="hidden" id="products-hidden" name="products[]" value="2021portami"
                                     required>
                                 <input type="hidden" id="flow-alt" name="flow" value="3" required>
-                                <input type="hidden" id="size-hidden" name="additional_data[size]" required>
+                                <input type="hidden" id="team-hidden" name="additional_data[team]" required>
                                 <input type="hidden" id="school-hidden" name="additional_data[school]" required>
                             </form>
                         </div>
