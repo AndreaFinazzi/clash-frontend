@@ -10,7 +10,6 @@ var today;
 $(window).on('load', function () {
     today = new Date();
     today.setFullYear(this.today.getFullYear() - 18);
-    this.checkMembership();
     // VALIDATION
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
@@ -34,7 +33,7 @@ $(window).on('load', function () {
                         })
                         .then(data => {
                             if (data.status == 500) return Promise.reject(data);
-                            else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+                            else window.location = "/flow.html"
                         })
                         .catch(err => window.location = "/sorryforthat.html");
                 }
@@ -43,64 +42,45 @@ $(window).on('load', function () {
         }, false);
     });
 
+    if (window.user.logged) {
+        this.checkMembership();
+    } else {
+        window.addEventListener('user-logged', event => {
+            this.checkMembership();
+        })
+    }
+
 })
 
 $('document').ready(function () {
     $("#selfie").on("change", function (e) {
-
         var count = 1;
         var files = e.currentTarget.files; // puts all files into an array
-
         // call them as such; files[0].size will get you the file size of the 0th file
         for (var x in files) {
-
             var filesize = ((files[x].size / 1024) / 1024).toFixed(2); // MB
-
             if (files[x].name != "item" && typeof files[x].name != "undefined" && filesize <= 10) {
-
                 if (count > 1) {
-
                     approvedHTML += ", " + files[x].name;
                 }
                 else {
-
                     approvedHTML += files[x].name;
                 }
-
                 count++;
             }
         }
         $("#approvedFiles").val(approvedHTML);
-
     });
-    /*
-    $("#opesForm").on("submit", function (event) {
-        event.preventDefault();
-        $('.loader').delay(50).fadeIn('slow');
-        var object = {};
-        let formData = new FormData($(this)[0]);
-
-        api.opes_mp(formData)
-            .then(response => {
-                if (response.ok) return response.json();
-                if (response.status >= 400) return Promise.reject(response);
-            })
-            .then(data => {
-                if (data.status == 500) return Promise.reject(data);
-                else window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
-            })
-            .catch(err => window.location = "/sorryforthat.html");
-    });*/
 });
 
 
-function checkMembership() {
-    api.getMembership().then(response => {
+function checkMembership() { 
+    api.getMembership('opes').then(response => {
         if (response.ok) return response.json();
         return Promise.resolve(false)
     })
         .then(data => {
-            if (data.valid == true) window.location = "/sci-tesseramento.html?success=true&membership=" + data.id
+            if (data.valid == true) window.location = "/flow.html"
             return Promise.resolve(false)
         })
         .catch(err => window.location = "/sorryforthat.html");

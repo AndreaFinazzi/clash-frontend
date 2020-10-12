@@ -2,20 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130491791-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-130491791-1');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - Sorry</title>
+    <title>Clash - Thanks</title>
 
 
     <link rel="stylesheet" href="/assets/css/index.css">
@@ -45,9 +36,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="/">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/iscrizione.html">Iscriviti</a>
-                        </li>
                         <li class="nav-item" id="logged-icon" style="display: none;">
                             <div class="dropdown">
                                 <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -70,16 +58,28 @@
 
             <div class="sct-body">
                 <div class="container d-flex flex-column text-center justify-content-end align-items-center">
-                    <div style="color: #4C848F;" class="sct-text text-fi">
-                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
-                        <i style="font-size: xx-large" class="fas fa-sad-tear"></i>
-                    </div>
-
                     <div class="container px-0">
                         <div class="caption">
                             <div class="continer p-4 text-justify text-center">
-                                Qualcosa non ha funzionato nel processare la tua richiesta.
-                                Ripeti il processo d'iscrizione, oppure prova a contattarci se il problema persiste.
+                                <h3>Verifica utente</h3>
+                                <p>
+                                    Inserisci il codice di verifica che hai ricevuto nella mail per confermare il
+                                    tesseramento:
+                                </p>
+                                <form id="verifyForm">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="verification_code"
+                                            id="verification_code" placeholder="Codice di verifica" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-xl" style="width: 40%;"
+                                            type="submit">Conferma</button>
+                                    </div>
+                                    <input type="hidden" class="form-control" name="user_email" id="user_email"
+                                        required>
+                                    <input type="hidden" class="form-control" name="temp_user_email"
+                                        id="temp_user_email" required>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -156,29 +156,6 @@
                 </div>
                 <!-- Grid column -->
 
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!--
-              <h5 class="text-uppercase">Links</h5>
-      
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!">Link 4</a>
-                </li>
-              </ul>
-            -->
-                </div>
-                <!-- Grid column -->
-
             </div>
             <!-- Grid row -->
 
@@ -197,11 +174,11 @@
     </div>
     <!-- include jQuery -->
     <script src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.serializejson.min.js"></script>
     <!-- include Bundle Bootstrap -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/api.js"></script>
-    <script src="/assets/js/auth.js"></script>
-    </footer>
+    <script src="/assets/js/verification.js"></script>
 </body>
 
 </html>

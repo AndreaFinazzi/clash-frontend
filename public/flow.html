@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md">
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
         <div class="container">
             <a class="navbar-brand logo" href="/">
                 <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
@@ -65,7 +65,7 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
+    <main class="d-flex pt-5 pt-md-0 justify-content-center align-items-center">
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -122,51 +122,44 @@
                             </div>
 
                             <div id="flow-button-container" class="card-group">
-                                
+                                <div class="card" style="min-width: 20em;">
+                                    <div class="card-body text-left">
+                                        <h5 class="card-title text-center">PortaMi 2020</h5>
+                                        <ul>
+                                            <li>18 Ottobre 2020</li>
+                                            <!-- <li>Gara e assicurazione incluse</li> -->
+                                            <li>Tesseramento incluso</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/2021-portami-order.html" id="subscribePortami" class="btn btn-block btn-primary">Iscriviti</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div id="paymentBox" style="display: none;">
-                            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="goBack()">
-                                <span class="p-1" aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>Indietro
-                            </button>
-                            <div class="p-4 text-justify text-center">
-                                <h3>Completa il pagamento</h3>
-                                Utilizza i servizi PayPal per confermare il pagamento
-                            </div>
-                            <div id="paypal-button-container"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
+
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
-
             <!-- Footer Links -->
             <div class="container-fluid text-center text-md-left">
-
                 <!-- Grid row -->
                 <div class="row" style="padding-top: 50px;">
-
                     <!-- Grid column -->
                     <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
-
                         <!-- Content -->
                         <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
-
                     </div>
                     <!-- Grid column -->
-
                     <hr class="clearfix w-100 d-md-none pb-3">
-
                     <!-- Grid column -->
                     <div class="col-md-3 mb-md-0 mb-3">
-
                         <!-- Links -->
                         <h5 class="text-uppercase">Social</h5>
-
                         <ul class="list-unstyled">
                             <li>
                                 <a style="color: #ffffff; text-decoration:none;"
@@ -189,26 +182,19 @@
                         </ul>
                     </div>
                     <!-- Grid column -->
-
                     <!-- Grid column -->
                     <div class="col-md-3 mb-md-0 mb-3">
                     </div>
                     <!-- Grid column -->
-
                 </div>
                 <!-- Grid row -->
-
             </div>
-            <!-- Footer Links -->
-
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
             </div>
             <!-- Copyright -->
 
         </footer>
-        <script
-            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AWuSAkbbmWJLaZHffDS5e1wsuo2E2ZjRHJuV8GNMQHuVC_s9lODACdQatIpxLKxX4yru2RQGi4WRWB0t"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
@@ -216,7 +202,6 @@
         <!-- include custom script -->
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/auth.js"></script>
-        <script src="/assets/js/pagamento.js"></script>
     </footer>
 </body>
 

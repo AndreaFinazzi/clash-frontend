@@ -12,18 +12,20 @@
         gtag('config', 'UA-130491791-1');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - Gara di Sci</title>
+    <title>Clash - Iscrizione</title>
 
-    <link rel="stylesheet" href="assets/css/sci-tesseramento.css">
+
+    <link rel="stylesheet" href="/assets/css/tesseramento.css">
     <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
 
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md">
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
         <div class="container">
             <a class="navbar-brand logo" href="/">
                 <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
@@ -57,7 +59,6 @@
                 </div>
             </div>
         </div>
-
     </header>
 
     <div class="loader">
@@ -65,7 +66,7 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
+    <main>
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -106,92 +107,114 @@
         </div>
         <!-- Modal end -->
 
-        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="min-height: 60vh;">
-            <div class="sct-body">
-                <div class="container d-flex flex-column text-center justify-content-end align-items-center">
-                    <div style="color: #4C848F;" class="sct-text text-fi">
-                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
-                        <!-- <i style="font-size:xx-large;" class="fas fa-smile-wink"></i> -->
-                    </div>
 
-                    <div class="container px-0">
-                        <div id="purchaseBox">
-                            <div class="p-4 text-justify text-center">
-                                <h3>Seleziona un evento</h3>
-                                Seleziona un evento per cui completare l'iscrizione
+        <div class="sfondo"></div>
+        <div class="container">
+            <section class="row sct d-fixed" style="padding-top: 10vh;">
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <h3 class="title">Ancora con qualche <br>informazione!</h3>
+                        <p class="p-iscrizione">Per partecipare alle nostre attività bisogna essere tesserati.
+                            Ecco perchè
+                            ti chiediamo alcuni dati che ci permetteranno di farti entrare nella famiglia di
+                            Clash!
+                        </p>
+                        <div class="sct-body">
+                            <!-- card documenti-->
+                            <div class="card bg-light border-secondary mb-3">
+                                <div class="card-header">
+                                    <h5>Alcune informazioni</h5>
+                                </div>
+                                <div class="card-body">
+                                    Puoi caricare file di dimensioni <strong>inferiori a 1MB</strong>, in uno dei seguenti formati:
+                                    <p  class="px-2">
+                                        <i class="far fa-file-pdf"></i></i>PDF<br>
+                                        <i class="far fa-file-image"></i>PNG<br>
+                                        <i class="far fa-file-image"></i>JPEG<br>
+                                    </p>
+                                </div>
+                                <div class="card-footer"></div>
                             </div>
 
-                            <div id="flow-button-container" class="card-group">
-                                
-                            </div>
                         </div>
-                        <div id="paymentBox" style="display: none;">
-                            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="goBack()">
-                                <span class="p-1" aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>Indietro
-                            </button>
-                            <div class="p-4 text-justify text-center">
-                                <h3>Completa il pagamento</h3>
-                                Utilizza i servizi PayPal per confermare il pagamento
-                            </div>
-                            <div id="paypal-button-container"></div>
-                        </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="col-sm">
+                    <div class="sct-body">
+                        <div class="sct-title">
+                            <h5>
+                                Di cosa abbiamo bisogno
+                            </h5>
+                            <p>Per completare il tesseramento abbiamo bisogno dei seguenti documenti:</p>
+                        </div>
+                        <form class="needs-validation py-4" id="docsForm" novalidate action=""
+                            enctype="multipart/form-data">
+                            <div id="docsContainer" class="docs">
 
+                            </div>
+                            <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                <button id="docsSubmit" class="btn btn-primary btn-xl" style="width: 60%;" type="submit"
+                                    disabled>Avanti</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
-
             <!-- Footer Links -->
             <div class="container-fluid text-center text-md-left">
-
                 <!-- Grid row -->
                 <div class="row" style="padding-top: 50px;">
-
                     <!-- Grid column -->
                     <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
-
                         <!-- Content -->
                         <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
-
                     </div>
                     <!-- Grid column -->
-
                     <hr class="clearfix w-100 d-md-none pb-3">
-
                     <!-- Grid column -->
                     <div class="col-md-3 mb-md-0 mb-3">
-
                         <!-- Links -->
                         <h5 class="text-uppercase">Social</h5>
-
                         <ul class="list-unstyled">
                             <li>
-                                <a style="color: #ffffff; text-decoration:none;"
-                                    href="https://www.instagram.com/clashofschools/"><i class="fab fa-instagram"
-                                        style="padding-right: 10px;"></i>Instagram
-                                </a>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram"
+                                        style="padding-right: 10px;"></i>Instagram</a>
                             </li>
                             <li>
-                                <a style="color: #ffffff; text-decoration:none;"
-                                    href="https://www.facebook.com/clashofschools/"><i class="fab fa-facebook-f"
-                                        style="padding-right: 13px;"></i>Facebook
-                                </a>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f"
+                                        style="padding-right: 13px;"></i>Facebook</a>
                             </li>
                             <li>
-                                <a style="color: #ffffff; text-decoration:none;"
-                                    href="https://www.linkedin.com/company/clashh/"><i class="fab fa-linkedin"
-                                        style="padding-right: 10px;"></i>Linkedin
-                                </a>
+                                <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin"
+                                        style="padding-right: 10px;"></i>Linkedin</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Grid column -->
-
                     <!-- Grid column -->
                     <div class="col-md-3 mb-md-0 mb-3">
+                        <!--
+                  <h5 class="text-uppercase">Links</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                      <a href="#!">Link 4</a>
+                    </li>
+                  </ul>
+                -->
                     </div>
                     <!-- Grid column -->
 
@@ -207,17 +230,17 @@
             <!-- Copyright -->
 
         </footer>
-        <script
-            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AWuSAkbbmWJLaZHffDS5e1wsuo2E2ZjRHJuV8GNMQHuVC_s9lODACdQatIpxLKxX4yru2RQGi4WRWB0t"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <!-- include custom script -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/auth.js"></script>
-        <script src="/assets/js/pagamento.js"></script>
+        <script src="/assets/js/docs.js"></script>
+        <!-- include Bundle Bootstrap -->
+
     </footer>
+
 </body>
 
 </html>

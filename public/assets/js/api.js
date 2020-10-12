@@ -2,7 +2,7 @@ window.user = {
     logged: false
 };
 url = new URLSearchParams(window.location.search);
-var host = 'https://clash.andreafinazzi.com/api';
+var host = 'https://dev.andreafinazzi.com/api';
 defaultHeaders = {
     content: {
         "Content-Type": "application/json",
@@ -64,6 +64,10 @@ api = {
                 })
                 .then(data => {
                     localStorage.setItem('token', data.access_token);
+                    // User logged
+                    window.user.logged = true;
+
+                    window.dispatchEvent(new Event('user-logged'));
                     return true;
                 })
         },
@@ -94,15 +98,31 @@ api = {
                     } else
                         return Promise.reject("?type=signup&success=false");
                 })
-        }
-    },
-    getMembership: () => {
-            defaultHeaders.refresh();
-            return fetch(host + '/users/membership', {
-                mode: 'cors',
-                method: 'get',
+        },
+        verifyTemp: (jsonData) => {
+            delete defaultHeaders.content.Authorization;
+            return fetch(host + '/auth/verify_temp', {
+                method: 'POST',
+                mode: "cors",
+                body: jsonData,
+                connection: 'keep-alive',
                 headers: defaultHeaders.content,
             })
+                .then(res => {
+                    if (res.ok && res.status >= 200) {
+                        return res.json();
+                    } else
+                        return Promise.reject("?type=verification&success=false");
+                })
+        }
+    },
+    getMembership: (name) => {
+        defaultHeaders.refresh();
+        return fetch(host + '/membership/' + name, {
+            mode: 'cors',
+            method: 'get',
+            headers: defaultHeaders.content,
+        })
     },
     opes: (payload) => {
         defaultHeaders.refresh();
@@ -123,6 +143,27 @@ api = {
             headers: defaultHeaders.content,
         })
     },
+    docs: {
+        submit: (formData) => {
+            defaultHeaders.refresh();
+            delete defaultHeaders.content['Content-Type']
+            return fetch(host + '/venti-venti/docs', {
+                method: 'POST',
+                mode: "cors",
+                body: formData,
+                headers: defaultHeaders.content,
+            })
+        },
+        get: () => {
+            defaultHeaders.refresh();
+            delete defaultHeaders.content['Content-Type']
+            return fetch(host + '/venti-venti/docs', {
+                method: 'GET',
+                mode: "cors",
+                headers: defaultHeaders.content,
+            })
+        },
+    },
     purchase_ski: (formData) => {
         defaultHeaders.refresh();
         delete defaultHeaders.content['Content-Type']
@@ -130,6 +171,15 @@ api = {
             method: 'POST',
             mode: "cors",
             body: formData,
+            headers: defaultHeaders.content,
+        })
+    },
+    purchase: (jsonData) => {
+        defaultHeaders.refresh();
+        return fetch(host + '/venti-venti/purchase', {
+            method: 'POST',
+            mode: "cors",
+            body: jsonData,
             headers: defaultHeaders.content,
         })
     },
@@ -141,9 +191,9 @@ api = {
             headers: defaultHeaders.content,
         })
     },
-    getPaidItems: () => {
+    getPaidItems: (flow) => {
         defaultHeaders.refresh();
-        return fetch(host + '/venti-venti/paid', {
+        return fetch(host + '/venti-venti/paid/' + flow, {
             mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,

@@ -1,5 +1,24 @@
 window.user.loaded = false
 
+orderButton = (element) => {
+    let productsList = '';
+    element.products.map(product => productsList += `<li>${product.product_id.title}</li>`)
+    return `<div class="card" style="min-width: 20em;">
+                <div class="card-body text-left">
+                    <h5 class="card-title text-center">${element.flow.title}</h5>
+                    <ul>
+                        ${productsList}
+                    </ul>
+                    <div class="text-center">
+                        <a href="/${element.flow.name}-order.html"><span><i class="fas fa-edit"></i> Modifica</span></a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="${element.reference_id}" class="btn btn-block btn-primary">Vai al pagamento</button>
+                </div>
+            </div>`
+}
+
 $('document').ready(function () {
     $('.header').addClass('sticky_header');
     $('.navbar-toggler').prop('disabled', false);
@@ -21,39 +40,55 @@ function initPayment() {
                 return Promise.reject("?type=payment&success=false");
         })
         .then(data => {
-            // console.log(data);
-            let totalAmount = 0;
-            data.products.forEach(product => totalAmount+=(product.quantity*product.product_id.price));
-            return Promise.resolve(generateButton({
-                reference_id: data.reference_id,
-                amount: {
-                    currency_code: 'EUR',
-                    value: totalAmount.toString(),
-                    breakdown: {
-                        item_total: {
-                            currency_code: 'EUR',
-                            value: totalAmount.toString()
-                        }
-                    }
-                },
-                payee: {
-                    email_address: 'cityinvadersmilano@gmail.com'
-                },
-                description: '',
-                items: data.products.map(product => {
-                    return {
-                        name: product.product_id.title,
-                        unit_amount: {
-                            currency_code: 'EUR',
-                            value: product.product_id.price.toString()
-                        },
-                        quantity: product.quantity.toString(),
-                        category: 'DIGITAL_GOODS'
-                    }
-                })
-            }))
+            if (data && data.length)
+                renderChoices(data);
+            else window.location = "/grazie.html?type=payment&success=false"
         })
-        .catch(err => window.location = "/sorryforthat.html?type=payment")
+        .catch(err => window.location = "/sorryforthat.html?type=payment&success=false")
+}
+
+function renderChoices(data) {
+    data.forEach(element => {
+        // console.log(data);
+        let totalAmount = 0;
+        element.products.forEach(product => totalAmount += (product.quantity * product.product_id.price));
+        let purchase_unit = {
+            reference_id: element.reference_id,
+            amount: {
+                currency_code: 'EUR',
+                value: totalAmount.toString(),
+                breakdown: {
+                    item_total: {
+                        currency_code: 'EUR',
+                        value: totalAmount.toString()
+                    }
+                }
+            },
+            payee: {
+                email_address: 'cityinvadersmilano@gmail.com'
+            },
+            description: '',
+            items: element.products.map(product => {
+                return {
+                    name: product.product_id.title,
+                    unit_amount: {
+                        currency_code: 'EUR',
+                        value: product.product_id.price.toString()
+                    },
+                    quantity: product.quantity.toString(),
+                    category: 'DIGITAL_GOODS'
+                }
+            })
+        }
+
+        $('#flow-button-container').append(orderButton(element))
+        $('#' + element.reference_id).on('click', e => {
+            generateButton(purchase_unit)
+            $('#purchaseBox').fadeToggle(250, element => {
+                $('#paymentBox').fadeToggle(250);
+            })
+        })
+    });
 }
 
 function generateButton(purchase_unit) {
@@ -74,10 +109,18 @@ function generateButton(purchase_unit) {
                     data.details = details;
                     // Call your server to save the transaction
                     return api.paypalOnApprove(data)
-                    .then(result => {
-                        window.location = '/grazie.html';
-                    })
+                        .then(result => {
+                            window.location = '/grazie.html?type=payment&success=true';
+                        })
                 });
         }
     }).render('#paypal-button-container');
+}
+
+function goBack() {
+    $('#paymentBox').fadeToggle(250, element => {
+        $('#purchaseBox').fadeToggle(250);
+        $('#paypal-button-container').html('');
+    })
+
 }

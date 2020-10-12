@@ -4,7 +4,7 @@ let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-$('document').ready(function () {
+$(function () {
     $('.header').addClass('sticky_header');
     $('.navbar-toggler').prop('disabled', false);
 
@@ -30,7 +30,7 @@ $('document').ready(function () {
 });
 
 function checkPaid() {
-    api.getPaidItems().then(response => {
+    api.getPaidItems('1').then(response => {
         if (response.ok) return response.json();
         if (response.status >= 400) return Promise.reject(response);
     })

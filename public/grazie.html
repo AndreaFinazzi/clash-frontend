@@ -2,142 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - Thanks</title>
+  <title>Clash - Thanks</title>
 
 
-    <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
-    <link rel="stylesheet" href="/assets/css/jquery.flipster.min.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+  <link rel="stylesheet" href="/assets/css/jquery.flipster.min.css">
 
 
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md sticky_header">
-        <div class="container">
-            <a class="navbar-brand logo" href="/">
-                <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
-            </a>
-            <!--
+  <header class="header navbar fixed-top navbar-expand-md sticky_header">
+    <div class="container">
+      <a class="navbar-brand logo" href="/">
+        <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
+      </a>
+      <!--
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav"
                 aria-expanded="false" aria-label="Toggle navigation" disabled>
                 <span class="fas fa-hamburger"></span>
             </button>-->
 
-            <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler"
-                data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation"
-                >
-            <div class="container">
-                <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
-                    <ul class=" nav navbar-nav menu">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/">Home</a>
-                        </li>
-                        <li class="nav-item" id="logged-icon" style="display: none;">
-                            <div class="dropdown" >
-                                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                    <i class="fas fa-user-check" style="color: #ffffff; "></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                                    <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
-                                  </div>
-                              </div>
-                        </li>
-                    </ul>
+      <img src="/assets/img/logo/menu-barbaro.svg" style="height: 40px;" class="navbar-toggler" data-toggle="collapse"
+        data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="container">
+        <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+          <ul class=" nav navbar-nav menu">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item" id="logged-icon" style="display: none;">
+              <div class="dropdown">
+                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="fas fa-user-check" style="color: #ffffff; "></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" id="logOutButton" onclick="logOut()" href="">Log-out</a>
                 </div>
-            </div>
+              </div>
+            </li>
+          </ul>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <main class="d-flex justify-content-center align-items-center">
-        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="height: 60vh;" >
+  <main class="d-flex pt-5 pt-md-0 justify-content-center align-items-center">
+    <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="height: 60vh;">
 
-            <div class="sct-body">
-                <div class="container d-flex flex-column text-center justify-content-end align-items-center">
-                    <div style="color: #4C848F;" class="sct-text text-fi">
-                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
-                        <i style="font-size:xx-large;" class="fas fa-smile-wink"></i>
-                    </div>
+      <div class="sct-body">
+        <div class="container d-flex flex-column text-center justify-content-end align-items-center">
+          <div style="color: #4C848F;" class="sct-text text-fi">
+            <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
+            <i style="font-size:xx-large;" class="fas fa-smile-wink"></i>
+          </div>
 
-                    <div class="container px-0">
-                        <div class="caption">
-                            <div class="continer p-4 text-justify text-center">
-                                <h3>Grazie</h3>
-                                La procedura di iscrizione é andata a buon fine, grazie per aver scelto clash!
-                            </div>
-                        </div>
-                    </div>
+          <div class="container px-0">
+            <div class="caption">
+              <div class="continer p-4 text-justify text-center">
+                <h3>Grazie</h3>
+                La procedura di iscrizione é andata a buon fine, grazie per aver scelto clash!
+                <p id="backToPayment" class="pt-3" style="display: none;"><a href="/pagamento.html">Torna alla pagina di
+                    pagamento</a></p>
+                <!-- <div id="loadDocs" class="form-group" style="text-align: center; padding-top: 30px; display: none;">
+                  <a href="/docs.html" class="btn btn-primary" type="button">Carica i documenti</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
 
 
-                    <div class="d-flex justify-content-center sct-nav">
-                        <a href="mailto:segreteria@clashofschools.it" style="color: #A7AEB8;">
-                            <i class="far fa-envelope" style="font-size: xx-large;padding: 4px 16px;"></i>
-                        </a>
-                        <a href="https://instagram.com/clashofschools" target="_blank" rel="noopener noreferrer"
-                            style="color: #A7AEB8;">
-                            <i class="fab fa-instagram" style="font-size: xx-large;padding: 4px 16px;"></i>
-                        </a>
-                        <a href="https://www.facebook.com/clashofschools/" target="_blank" rel="noopener noreferrer"
-                            style="color: #A7AEB8;">
-                            <i class="fab fa-facebook-square" style="font-size: xx-large;padding: 4px 16px;"></i>
-                        </a>
-                    </div>
-                    <!-- <div class="sct-nav align-items-center">
+          <div class="d-flex justify-content-center sct-nav">
+            <a href="mailto:segreteria@clashofschools.it" style="color: #A7AEB8;">
+              <i class="far fa-envelope" style="font-size: xx-large;padding: 4px 16px;"></i>
+            </a>
+            <a href="https://instagram.com/clashofschools" target="_blank" rel="noopener noreferrer"
+              style="color: #A7AEB8;">
+              <i class="fab fa-instagram" style="font-size: xx-large;padding: 4px 16px;"></i>
+            </a>
+            <a href="https://www.facebook.com/clashofschools/" target="_blank" rel="noopener noreferrer"
+              style="color: #A7AEB8;">
+              <i class="fab fa-facebook-square" style="font-size: xx-large;padding: 4px 16px;"></i>
+            </a>
+          </div>
+          <!-- <div class="sct-nav align-items-center">
                         <a id="btn-partner-collaboriamo-partners" class="btn btn-primary btn-block"
                             href="mailto:segreteria@clashofschools.it">Contattaci</a>
                     </div> -->
-                </div>
-            </div>
-        </section>
-        <!--Fine Cascinet-->
-    </main>
-    <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
+        </div>
+      </div>
+    </section>
+    <!--Fine Cascinet-->
+  </main>
+  <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
 
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-      
-          <!-- Grid row -->
-          <div class="row" style="padding-top: 50px;">
-      
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
-      
-              <!-- Content -->
-              <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
-      
-            </div>
-            <!-- Grid column -->
-      
-            <hr class="clearfix w-100 d-md-none pb-3">
-      
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-      
-              <!-- Links -->
-              <h5 class="text-uppercase">Social</h5>
-      
-              <ul class="list-unstyled" >
-                <li>
-                  <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-instagram" style="padding-right: 10px;"></i>Instagram</a>
-                </li>
-                <li>
-                  <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-facebook-f" style="padding-right: 13px;"></i>Facebook</a>
-                </li>
-                <li>
-                  <a style="color: #ffffff; text-decoration:none;" href="#!"><i class="fab fa-linkedin" style="padding-right: 10px;"></i>Linkedin</a>
-                </li>
-              </ul>
-      
-            </div>
-            <!-- Grid column -->
-      
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-                <!--
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row" style="padding-top: 50px;">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="text-align: center;">
+
+          <!-- Content -->
+          <img src="/assets/img/logo/barbaro.definitivo3.svg" style="width:200px; ">
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Social</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a style="color: #ffffff; text-decoration:none;" href="https://www.instagram.com/clashofschools/"><i
+                  class="fab fa-instagram" style="padding-right: 10px;"></i>Instagram
+              </a>
+            </li>
+            <li>
+              <a style="color: #ffffff; text-decoration:none;" href="https://www.facebook.com/clashofschools/"><i
+                  class="fab fa-facebook-f" style="padding-right: 13px;"></i>Facebook
+              </a>
+            </li>
+            <li>
+              <a style="color: #ffffff; text-decoration:none;" href="https://www.linkedin.com/company/clashh/"><i
+                  class="fab fa-linkedin" style="padding-right: 10px;"></i>Linkedin
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+          <!--
               <h5 class="text-uppercase">Links</h5>
       
               <ul class="list-unstyled">
@@ -155,32 +166,41 @@
                 </li>
               </ul>
             -->
-            </div>
-            <!-- Grid column -->
-      
-          </div>
-          <!-- Grid row -->
-      
         </div>
-        <!-- Footer Links -->
-      
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
-        </div>
-        <!-- Copyright -->
-      
-      </footer>
-      <!-- Footer -->
-    
+        <!-- Grid column -->
 
-        </div>
-        <!-- include jQuery -->
-        <script src="/assets/js/jquery.min.js"></script>
-        <!-- include Bundle Bootstrap -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="/assets/js/api.js"></script>
-        <script src="/assets/js/auth.js"></script>
-    </footer>
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="background-color: #5D6671;">Clash of Schools
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+  </div>
+  <!-- include jQuery -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <!-- include Bundle Bootstrap -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script>
+    // uses api var declared in api.js
+    if (url.has('type') && url.has('success')) {
+      if (url.get('type') == 'payment' && url.get('success') == 'true') {
+        $('#backToPayment').show();
+        // $('#loadDocs').show();
+      }
+    }
+  </script>
+  </footer>
 </body>
 
 </html>

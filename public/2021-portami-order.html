@@ -12,18 +12,19 @@
         gtag('config', 'UA-130491791-1');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Clash - Gara di Sci</title>
+    <title>Clash - Iscrizione</title>
 
-    <link rel="stylesheet" href="assets/css/sci-tesseramento.css">
+    <link rel="stylesheet" href="/assets/css/sci-tesseramento.css">
     <link rel="stylesheet" href="/assets/vendor/fontawesome-free-5.11.2-web/css/all.css">
+
 
 </head>
 
 <body>
-    <header class="header navbar fixed-top navbar-expand-md">
+    <header class="header navbar fixed-top navbar-expand-md sticky_header">
         <div class="container">
             <a class="navbar-brand logo" href="/">
                 <img id="logo-header" src="/assets/img/logo/logo_scritta.svg" alt="Clash">
@@ -57,7 +58,6 @@
                 </div>
             </div>
         </div>
-
     </header>
 
     <div class="loader">
@@ -65,7 +65,7 @@
         <div class="loader-inner"></div>
     </div>
 
-    <main class="d-flex justify-content-center align-items-center" style="padding: 10vh 0;">
+    <main>
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -106,40 +106,76 @@
         </div>
         <!-- Modal end -->
 
-        <section class="sct sct-mission d-flex flex-column-reverse justify-content-center" style="min-height: 60vh;">
-            <div class="sct-body">
-                <div class="container d-flex flex-column text-center justify-content-end align-items-center">
-                    <div style="color: #4C848F;" class="sct-text text-fi">
-                        <!-- <object type="image/svg+xml" id="logo" data="assets/img/logo/barbaro.invisible.svg"></object> -->
-                        <!-- <i style="font-size:xx-large;" class="fas fa-smile-wink"></i> -->
-                    </div>
-
-                    <div class="container px-0">
-                        <div id="purchaseBox">
-                            <div class="p-4 text-justify text-center">
-                                <h3>Seleziona un evento</h3>
-                                Seleziona un evento per cui completare l'iscrizione
-                            </div>
-
-                            <div id="flow-button-container" class="card-group">
-                                
-                            </div>
-                        </div>
-                        <div id="paymentBox" style="display: none;">
-                            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="goBack()">
-                                <span class="p-1" aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>Indietro
-                            </button>
-                            <div class="p-4 text-justify text-center">
-                                <h3>Completa il pagamento</h3>
-                                Utilizza i servizi PayPal per confermare il pagamento
-                            </div>
-                            <div id="paypal-button-container"></div>
+        <div class="sct-container">
+            <div class="sfondo"></div>
+            <section class="sct d-fixed" style="margin-top: 80px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col sct-body">
+                            <form id="purchaseForm" class="needs-validation">
+                                <div class="form-group">
+                                    <label for="ruolo">
+                                        <h3>PortaMI 2020</h3>
+                                        <h5>Seleziona la tua scuola</h5>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scuola">Scuola di provenienza</label>
+                                    <select id="scuola" class="form-control" onchange="AggiornaScuole(this.value)"
+                                        required>
+                                        <option value="">Seleziona</option>
+                                        <option value="mi_manzoni_linguistico">Civico Liceo Linguistico Alessandro
+                                            Manzoni
+                                        </option>
+                                        <option value="mi_galvani">Istituto di Istruzione Superiore Luigi Galvani
+                                        </option>
+                                        <option value="mi_moreschi">Istituto di Istruzione Superiore Nicola Moreschi
+                                        </option>
+                                        <option value="mi_severi_correnti">Istituto di Istruzione Superiore
+                                            Severi-Correnti
+                                        </option>
+                                        <option value="mi_bazzi">Istituto Tecnico Industriale Carlo Bazzi</option>
+                                        <option value="mi_berchet">Liceo Classico Statale Giovanni Berchet</option>
+                                        <option value="mi_parini">Liceo Classico Statale Giuseppe Parini</option>
+                                        <option value="mi_manzoni_classico">Liceo Ginnasio Statale Alessandro Manzoni
+                                        </option>
+                                        <option value="mi_einstein">Liceo Scientifico Statale Albert Einstein</option>
+                                        <option value="mi_volta">Liceo Scientifico Statale Alessandro Volta</option>
+                                        <option value="mi_donatelli">Liceo Scientifico Statale Donatelli Pascal</option>
+                                        <option value="mi_vittorini">Liceo Scientifico Statale Elio Vittorini</option>
+                                        <option value="mi_leonardo">Liceo Scientifico Statale Leonardo da Vinci</option>
+                                        <option value="mi_vittorio_veneto">Liceo Scientifico Statale Vittorio Veneto
+                                        </option>
+                                        <option value="mi_tenca">Liceo Statale Carlo Tenca</option>
+                                        <option value="mi_agnesi">Liceo Statale Gaetano Agnesi</option>
+                                        <option value="mi_marconi">Liceo Statale Scientifico e Linguistico Guglielmo
+                                            Marconi
+                                        </option>
+                                        <option value="no_school">-- Nessuna delle precedenti --</option>
+                                    </select>
+                                    <input type="hidden" class="form-control" style="margin-top: 5px;" id="scuole-alt"
+                                        placeholder="Scuola" onchange="AggiornaScuole(this.value, false)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="team">Inserisci il nome del tuo team <b>(assicurati che i tuoi compagni di squadra inseriscano lo stesso!)</b></label>
+                                    <input class="form-control" onchange="document.getElementById('team-hidden').value = this.value" id="team"
+                                        required>
+                                </div>
+                                <div class="form-group" style="text-align: center; padding-top: 30px;">
+                                    <button class="btn btn-primary btn-xl" style="width: 60%;"
+                                        type="submit">Avanti</button>
+                                </div>
+                                <input type="hidden" id="products-hidden" name="products[]" value="2021portami"
+                                    required>
+                                <input type="hidden" id="flow-alt" name="flow" value="3" required>
+                                <input type="hidden" id="team-hidden" name="additional_data[team]" required>
+                                <input type="hidden" id="school-hidden" name="additional_data[school]" required>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
+        </div>
     </main>
     <footer>
         <footer class="page-footer font-small blue pt-4" style="color: #ffffff; font-size: 20px;">
@@ -207,17 +243,18 @@
             <!-- Copyright -->
 
         </footer>
-        <script
-            src="https://www.paypal.com/sdk/js?locale=it_IT&currency=EUR&disable-funding=venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,sofort&client-id=AWuSAkbbmWJLaZHffDS5e1wsuo2E2ZjRHJuV8GNMQHuVC_s9lODACdQatIpxLKxX4yru2RQGi4WRWB0t"></script>
         <!-- Footer -->
         <!-- include jQuery -->
         <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <!-- include custom script -->
+        <script type="text/javascript" src="/assets/js/jquery.serializejson.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/api.js"></script>
         <script src="/assets/js/auth.js"></script>
-        <script src="/assets/js/pagamento.js"></script>
+        <script src="/assets/js/2021-portami-order.js"></script>
+        <!-- include Bundle Bootstrap -->
+
     </footer>
+
 </body>
 
 </html>

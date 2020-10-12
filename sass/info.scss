@@ -27,6 +27,11 @@ main {
         background-image: url("/assets/img/sport-info/frontend-sport.jpeg");
     }
 
+    &.portami {
+        background-image: url("/assets/img/portami-info/frontend-portami.jpeg");
+        background-position-y: initial;
+    }
+
     &.loudpolaroid {
         height: 50vh;
         background-image: url("/assets/img/loudpolaroid/LP_banner_wide_1080.png");
@@ -153,6 +158,7 @@ article {
     p {
         margin: 2rem 0;
     }
+
     img {
         max-width: 100% !important;
         height: auto !important;
@@ -161,4 +167,4 @@ article {
     .timeline-title {
         text-align: initial;
     }
-}   
+}
