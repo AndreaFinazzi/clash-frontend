@@ -118,7 +118,7 @@ api = {
     },
     getMembership: (name) => {
         defaultHeaders.refresh();
-        return fetch(host + '/membership/' + name, {
+        return fetch(host + '/users/membership/', {
             mode: 'cors',
             method: 'get',
             headers: defaultHeaders.content,
