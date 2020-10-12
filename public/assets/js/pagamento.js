@@ -19,7 +19,7 @@ orderButton = (element) => {
             </div>`
 }
 
-$('document').ready(function () {
+$(function () {
     $('.header').addClass('sticky_header');
     $('.navbar-toggler').prop('disabled', false);
 
@@ -56,13 +56,17 @@ function renderChoices(data) {
             reference_id: element.reference_id,
             amount: {
                 currency_code: 'EUR',
-                value: totalAmount.toString(),
+                value: (totalAmount + 0.54).toString() ,
                 breakdown: {
                     item_total: {
                         currency_code: 'EUR',
                         value: totalAmount.toString()
+                    },
+                    tax_total: {
+                        currency_code: 'EUR',
+                        value: '0.54'
                     }
-                }
+                },
             },
             payee: {
                 email_address: 'cityinvadersmilano@gmail.com'
