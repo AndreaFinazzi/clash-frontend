@@ -5,7 +5,7 @@ let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-$('document').ready(function () {
+$(function () {
     // $("#flat").flipster({
     //     style: 'flat',
     //     spacing: -0.25,
@@ -35,7 +35,7 @@ $('document').ready(function () {
         showContattiSend();
     })
 
-    $('[data-toggle="contatti-indietro"]').click(function (e) {
+    $('[data-toggle="contatti-indietro"]').on('click', function (e) {
         hideContattiSend();
     })
 
@@ -47,28 +47,7 @@ $('document').ready(function () {
         delay: 5,
         time: 2000
     });
-
-    /* 
-==============================================
-    STICKY HEADER
-=============================================== 
-*/
-
-    $(window).on('scroll', stickyHeader);
-
-    
-    stickyHeader();
 })
-
-function stickyHeader() {
-    if ($(window).scrollTop() < 100) {
-        $('.header').removeClass('sticky_header');
-        $('.navbar-toggler').prop('disabled', true);
-    } else {
-        $('.header').addClass('sticky_header');
-        $('.navbar-toggler').prop('disabled', false);
-    }
-}
 
 function loadContattiSend(label, staff_img, title, subtitle, desc, mail) {
     $('#profilo-img').attr('src', assets_root_staff + staff_img);
