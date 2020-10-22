@@ -2,7 +2,7 @@ docInput = data => {
     if (!data.verified) return (
         `<div class="form-group">
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="${data.name}" name="${data.name}" onchange='checkFile(this)' required>
+                <input type="file" class="custom-file-input" id="${data.name}" name="${data.name}" onchange='checkFile(this)'>
                 <label class="custom-file-label" for="selfie">${data.label}</label>
             </div>
             <input name="${data.name}" type="hidden" value='{"is_temp":${data.is_temp}}'></input>
